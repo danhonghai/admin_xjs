@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <title>后台管理系统</title>
+    <!--Core CSS -->
+    <link href="bs3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/bootstrap-switch-master/build/css/bootstrap3/bootstrap-switch.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-fileupload/bootstrap-fileupload.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-wysihtml5/bootstrap-wysihtml5.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-timepicker/compiled/timepicker.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-colorpicker/css/colorpicker.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-datetimepicker/css/datetimepicker.css" />
+    <link rel="stylesheet" type="text/css" href="assets/jquery-multi-select/css/multi-select.css" />
+    <link rel="stylesheet" type="text/css" href="assets/jquery-tags-input/jquery.tagsinput.css" />
+
+    <link rel="stylesheet" type="text/css" href="assets/select2-master/select2.css" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="js/ie8/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<section id="container">
+<!--header start-->
+<header class="header fixed-top clearfix">
+<!--logo start-->
+<div class="brand">
+
+    <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="">
+    </a>
+    <div class="sidebar-toggle-box">
+        <div class="fa fa-bars"></div>
+    </div>
+</div>
+<!--logo end-->
+
+<div class="nav notify-row" id="top_menu">
+    <!--  notification start -->
+    <ul class="nav top-menu">
+        <!-- settings start -->
+        <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <i class="fa fa-tasks"></i>
+                <span class="badge bg-success">8</span>
+            </a>
+            <ul class="dropdown-menu extended tasks-bar">
+                <li>
+                    <p class="">You have 8 pending tasks</p>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="task-info clearfix">
+                            <div class="desc pull-left">
+                                <h5>Target Sell</h5>
+                                <p>25% , Deadline  12 June’13</p>
+                            </div>
+                                    <span class="notification-pie-chart pull-right" data-percent="45">
+                            <span class="percent"></span>
+                            </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="task-info clearfix">
+                            <div class="desc pull-left">
+                                <h5>Product Delivery</h5>
+                                <p>45% , Deadline  12 June’13</p>
+                            </div>
+                                    <span class="notification-pie-chart pull-right" data-percent="78">
+                            <span class="percent"></span>
+                            </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="task-info clearfix">
+                            <div class="desc pull-left">
+                                <h5>Payment collection</h5>
+                                <p>87% , Deadline  12 June’13</p>
+                            </div>
+                                    <span class="notification-pie-chart pull-right" data-percent="60">
+                            <span class="percent"></span>
+                            </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="task-info clearfix">
+                            <div class="desc pull-left">
+                                <h5>Target Sell</h5>
+                                <p>33% , Deadline  12 June’13</p>
+                            </div>
+                                    <span class="notification-pie-chart pull-right" data-percent="90">
+                            <span class="percent"></span>
+                            </span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="external">
+                    <a href="#">See All Tasks</a>
+                </li>
+            </ul>
+        </li>
+        <!-- settings end -->
+        <!-- inbox dropdown start-->
+        <li id="header_inbox_bar" class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <i class="fa fa-envelope-o"></i>
+                <span class="badge bg-important">4</span>
+            </a>
+            <ul class="dropdown-menu extended inbox">
+                <li>
+                    <p class="red">You have 4 Mails</p>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="photo"><img alt="avatar" src="images/avatar-mini.jpg"></span>
+                                <span class="subject">
+                                <span class="from">Jonathan Smith</span>
+                                <span class="time">Just now</span>
+                                </span>
+                                <span class="message">
+                                    Hello, this is an example msg.
+                                </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="photo"><img alt="avatar" src="images/avatar-mini-2.jpg"></span>
+                                <span class="subject">
+                                <span class="from">Jane Doe</span>
+                                <span class="time">2 min ago</span>
+                                </span>
+                                <span class="message">
+                                    Nice admin template
+                                </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="photo"><img alt="avatar" src="images/avatar-mini-3.jpg"></span>
+                                <span class="subject">
+                                <span class="from">Tasi sam</span>
+                                <span class="time">2 days ago</span>
+                                </span>
+                                <span class="message">
+                                    This is an example msg.
+                                </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="photo"><img alt="avatar" src="images/avatar-mini.jpg"></span>
+                                <span class="subject">
+                                <span class="from">Mr. Perfect</span>
+                                <span class="time">2 hour ago</span>
+                                </span>
+                                <span class="message">
+                                    Hi there, its a test
+                                </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">See all messages</a>
+                </li>
+            </ul>
+        </li>
+        <!-- inbox dropdown end -->
+        <!-- notification dropdown start-->
+        <li id="header_notification_bar" class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+                <i class="fa fa-bell-o"></i>
+                <span class="badge bg-warning">3</span>
+            </a>
+            <ul class="dropdown-menu extended notification">
+                <li>
+                    <p>Notifications</p>
+                </li>
+                <li>
+                    <div class="alert alert-info clearfix">
+                        <span class="alert-icon"><i class="fa fa-bolt"></i></span>
+                        <div class="noti-info">
+                            <a href="#"> Server #1 overloaded.</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="alert alert-danger clearfix">
+                        <span class="alert-icon"><i class="fa fa-bolt"></i></span>
+                        <div class="noti-info">
+                            <a href="#"> Server #2 overloaded.</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="alert alert-success clearfix">
+                        <span class="alert-icon"><i class="fa fa-bolt"></i></span>
+                        <div class="noti-info">
+                            <a href="#"> Server #3 overloaded.</a>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </li>
+        <!-- notification dropdown end -->
+    </ul>
+    <!--  notification end -->
+</div>
+<div class="top-nav clearfix">
+    <!--search & user info start-->
+    <ul class="nav pull-right top-menu">
+        <li>
+            <input type="text" class="form-control search" placeholder=" Search">
+        </li>
+        <!-- user login dropdown start-->
+        <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <img alt="" src="images/avatar1_small.jpg">
+                <span class="username">John Doe</span>
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu extended logout">
+                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+            </ul>
+        </li>
+        <!-- user login dropdown end -->
+        <li>
+            <div class="toggle-right-box">
+                <div class="fa fa-bars"></div>
+            </div>
+        </li>
+    </ul>
+    <!--search & user info end-->
+</div>
+</header>
+<!--header end-->
+<!--sidebar start-->
+<aside>
+    <div id="sidebar" class="nav-collapse">
+        <!-- sidebar menu start-->
+        <div class="leftside-navigation">
+            <ul class="sidebar-menu" id="nav-accordion">
+                <!-- <li>
+                    <span style="display: block;line-height:30px; text-align:center;">一级菜单</span>
+                </li> -->
+                <li>
+                    <a class="" href="index.html">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="firstmenu active" href="javascript:;">
+                        <i class="fa fa-briefcase"></i>
+                        <span>业务管理</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a class="apl40 active" href="javascript:;">
+                                <i class="fa fa-credit-card"></i>
+                                <span>融资管理</span>
+                            </a>
+                            <ul class="sub">
+                                <li class="active"><a class="alast" href="opborrow_add.html">融资发布</a></li>
+                                <li><a class="alast" href="borrowlist.html">融资初审</a></li>
+                                <li><a class="alast" href="">融资复审</a></li>
+                                <li><a class="alast" href="">融资预约</a></li>
+                                <li><a class="alast" href="">投标记录</a></li>
+                                <li><a class="alast" href="">手动流标</a></li>
+                                <li><a class="alast" href="">投标状态</a></li>
+                                <li><a class="alast" href="">流标记录</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-retweet"></i>
+                                <span>债权转让</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">债权转让列表</a></li>
+                                <li><a class="alast" href="">债权转让合同设置</a></li>
+                                <li><a class="alast" href="">债权转让规则配置</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-coffee"></i>
+                                <span>贷后管理</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">还款中明细</a></li>
+                                <li><a class="alast" href="">已还款明细</a></li>
+                                <li><a class="alast" href="">逾期管理</a></li>
+                                <li><a class="alast" href="">催收管理</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="firstmenu" href="javascript:;">
+                        <i class="fa fa-keyboard-o"></i>
+                        <span>运营管理</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-bar-chart-o"></i>
+                                <span>数据统计</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">平台盈亏情况</a></li>
+                                <li><a class="alast" href="">交易规模分析</a></li>
+                                <li><a class="alast" href="">借款产品分析</a></li>
+                                <li><a class="alast" href="">风险控制分析</a></li>
+                                <li><a class="alast" href="">借款人分布</a></li>
+                                <li><a class="alast" href="">用户分析</a></li>
+                                <li><a class="alast" href="">用户档案</a></li>
+                                <li><a class="alast" href="">数据分析</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-building-o"></i>
+                                <span>账户信息</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">账户信息查询</a></li>
+                                <li><a class="alast" href="">审核列表</a></li>
+                                <li><a class="alast" href="">账户收支明细查询</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-comments"></i>
+                                <span>消息中心</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">意见反馈</a></li>
+                                <li><a class="alast" href="">APP消息推送</a></li>
+                                <li><a class="alast" href="">短信模板设置</a></li>
+                                <li><a class="alast" href="">站内信模板设置</a></li>
+                                <li><a class="alast" href="">短信列表</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-gift"></i>
+                                <span>活动管理</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">红包规则配置</a></li>
+                                <li><a class="alast" href="">红包明细查询</a></li>
+                                <li><a class="alast" href="">红包场景设置</a></li>
+                                <li><a class="alast" href="">积分规则配置</a></li>
+                                <li><a class="alast" href="">积分明细查询</a></li>
+                                <li><a class="alast" href="">积分明细查询</a></li>
+                                <li><a class="alast" href="">加息券规则设置</a></li>
+                                <li><a class="alast" href="">加息券场景设置</a></li>
+                                <li><a class="alast" href="">加息券明细查询</a></li>
+                                <li><a class="alast" href="">每日签到</a></li>
+                                <li><a class="alast" href="">天天摇</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="firstmenu" href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span>内容管理</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-file-text-o"></i>
+                                <span>文章管理</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-paste"></i>
+                                <span>合同模板</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-picture-o"></i>
+                                <span>首页banner配置</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-exclamation-triangle"></i>
+                                <span>风险评估</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">风险控制</a></li>
+                                <li><a class="alast" href="">风险题目</a></li>
+                                <li><a class="alast" href="">题目选择</a></li>
+                                <li><a class="alast" href="">风险等级</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="firstmenu" href="javascript:;">
+                        <i class="fa fa-user"></i>
+                        <span>用户管理</span>
+                    </a>
+                    <ul>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-user"></i>
+                                <span>用户列表</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">前台用户</a></li>
+                                <li><a class="alast" href="">后台用户</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-male"></i>
+                                <span>角色管理</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-unlock-alt"></i>
+                                <span>权限管理</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-stack-exchange"></i>
+                                <span>操作日志</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="firstmenu" href="javascript:;">
+                        <i class="fa fa-cogs"></i>
+                        <span>基础设置</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-money"></i>
+                                <span>费用设置</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-vimeo-square"></i>
+                                <span>版本配置</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-tumblr-square"></i>
+                                <span>标类型管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-bullseye"></i>
+                                <span>系统参数</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-bell-o"></i>
+                                <span>账单提醒设置</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-youtube"></i>
+                                <span>风险评估设置</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-question-circle"></i>
+                                <span>风险评估问题设置</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="firstmenu" href="javascript:;">
+                        <i class="fa fa-cny"></i>
+                        <span>财务管理</span>
+                    </a>
+                    <ul>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-credit-card"></i>
+                                <span>资金管理</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">充值记录</a></li>
+                                <li><a class="alast" href="">提现记录</a></li>
+                                <li><a class="alast" href="">资金明细记录</a></li>
+                                <li><a class="alast" href="">用户资金记录</a></li>
+                                <li><a class="alast" href="">平台账户以及收支统计</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-exchange"></i>
+                                <span>对账管理</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-warning"></i>
+                                <span>异常处理</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-minus-square-o"></i>
+                                <span>支付管理</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">支付通道参数配置</a></li>
+                                <li><a class="alast" href="">支付订单信息</a></li>
+                                <li><a class="alast" href="">批处理任务</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="firstmenu" href="javascript:;">
+                        <i class="fa fa-ticket"></i>
+                        <span>VIP管理</span>
+                    </a>
+                    <ul>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-align-justify"></i>
+                                <span>VIP用户列表</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-sort-numeric-asc"></i>
+                                <span>VIP等级配置</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-gift"></i>
+                                <span>VIP礼包管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="" href="lock_screen.html">
+                        <i class="fa fa-lock"></i>
+                        <span>锁屏</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- sidebar menu end-->
+    </div>
+</aside>
+<!--sidebar end-->
+<!--main content start
+<div class="has-switch" tabindex="0"><div class="switch-on switch-animate"><span class="switch-left switch-success">ON</span><label for="change-color-switch">&nbsp;</label><span class="switch-right switch-danger">OFF</span><input type="checkbox" id="change-color-switch" checked="" data-on="default" data-off="primary"></div></div>
+-->
+<section id="main-content">
+    <section class="wrapper">
+        <form class="form-horizontal bucket-form" method="get">
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-sm-3 control-label col-lg-2">借款标题：</label>
+                <div class="col-lg-7">
+                    <div class="input-group" style="width: 400px">
+                        <span class="input-group-addon btn-danger"><i class="fa fa-user"></i></span>
+                        <input type="text" class="form-control" placeholder="借款标题">
+                        <!-- <input type="text" placeholder="" data-mask="999-9999-9999" class="form-control"> -->
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-sm-3 control-label col-lg-2">是否天标：</label>
+                <div class="col-lg-7">
+                    <input type="checkbox" checked data-on="success" data-off="warning" data-on-label="<i class='fa fa-check'></i>" data-off-label="<i class='fa fa-times'></i>">
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-sm-3 control-label col-lg-2">借款人：</label>
+                <div class="col-lg-7">
+                    <select name="e9" id="e9" style="width:400px" class="populate">
+                        <option value="299">方浩 13067878610</option>
+                        <option value="291">尹飞 13486172131</option>
+                        <option value="288">白可意 18867763630</option>
+                        <option value="287">东夏山 13067876787</option>
+                        <option value="284">韦冰 17775700318</option>
+                        <option value="249">潘闽 13112341235</option>
+                        <option value="240">禄绮南 13112341234</option>
+                        <option value="230">凤霖一 17712340001</option>
+                        <option value="225">苏鸿铿 13325804990</option>
+                        <option value="201">丁丁 18300000000</option>
+                        <option value="200">郑云支 13480006000</option>
+                        <option value="194">赖觅云 18268000015</option>
+                        <option value="193">元振华 18268000014</option>
+                        <option value="191">陈军 13867150222</option>
+                        <option value="183">王大美 18868807137</option>
+                        <option value="174">姚程亚 15757133106</option>
+                        <option value="169">杨玉 18268000012</option>
+                        <option value="164">xhy 15168756161</option>
+                        <option value="162">怀洋 18268000011</option>
+                        <option value="157">白曼云 18268000008</option>
+                        <option value="152">瞿晓乐 18268001122</option>
+                        <option value="151">水星宇 18268005342</option>
+                        <option value="137">乐烟 18268000007</option>
+                        <option value="136">彭贝 18268000006</option>
+                        <option value="135">江贝儿 18268000005</option>
+                        <option value="134">袁帅 18268000004</option>
+                        <option value="133">吴昊 18360068936</option>
+                        <option value="132">方惜灵 18268000010</option>
+                        <option value="131">饶辰 18268000001</option>
+                        <option value="129">袁帅 18268000003</option>
+                        <option value="128">许若南 18268000002</option>
+                        <option value="127">余少 18268000000</option>
+                        <option value="126">卜艺璇 18268001234</option>
+                        <option value="116">滕烟 13735700038</option>
+                        <option value="111">何飞阳 13735700036</option>
+                        <option value="110">杜雪绿 13735700034</option>
+                        <option value="109">赖非 13735700032</option>
+                        <option value="104">庄香桃 13735700030</option>
+                        <option value="100">和星宏 18767123334</option>
+                        <option value="98">滑一 13735700026</option>
+                        <option value="96">施淼 13735700024</option>
+                        <option value="95">辛冬 13735700023</option>
+                        <option value="94">于然 13735700022</option>
+                        <option value="93">房皿 13735700021</option>
+                        <option value="91">戚苗 13735700020</option>
+                        <option value="86">吴坚 13505814177</option>
+                        <option value="85">祝彤 15263819008</option>
+                        <option value="82">盛玉二 13735700014</option>
+                        <option value="81">于明强 13735700013</option>
+                        <option value="78">乐书文 13735700010</option>
+                        <option value="76">史涛 13735700009</option>
+                        <option value="75">崔生 13735700008</option>
+                        <option value="73">苗安白 15300000000</option>
+                        <option value="65">王平凡 13735700004</option>
+                        <option value="64">徐欣雨 13738185387</option>
+                        <option value="61">王伟国 15038602066</option>
+                        <option value="57">杨秋 13535700001</option>
+                        <option value="43">松小丫 13675834936</option>
+                        <option value="42">高景峰 13605811656</option>
+                        <option value="41">居恒嘉 15236027003</option>
+                        <option value="38">杭夏山 13735700001</option>
+                        <option value="37">王大大 13355718375</option>
+                        <option value="33">蒋丰 17709688396</option>
+                        <option value="32">朱佳一 18767122599</option>
+                        <option value="30">黄晓彧 17006696114</option>
+                        <option value="26">马晓乐 17709688397</option>
+                        <option value="25">方映冬 17709688398</option>
+                        <option value="24">常文心 17709688399</option>
+                        <option value="3">姜晶晶 13067878620</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-lg-2 col-sm-2 control-label">店铺选择：</label>
+                <div class="col-lg-6">
+                    <select class="form-control" style="width: 400px" id="source1">
+                        <option value="1">一号店</option>
+                        <option value="1">一号店</option>
+                        <option value="1">一号店</option>
+                        <option value="1">一号店</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-lg-2 col-sm-2 control-label">产品类型：</label>
+                <div class="col-lg-6">
+                    <select class="form-control" style="width: 400px" id="source2">
+                        <option value="1">新手标</option>
+                        <option value="1">普通标</option>
+                        <option value="1">定向标</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-sm-3 control-label col-lg-2">是否推荐：</label>
+                <div class="col-lg-7">
+                    <input type="checkbox" checked data-on="info" data-off="warning" data-on-label="是" data-off-label="否">
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-lg-2 col-sm-2 control-label">借款期限：</label>
+                <div class="col-lg-6">
+                    <select class="form-control" style="width: 400px" id="source3">
+                        <option value="15">15天</option>
+                        <option value="30">30天</option>
+                        <option value="60">60天</option>
+                        <option value="90">90天</option>
+                        <option value="120">120天</option>
+                        <option value="150">150天</option>
+                        <option value="180">180天</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-lg-2 col-sm-2 control-label">还款方式：</label>
+                <div class="col-lg-6">
+                    <select class="form-control" style="width: 400px" id="source4">
+                        <option value="1">到期还本付息</option>
+                        <option value="2">到期先息后本</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-lg-2 col-sm-2 control-label">债权转让规则：</label>
+                <div class="col-lg-6">
+                    <select class="form-control" style="width: 400px" id="source5">
+                        <option value="1">不支持债权转让</option>
+                        <option value="2">规则一</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-lg-2 col-sm-2 control-label">借款金额：</label>
+                <div class="col-lg-6">
+                    <div class="input-group" style="width: 400px">
+                        <span class="input-group-addon btn-info">¥</span>
+                        <input type="number" class="form-control">
+                        <span class="input-group-addon btn-warning">.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-lg-2 col-sm-2 control-label">年利率：</label>
+                <div class="col-lg-6">
+                    <div class="input-group" style="width: 400px">
+                        <input type="number" class="form-control">
+                        <span class="input-group-addon btn-warning">%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-lg-2 col-sm-2 control-label">综合年利率：</label>
+                <div class="col-lg-6">
+                    <div class="input-group" style="width: 400px">
+                        <input type="number" class="form-control">
+                        <span class="input-group-addon btn-warning">%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-lg-2 col-sm-2 control-label">最低投标金额：</label>
+                <div class="col-lg-6">
+                    <div class="input-group" style="width: 400px">
+                        <span class="input-group-addon btn-info">¥</span>
+                        <input type="text" class="form-control" placeholder="请输入最低投标金额（人民币单位：元）">
+                        <span class="input-group-addon btn-warning">.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-lg-2 col-sm-2 control-label">最高投标金额：</label>
+                <div class="col-lg-6">
+                    <div class="input-group" style="width: 400px">
+                        <span class="input-group-addon btn-info">¥</span>
+                        <input type="text" class="form-control" placeholder="请输入最高投标金额（人民币单位：元）">
+                        <span class="input-group-addon btn-warning">.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-lg-2 col-sm-2 control-label">募集开始时间：</label>
+                <div class="col-lg-6">
+                    <div class="input-group date form_datetime-component" style="width: 400px">
+                        <input type="text" class="form-control" disabled size="16" style="background-color:#fff;">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-primary date-set"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-lg-2 col-sm-2 control-label">有效时间：</label>
+                <div class="col-lg-6">
+                    <select class="form-control" style="width: 400px" id="source6">
+                        <option value="1">1小时</option>
+                        <option value="2">2小时</option>
+                        <option value="3">3小时</option>
+                        <option value="4">4小时</option>
+                        <option value="5">5小时</option>
+                        <option value="6">6小时</option>
+                        <option value="7">7小时</option>
+                        <option value="8">8小时</option>
+                        <option value="9">9小时</option>
+                        <option value="10">10小时</option>
+                        <option value="11">11小时</option>
+                        <option value="12">12小时</option>
+                        <option value="13">13小时</option>
+                        <option value="14">14小时</option>
+                        <option value="15">15小时</option>
+                        <option value="16">16小时</option>
+                        <option value="17">17小时</option>
+                        <option value="18">18小时</option>
+                        <option value="19">19小时</option>
+                        <option value="20">20小时</option>
+                        <option value="21">21小时</option>
+                        <option value="22">22小时</option>
+                        <option value="23">23小时</option>
+                        <option value="24">24小时</option>
+                        <option value="48">48小时</option> 
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-lg-2 col-sm-2 control-label">优惠券支持：</label>
+                <div class="col-lg-6">
+                    <select class="form-control" style="width: 400px" id="source7">
+                        <option value="1">支持红包</option>
+                        <option value="2">支持加息券</option>
+                        <option value="3">支持红包和加息券</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-lg-2 col-sm-2 control-label">项目介绍：</label>
+                <div class="col-lg-6">
+                    <textarea class="form-control ckeditor" name="editor1" rows="6"></textarea>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-lg-2 col-sm-2 control-label">安全保障：</label>
+                <div class="col-lg-6">
+                    <textarea class="form-control ckeditor" name="editor2" rows="6"></textarea>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+                <label class="col-lg-2 col-sm-2 control-label"></label>
+                <div class="col-lg-6">
+                    <button type="button" class="btn btn-primary btn-lg btn-block">提交</button>
+                </div>
+            </div>
+        </form>
+    </section>
+</section>
+<!--main content end-->
+<!--right sidebar start-->
+<div class="right-sidebar">
+<div class="search-row">
+    <input type="text" placeholder="Search" class="form-control">
+</div>
+<div class="right-stat-bar">
+<ul class="right-side-accordion">
+<li class="widget-collapsible">
+    <a href="#" class="head widget-head red-bg active clearfix">
+        <span class="pull-left">work progress (5)</span>
+        <span class="pull-right widget-collapse"><i class="ico-minus"></i></span>
+    </a>
+    <ul class="widget-container">
+        <li>
+            <div class="prog-row side-mini-stat clearfix">
+                <div class="side-graph-info">
+                    <h4>Target sell</h4>
+                    <p>
+                        25%, Deadline 12 june 13
+                    </p>
+                </div>
+                <div class="side-mini-graph">
+                    <div class="target-sell">
+                    </div>
+                </div>
+            </div>
+            <div class="prog-row side-mini-stat">
+                <div class="side-graph-info">
+                    <h4>product delivery</h4>
+                    <p>
+                        55%, Deadline 12 june 13
+                    </p>
+                </div>
+                <div class="side-mini-graph">
+                    <div class="p-delivery">
+                        <div class="sparkline" data-type="bar" data-resize="true" data-height="30" data-width="90%" data-bar-color="#39b7ab" data-bar-width="5" data-data="[200,135,667,333,526,996,564,123,890,564,455]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prog-row side-mini-stat">
+                <div class="side-graph-info payment-info">
+                    <h4>payment collection</h4>
+                    <p>
+                        25%, Deadline 12 june 13
+                    </p>
+                </div>
+                <div class="side-mini-graph">
+                    <div class="p-collection">
+						<span class="pc-epie-chart" data-percent="45">
+						<span class="percent"></span>
+						</span>
+                    </div>
+                </div>
+            </div>
+            <div class="prog-row side-mini-stat">
+                <div class="side-graph-info">
+                    <h4>delivery pending</h4>
+                    <p>
+                        44%, Deadline 12 june 13
+                    </p>
+                </div>
+                <div class="side-mini-graph">
+                    <div class="d-pending">
+                    </div>
+                </div>
+            </div>
+            <div class="prog-row side-mini-stat">
+                <div class="col-md-12">
+                    <h4>total progress</h4>
+                    <p>
+                        50%, Deadline 12 june 13
+                    </p>
+                    <div class="progress progress-xs mtop10">
+                        <div style="width: 50%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" role="progressbar" class="progress-bar progress-bar-info">
+                            <span class="sr-only">50% Complete</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</li>
+<li class="widget-collapsible">
+    <a href="#" class="head widget-head terques-bg active clearfix">
+        <span class="pull-left">contact online (5)</span>
+        <span class="pull-right widget-collapse"><i class="ico-minus"></i></span>
+    </a>
+    <ul class="widget-container">
+        <li>
+            <div class="prog-row">
+                <div class="user-thumb">
+                    <a href="#"><img src="images/avatar1_small.jpg" alt=""></a>
+                </div>
+                <div class="user-details">
+                    <h4><a href="#">Jonathan Smith</a></h4>
+                    <p>
+                        Work for fun
+                    </p>
+                </div>
+                <div class="user-status text-danger">
+                    <i class="fa fa-comments-o"></i>
+                </div>
+            </div>
+            <div class="prog-row">
+                <div class="user-thumb">
+                    <a href="#"><img src="images/avatar1.jpg" alt=""></a>
+                </div>
+                <div class="user-details">
+                    <h4><a href="#">Anjelina Joe</a></h4>
+                    <p>
+                        Available
+                    </p>
+                </div>
+                <div class="user-status text-success">
+                    <i class="fa fa-comments-o"></i>
+                </div>
+            </div>
+            <div class="prog-row">
+                <div class="user-thumb">
+                    <a href="#"><img src="images/chat-avatar2.jpg" alt=""></a>
+                </div>
+                <div class="user-details">
+                    <h4><a href="#">John Doe</a></h4>
+                    <p>
+                        Away from Desk
+                    </p>
+                </div>
+                <div class="user-status text-warning">
+                    <i class="fa fa-comments-o"></i>
+                </div>
+            </div>
+            <div class="prog-row">
+                <div class="user-thumb">
+                    <a href="#"><img src="images/avatar1_small.jpg" alt=""></a>
+                </div>
+                <div class="user-details">
+                    <h4><a href="#">Mark Henry</a></h4>
+                    <p>
+                        working
+                    </p>
+                </div>
+                <div class="user-status text-info">
+                    <i class="fa fa-comments-o"></i>
+                </div>
+            </div>
+            <div class="prog-row">
+                <div class="user-thumb">
+                    <a href="#"><img src="images/avatar1.jpg" alt=""></a>
+                </div>
+                <div class="user-details">
+                    <h4><a href="#">Shila Jones</a></h4>
+                    <p>
+                        Work for fun
+                    </p>
+                </div>
+                <div class="user-status text-danger">
+                    <i class="fa fa-comments-o"></i>
+                </div>
+            </div>
+            <p class="text-center">
+                <a href="#" class="view-btn">View all Contacts</a>
+            </p>
+        </li>
+    </ul>
+</li>
+<li class="widget-collapsible">
+    <a href="#" class="head widget-head purple-bg active">
+        <span class="pull-left"> recent activity (3)</span>
+        <span class="pull-right widget-collapse"><i class="ico-minus"></i></span>
+    </a>
+    <ul class="widget-container">
+        <li>
+            <div class="prog-row">
+                <div class="user-thumb rsn-activity">
+                    <i class="fa fa-clock-o"></i>
+                </div>
+                <div class="rsn-details ">
+                    <p class="text-muted">
+                        just now
+                    </p>
+                    <p>
+                        <a href="#">Jim Doe </a>Purchased new equipments for zonal office setup
+                    </p>
+                </div>
+            </div>
+            <div class="prog-row">
+                <div class="user-thumb rsn-activity">
+                    <i class="fa fa-clock-o"></i>
+                </div>
+                <div class="rsn-details ">
+                    <p class="text-muted">
+                        2 min ago
+                    </p>
+                    <p>
+                        <a href="#">Jane Doe </a>Purchased new equipments for zonal office setup
+                    </p>
+                </div>
+            </div>
+            <div class="prog-row">
+                <div class="user-thumb rsn-activity">
+                    <i class="fa fa-clock-o"></i>
+                </div>
+                <div class="rsn-details ">
+                    <p class="text-muted">
+                        1 day ago
+                    </p>
+                    <p>
+                        <a href="#">Jim Doe </a>Purchased new equipments for zonal office setup
+                    </p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</li>
+<li class="widget-collapsible">
+    <a href="#" class="head widget-head yellow-bg active">
+        <span class="pull-left"> shipment status</span>
+        <span class="pull-right widget-collapse"><i class="ico-minus"></i></span>
+    </a>
+    <ul class="widget-container">
+        <li>
+            <div class="col-md-12">
+                <div class="prog-row">
+                    <p>
+                        Full sleeve baby wear (SL: 17665)
+                    </p>
+                    <div class="progress progress-xs mtop10">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                            <span class="sr-only">40% Complete</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="prog-row">
+                    <p>
+                        Full sleeve baby wear (SL: 17665)
+                    </p>
+                    <div class="progress progress-xs mtop10">
+                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                            <span class="sr-only">70% Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</li>
+</ul>
+
+</div>
+
+</div>
+<!--right sidebar end-->
+</section>
+<!-- Placed js at the end of the document so the pages load faster -->
+<!--Core js-->
+<script src="js/lib/jquery.js"></script>
+<script src="js/lib/jquery-1.8.3.min.js"></script>
+<script src="bs3/js/bootstrap.min.js"></script>
+<script src="js/lib/jquery-ui-1.9.2.custom.min.js"></script>
+<script class="include" type="text/javascript" src="js/accordion-menu/jquery.dcjqaccordion.2.7.js"></script>
+<script src="js/scrollTo/jquery.scrollTo.min.js"></script>
+<script src="assets/easypiechart/jquery.easypiechart.js"></script>
+<script src="assets/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
+<script src="js/nicescroll/jquery.nicescroll.js"></script>
+<script src="js/nicescroll/jquery.nicescroll.js"></script>
+
+<script src="assets/bootstrap-switch-master/build/js/bootstrap-switch.js"></script>
+
+<script type="text/javascript" src="assets/fuelux/js/spinner.min.js"></script>
+<script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+<script type="text/javascript" src="assets/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+<script type="text/javascript" src="assets/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+<script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="assets/bootstrap-daterangepicker/moment.min.js"></script>
+<script type="text/javascript" src="assets/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="assets/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+<script type="text/javascript" src="assets/jquery-multi-select/js/jquery.multi-select.js"></script>
+<script type="text/javascript" src="assets/jquery-multi-select/js/jquery.quicksearch.js"></script>
+
+<script type="text/javascript" src="assets/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+
+<script src="assets/jquery-tags-input/jquery.tagsinput.js"></script>
+
+<script src="assets/select2-master/select2.js"></script>
+<script src="js/select2/select-init.js"></script>
+
+
+<!--common script init for all pages-->
+<script src="js/scripts.js"></script>
+
+<script src="js/toggle-button/toggle-init.js"></script>
+
+<script src="js/advanced-form/advanced-form.js"></script>
+<!--Easy Pie Chart-->
+<script src="assets/easypiechart/jquery.easypiechart.js"></script>
+<!--Sparkline Chart-->
+<script src="assets/sparkline/jquery.sparkline.js"></script>
+<!--jQuery Flot Chart-->
+<script src="assets/flot-chart/jquery.flot.js"></script>
+<script src="assets/flot-chart/jquery.flot.tooltip.min.js"></script>
+<script src="assets/flot-chart/jquery.flot.resize.js"></script>
+<script src="assets/flot-chart/jquery.flot.pie.resize.js"></script>
+
+<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+<!--script for this page-->
+</body>
+</html>
