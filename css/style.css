@@ -5671,3 +5671,23 @@ right: -1px;
 .alast {
     padding-left: 80px !important;
 }
+
+
+/* 新增自定义样式 by wuyf 20170908*/
+.nav-wrap{
+    padding-left: 40px;
+    padding-right:80px;
+}
+.nav-title{
+    float:left;
+}
+.nav-title span{
+    border-bottom:2px solid red;
+    display:inline-block;
+    padding:5px 10px;
+    margin-bottom:30px;
+}
+.nav-wrap .btn{
+    float:right;
+    margin-left: 10px;
+}
