@@ -1,0 +1,105 @@
+
+/* 新增自定义样式 by wuyf 20170908*/
+.nav-wrap{
+	margin-left: 0px;
+	margin-top: 20px;
+}
+.nav-title{
+    float:left;
+}
+.nav-title span{
+    border-bottom:2px solid #1fb5ad;
+    display:inline-block;
+    margin-bottom:20px;
+    padding-bottom: 2px;
+    font-size: 16px;
+    color: #333;
+}
+.nav-wrap .btn{
+    float:right;
+    margin-left: 10px;
+}
+
+.light-bg{
+	background-color: #ffffff;
+}
+
+.item-box{
+	padding:20px 40px;
+}
+
+.item-box .box-title{
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* tab样式 */
+.tab-list{
+	height: 45px;
+	line-height: 45px;
+	font-size: 16px;
+	border-bottom: 1px solid #dbdbdb;
+}
+.tab-list .tab-item{
+	display: inline-block;
+	width: 110px;
+	text-align: center;
+	cursor: pointer;
+}
+.tab-list .tab-item.active{
+	color: #1fb5ad;
+	border-bottom:2px solid #1fb5ad;
+}
+/* 搜索框 */
+.search-box .form-group{
+	margin-right: 10px;
+}
+
+.fr{
+	float:right;
+}
+.fl{
+	float:left;
+}
+
+.btn-refresh{
+	background-color: #ffffff;
+	color: #2eaced;
+	border:1px solid #2eaced;
+}
+
+/* 表格样式*/
+.table-new thead tr th{
+	background-color: #eeeeee;
+}
+
+.table-new tbody tr:hover,.table-striped tbody tr:hover,.table-striped tbody tr:hover td{
+	background-color: #ffcece;
+}
+
+.link{
+	color:#1192ff;
+}
+.link:hover{
+	color:red;
+	text-decoration: underline;
+}
+/* 统计数据 */
+.table-count tr th{
+	background: #f2f2f2;
+    color: #333;
+    font-size: 14px;
+}
+/* 定位input后面的单位 */
+.input-position{
+	position: relative;
+}
+.input-position input{
+	padding-right: 15px;
+}
+.input-position .input-span{
+	position: absolute;
+	right: 5px;
+	top: 9px;
+}

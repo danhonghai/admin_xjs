@@ -25,6 +25,9 @@
 
     <link rel="stylesheet" type="text/css" href="assets/select2-master/select2.css" />
 
+    <!--zTreeStyle css-->
+    <link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" type="text/css">
+
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
@@ -276,18 +279,18 @@
                     </a>
                 </li>
                 <li>
-                    <a class="firstmenu active" href="javascript:;">
+                    <a class="firstmenu" href="javascript:;">
                         <i class="fa fa-briefcase"></i>
                         <span>业务管理</span>
                     </a>
                     <ul>
                         <li>
-                            <a class="apl40 active" href="javascript:;">
+                            <a class="apl40" href="javascript:;">
                                 <i class="fa fa-credit-card"></i>
                                 <span>融资管理</span>
                             </a>
                             <ul class="sub">
-                                <li class="active"><a class="alast" href="opborrow_add.html">融资发布</a></li>
+                                <li><a class="alast" href="opborrow_add.html">融资发布</a></li>
                                 <li><a class="alast" href="borrowlist.html">融资初审</a></li>
                                 <li><a class="alast" href="">融资复审</a></li>
                                 <li><a class="alast" href="">融资预约</a></li>
@@ -428,7 +431,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="firstmenu" href="javascript:;">
+                    <a class="firstmenu active" href="javascript:;">
                         <i class="fa fa-user"></i>
                         <span>用户管理</span>
                     </a>
@@ -444,7 +447,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="apl40" href="role.html">
+                            <a class="apl40 active" href="role.html">
                                 <i class="fa fa-male"></i>
                                 <span>角色管理</span>
                             </a>
@@ -525,8 +528,9 @@
                                 <span>资金管理</span>
                             </a>
                             <ul class="sub">
-                                <li><a class="alast" href="">充值记录</a></li>
-                                <li><a class="alast" href="">提现记录</a></li>
+                                <li><a class="alast" href="rechargelist.html">充值记录</a></li>
+                                <li><a class="alast" href="withdrawaudit.html">提现审核</a></li>
+                                <li><a class="alast" href="withdrawlist.html">提现记录</a></li>
                                 <li><a class="alast" href="">资金明细记录</a></li>
                                 <li><a class="alast" href="">用户资金记录</a></li>
                                 <li><a class="alast" href="">平台账户以及收支统计</a></li>
@@ -600,274 +604,43 @@
 -->
 <section id="main-content">
     <section class="wrapper">
-        <form class="form-horizontal bucket-form" method="get">
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-sm-3 control-label col-lg-2">借款标题：</label>
+        <div class="row nav-wrap">
+            <div class="nav-title"><span>角色权限配置</span></div>
+        </div>
+        <form class="form-horizontal" method="get">
+            <div class="form-group">
+                <label class="col-sm-3 control-label col-lg-2">角色名称：</label>
                 <div class="col-lg-7">
                     <div class="input-group" style="width: 400px">
-                        <span class="input-group-addon btn-danger"><i class="fa fa-user"></i></span>
-                        <input type="text" class="form-control" placeholder="借款标题">
-                        <!-- <input type="text" placeholder="" data-mask="999-9999-9999" class="form-control"> -->
+                        <input type="text" class="form-control" placeholder="请输入角色名称">
                     </div>
                 </div>
             </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-sm-3 control-label col-lg-2">是否天标：</label>
+            <div class="form-group">
+                <label class="col-sm-3 control-label col-lg-2">角色代码：</label>
                 <div class="col-lg-7">
-                    <input type="checkbox" checked data-on="success" data-off="warning" data-on-label="<i class='fa fa-check'></i>" data-off-label="<i class='fa fa-times'></i>">
+                    <div class="input-group" style="width: 400px">
+                        <input type="text" class="form-control" placeholder="请输入角色代码">
+                    </div>
                 </div>
             </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-sm-3 control-label col-lg-2">借款人：</label>
+            <div class="form-group">
+                <label class="col-sm-3 control-label col-lg-2">角色描述：</label>
                 <div class="col-lg-7">
-                    <select name="e9" id="e9" style="width:400px" class="populate">
-                        <option value="299">方浩 13067878610</option>
-                        <option value="291">尹飞 13486172131</option>
-                        <option value="288">白可意 18867763630</option>
-                        <option value="287">东夏山 13067876787</option>
-                        <option value="284">韦冰 17775700318</option>
-                        <option value="249">潘闽 13112341235</option>
-                        <option value="240">禄绮南 13112341234</option>
-                        <option value="230">凤霖一 17712340001</option>
-                        <option value="225">苏鸿铿 13325804990</option>
-                        <option value="201">丁丁 18300000000</option>
-                        <option value="200">郑云支 13480006000</option>
-                        <option value="194">赖觅云 18268000015</option>
-                        <option value="193">元振华 18268000014</option>
-                        <option value="191">陈军 13867150222</option>
-                        <option value="183">王大美 18868807137</option>
-                        <option value="174">姚程亚 15757133106</option>
-                        <option value="169">杨玉 18268000012</option>
-                        <option value="164">xhy 15168756161</option>
-                        <option value="162">怀洋 18268000011</option>
-                        <option value="157">白曼云 18268000008</option>
-                        <option value="152">瞿晓乐 18268001122</option>
-                        <option value="151">水星宇 18268005342</option>
-                        <option value="137">乐烟 18268000007</option>
-                        <option value="136">彭贝 18268000006</option>
-                        <option value="135">江贝儿 18268000005</option>
-                        <option value="134">袁帅 18268000004</option>
-                        <option value="133">吴昊 18360068936</option>
-                        <option value="132">方惜灵 18268000010</option>
-                        <option value="131">饶辰 18268000001</option>
-                        <option value="129">袁帅 18268000003</option>
-                        <option value="128">许若南 18268000002</option>
-                        <option value="127">余少 18268000000</option>
-                        <option value="126">卜艺璇 18268001234</option>
-                        <option value="116">滕烟 13735700038</option>
-                        <option value="111">何飞阳 13735700036</option>
-                        <option value="110">杜雪绿 13735700034</option>
-                        <option value="109">赖非 13735700032</option>
-                        <option value="104">庄香桃 13735700030</option>
-                        <option value="100">和星宏 18767123334</option>
-                        <option value="98">滑一 13735700026</option>
-                        <option value="96">施淼 13735700024</option>
-                        <option value="95">辛冬 13735700023</option>
-                        <option value="94">于然 13735700022</option>
-                        <option value="93">房皿 13735700021</option>
-                        <option value="91">戚苗 13735700020</option>
-                        <option value="86">吴坚 13505814177</option>
-                        <option value="85">祝彤 15263819008</option>
-                        <option value="82">盛玉二 13735700014</option>
-                        <option value="81">于明强 13735700013</option>
-                        <option value="78">乐书文 13735700010</option>
-                        <option value="76">史涛 13735700009</option>
-                        <option value="75">崔生 13735700008</option>
-                        <option value="73">苗安白 15300000000</option>
-                        <option value="65">王平凡 13735700004</option>
-                        <option value="64">徐欣雨 13738185387</option>
-                        <option value="61">王伟国 15038602066</option>
-                        <option value="57">杨秋 13535700001</option>
-                        <option value="43">松小丫 13675834936</option>
-                        <option value="42">高景峰 13605811656</option>
-                        <option value="41">居恒嘉 15236027003</option>
-                        <option value="38">杭夏山 13735700001</option>
-                        <option value="37">王大大 13355718375</option>
-                        <option value="33">蒋丰 17709688396</option>
-                        <option value="32">朱佳一 18767122599</option>
-                        <option value="30">黄晓彧 17006696114</option>
-                        <option value="26">马晓乐 17709688397</option>
-                        <option value="25">方映冬 17709688398</option>
-                        <option value="24">常文心 17709688399</option>
-                        <option value="3">姜晶晶 13067878620</option>
-                    </select>
+                    <div class="input-group" style="width: 400px">
+                        <input type="text" class="form-control" placeholder="请输入角色描述">
+                    </div>
                 </div>
             </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-lg-2 col-sm-2 control-label">店铺选择：</label>
-                <div class="col-lg-6">
-                    <select class="form-control" style="width: 400px" id="source1">
-                        <option value="1">一号店</option>
-                        <option value="1">一号店</option>
-                        <option value="1">一号店</option>
-                        <option value="1">一号店</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-lg-2 col-sm-2 control-label">产品类型：</label>
-                <div class="col-lg-6">
-                    <select class="form-control" style="width: 400px" id="source2">
-                        <option value="1">新手标</option>
-                        <option value="1">普通标</option>
-                        <option value="1">定向标</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-sm-3 control-label col-lg-2">是否推荐：</label>
+            <div class="form-group">
+                <label class="col-sm-3 control-label col-lg-2">角色权限：</label>
                 <div class="col-lg-7">
-                    <input type="checkbox" checked data-on="info" data-off="warning" data-on-label="是" data-off-label="否">
+                    <ul id="treeDemo" class="ztree"></ul>
                 </div>
             </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-lg-2 col-sm-2 control-label">借款期限：</label>
-                <div class="col-lg-6">
-                    <select class="form-control" style="width: 400px" id="source3">
-                        <option value="15">15天</option>
-                        <option value="30">30天</option>
-                        <option value="60">60天</option>
-                        <option value="90">90天</option>
-                        <option value="120">120天</option>
-                        <option value="150">150天</option>
-                        <option value="180">180天</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-lg-2 col-sm-2 control-label">还款方式：</label>
-                <div class="col-lg-6">
-                    <select class="form-control" style="width: 400px" id="source4">
-                        <option value="1">到期还本付息</option>
-                        <option value="2">到期先息后本</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-lg-2 col-sm-2 control-label">债权转让规则：</label>
-                <div class="col-lg-6">
-                    <select class="form-control" style="width: 400px" id="source5">
-                        <option value="1">不支持债权转让</option>
-                        <option value="2">规则一</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-lg-2 col-sm-2 control-label">借款金额：</label>
-                <div class="col-lg-6">
-                    <div class="input-group" style="width: 400px">
-                        <span class="input-group-addon btn-info">¥</span>
-                        <input type="number" class="form-control">
-                        <span class="input-group-addon btn-warning">.00</span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-lg-2 col-sm-2 control-label">年利率：</label>
-                <div class="col-lg-6">
-                    <div class="input-group" style="width: 400px">
-                        <input type="number" class="form-control">
-                        <span class="input-group-addon btn-warning">%</span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-lg-2 col-sm-2 control-label">综合年利率：</label>
-                <div class="col-lg-6">
-                    <div class="input-group" style="width: 400px">
-                        <input type="number" class="form-control">
-                        <span class="input-group-addon btn-warning">%</span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-lg-2 col-sm-2 control-label">最低投标金额：</label>
-                <div class="col-lg-6">
-                    <div class="input-group" style="width: 400px">
-                        <span class="input-group-addon btn-info">¥</span>
-                        <input type="text" class="form-control" placeholder="请输入最低投标金额（人民币单位：元）">
-                        <span class="input-group-addon btn-warning">.00</span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-lg-2 col-sm-2 control-label">最高投标金额：</label>
-                <div class="col-lg-6">
-                    <div class="input-group" style="width: 400px">
-                        <span class="input-group-addon btn-info">¥</span>
-                        <input type="text" class="form-control" placeholder="请输入最高投标金额（人民币单位：元）">
-                        <span class="input-group-addon btn-warning">.00</span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-lg-2 col-sm-2 control-label">募集开始时间：</label>
-                <div class="col-lg-6">
-                    <div class="input-group date form_datetime-component" style="width: 400px">
-                        <input type="text" class="form-control" disabled size="16" style="background-color:#fff;">
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-primary date-set"><i class="fa fa-calendar"></i></button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-lg-2 col-sm-2 control-label">有效时间：</label>
-                <div class="col-lg-6">
-                    <select class="form-control" style="width: 400px" id="source6">
-                        <option value="1">1小时</option>
-                        <option value="2">2小时</option>
-                        <option value="3">3小时</option>
-                        <option value="4">4小时</option>
-                        <option value="5">5小时</option>
-                        <option value="6">6小时</option>
-                        <option value="7">7小时</option>
-                        <option value="8">8小时</option>
-                        <option value="9">9小时</option>
-                        <option value="10">10小时</option>
-                        <option value="11">11小时</option>
-                        <option value="12">12小时</option>
-                        <option value="13">13小时</option>
-                        <option value="14">14小时</option>
-                        <option value="15">15小时</option>
-                        <option value="16">16小时</option>
-                        <option value="17">17小时</option>
-                        <option value="18">18小时</option>
-                        <option value="19">19小时</option>
-                        <option value="20">20小时</option>
-                        <option value="21">21小时</option>
-                        <option value="22">22小时</option>
-                        <option value="23">23小时</option>
-                        <option value="24">24小时</option>
-                        <option value="48">48小时</option> 
-                    </select>
-                </div>
-            </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-lg-2 col-sm-2 control-label">优惠券支持：</label>
-                <div class="col-lg-6">
-                    <select class="form-control" style="width: 400px" id="source7">
-                        <option value="1">支持红包</option>
-                        <option value="2">支持加息券</option>
-                        <option value="3">支持红包和加息券</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-lg-2 col-sm-2 control-label">项目介绍：</label>
-                <div class="col-lg-6">
-                    <textarea class="form-control ckeditor" name="editor1" rows="6"></textarea>
-                </div>
-            </div>
-            <div class="form-group" style="margin-bottom:0px;">
-                <label class="col-lg-2 col-sm-2 control-label">安全保障：</label>
-                <div class="col-lg-6">
-                    <textarea class="form-control ckeditor" name="editor2" rows="6"></textarea>
-                </div>
-            </div>
-            <div class="form-group" style="margin-bottom:0px;">
+            <div class="form-group">
                 <label class="col-lg-2 col-sm-2 control-label"></label>
-                <div class="col-lg-6">
+                <div class="col-lg-3">
                     <button type="button" class="btn btn-primary btn-lg btn-block">提交</button>
                 </div>
             </div>
@@ -1183,5 +956,54 @@
 
 <script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
 <!--script for this page-->
+
+<!-- zTree script -->
+<script type="text/javascript" src="js/ztree/jquery.ztree.all.min.js"></script>
+
+<script>
+    var setting = { 
+        check:{
+            enable:true
+        }
+    };  
+    var treeNodes = [  
+        {name:"首页信息展示",children:[
+            {name:"首页预览"}
+        ]},   
+        {name:"基础功能",children:[
+            {name:"融资管理"},
+            {name:"财务管理"},
+            {name:"贷后管理"},
+            {name:"用户管理"},
+            {name:"平台数据"},
+            {name:"财务统计"},
+            {name:"电子合同"}
+        ]},   
+        {name:"增值功能",children:[
+            {name:"红包管理"},
+            {name:"积分管理"},
+            {name:"加息券管理"}
+        ]},   
+        {name:"系统功能",children:[
+            {name:"栏目管理"},
+            {name:"权限管理"},
+            {name:"系统配置"},
+            {name:"系统维护"}
+        ]},   
+        {name:"资金处理平台",children:[
+            {name:"异常处理"},
+            {name:"支付平台管理"},
+            {name:"电子账户"}
+        ]},  
+        {name:"风险控制管理",children:[
+            {name:"风险控制审核"}
+        ]},  
+    ];    
+    var zTreeObj;
+     $(function() { 
+        zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, treeNodes); 
+     }); 
+</script>
+
 </body>
 </html>

@@ -242,10 +242,10 @@ var Script = function () {
     });
 
 
-    $(function() {
+    /*$(function() {
 
         var datatPie = [30,50];
-// DONUT
+        // DONUT
         $.plot($(".target-sell"), datatPie,
             {
                 series: {
@@ -278,7 +278,7 @@ var Script = function () {
 
                 colors: ["#ff6d60", "#cbcdd9"]
             });
-    });
+    });*/
 
     $(function() {
         $('.pc-epie-chart').easyPieChart({
