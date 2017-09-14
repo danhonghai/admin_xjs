@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <title>后台管理系统</title>
+    <!--Core CSS -->
+    <link href="../bs3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-reset.css" rel="stylesheet">
+    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../assets/bootstrap-fileupload/bootstrap-fileupload.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/bootstrap-wysihtml5/bootstrap-wysihtml5.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/bootstrap-datepicker/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/bootstrap-timepicker/compiled/timepicker.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/bootstrap-colorpicker/css/colorpicker.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/bootstrap-datetimepicker/css/datetimepicker.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/jquery-multi-select/css/multi-select.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/jquery-tags-input/jquery.tagsinput.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/select2-master/select2.css" />
+    <!-- radio -->
+    <link href="../assets/iCheck-master/skins/minimal/blue.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet" />
+    
+    <!-- MyStyle -->
+    <link rel="stylesheet" type="text/css" href="../css/xjs.css" />
+    <!-- <base href="/"> -->
+    
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="js/ie8/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<section id="container">
+<!--header start-->
+<header class="header fixed-top clearfix">
+<!--logo start-->
+<div class="brand">
+
+    <a href="index.html" class="logo">
+        <img src="../images/logo.png" alt="">
+    </a>
+    <div class="sidebar-toggle-box">
+        <div class="fa fa-bars"></div>
+    </div>
+</div>
+<!--logo end-->
+<div class="top-nav clearfix">
+    <!--search & user info start-->
+    <ul class="nav pull-right top-menu">
+        <!-- user login dropdown start-->
+        <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <img alt="" src="../images/avatar1_small.jpg">
+                <span class="username">John Doe</span>
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu extended logout">
+                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                <li><a href="login.html"><i class="fa fa-key"></i> 退出登录</a></li>
+            </ul>
+        </li>
+        <!-- user login dropdown end -->
+    </ul>
+    <!--search & user info end-->
+</div>
+</header>
+<!--header end-->
+<!--sidebar start-->
+<aside>
+    <div id="sidebar" class="nav-collapse">
+        <!-- sidebar menu start-->
+        <div class="leftside-navigation">
+            <ul class="sidebar-menu" id="nav-accordion">
+                <!-- <li>
+                    <span style="display: block;line-height:30px; text-align:center;">一级菜单</span>
+                </li> -->
+                <li>
+                    <a class="" href="index.html">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="firstmenu active" href="javascript:;">
+                        <i class="fa fa-briefcase"></i>
+                        <span>业务管理</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a class="apl40 active" href="javascript:;">
+                                <i class="fa fa-credit-card"></i>
+                                <span>融资管理</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="borrow_order.html">融资预约</a></li>
+                                <li><a class="alast" href="opborrow_add.html">融资发布</a></li>
+                                <li><a class="alast" href="borrow_published.html">已发布项目</a></li>
+                                <li><a class="alast" href="borrowlist.html">融资初审</a></li>
+                                <li><a class="alast" href="reborrowlist.html">融资复审</a></li>
+                                <li><a class="alast" href="raiselist.html">募集中项目</a></li>
+                                <li><a class="alast" href="bidlist.html">投标记录</a></li>
+                                <li><a class="alast" href="finaborrowlist.html">融资终审</a></li>
+                                <li><a class="alast" href="abortivelist.html">流标记录</a></li>
+                                <li><a class="alast" href="advanced_search.html">项目高级搜索</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-retweet"></i>
+                                <span>债权转让</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">债权转让列表</a></li>
+                                <li><a class="alast" href="">债权转让合同设置</a></li>
+                                <li><a class="alast" href="">债权转让规则配置</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-coffee"></i>
+                                <span>贷后管理</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">还款中明细</a></li>
+                                <li><a class="alast" href="">已还款明细</a></li>
+                                <li><a class="alast" href="">逾期管理</a></li>
+                                <li><a class="alast" href="">催收管理</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="firstmenu" href="javascript:;">
+                        <i class="fa fa-keyboard-o"></i>
+                        <span>运营管理</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-bar-chart-o"></i>
+                                <span>数据统计</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">平台盈亏情况</a></li>
+                                <li><a class="alast" href="">交易规模分析</a></li>
+                                <li><a class="alast" href="">借款产品分析</a></li>
+                                <li><a class="alast" href="">风险控制分析</a></li>
+                                <li><a class="alast" href="">借款人分布</a></li>
+                                <li><a class="alast" href="">用户分析</a></li>
+                                <li><a class="alast" href="">用户档案</a></li>
+                                <li><a class="alast" href="">数据分析</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-building-o"></i>
+                                <span>账户信息</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">账户信息查询</a></li>
+                                <li><a class="alast" href="">审核列表</a></li>
+                                <li><a class="alast" href="">账户收支明细查询</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-comments"></i>
+                                <span>消息中心</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">意见反馈</a></li>
+                                <li><a class="alast" href="">APP消息推送</a></li>
+                                <li><a class="alast" href="">短信模板设置</a></li>
+                                <li><a class="alast" href="">站内信模板设置</a></li>
+                                <li><a class="alast" href="">短信列表</a></li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-gift"></i>
+                                <span>活动管理</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">红包规则配置</a></li>
+                                <li><a class="alast" href="">红包明细查询</a></li>
+                                <li><a class="alast" href="">红包场景设置</a></li>
+                                <li><a class="alast" href="">积分规则配置</a></li>
+                                <li><a class="alast" href="">积分明细查询</a></li>
+                                <li><a class="alast" href="">积分明细查询</a></li>
+                                <li><a class="alast" href="">加息券规则设置</a></li>
+                                <li><a class="alast" href="">加息券场景设置</a></li>
+                                <li><a class="alast" href="">加息券明细查询</a></li>
+                                <li><a class="alast" href="">每日签到</a></li>
+                                <li><a class="alast" href="">天天摇</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="firstmenu" href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span>内容管理</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-file-text-o"></i>
+                                <span>文章管理</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-paste"></i>
+                                <span>合同模板</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-picture-o"></i>
+                                <span>首页banner配置</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-exclamation-triangle"></i>
+                                <span>风险评估</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">风险控制</a></li>
+                                <li><a class="alast" href="">风险题目</a></li>
+                                <li><a class="alast" href="">题目选择</a></li>
+                                <li><a class="alast" href="">风险等级</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="firstmenu" href="javascript:;">
+                        <i class="fa fa-user"></i>
+                        <span>用户管理</span>
+                    </a>
+                    <ul>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-user"></i>
+                                <span>用户列表</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">前台用户</a></li>
+                                <li><a class="alast" href="../admin/userlist.html">后台用户</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="apl40" href="../admin/role.html">
+                                <i class="fa fa-male"></i>
+                                <span>角色管理</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-unlock-alt"></i>
+                                <span>权限管理</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-stack-exchange"></i>
+                                <span>操作日志</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="firstmenu" href="javascript:;">
+                        <i class="fa fa-cogs"></i>
+                        <span>基础设置</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-money"></i>
+                                <span>费用设置</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-vimeo-square"></i>
+                                <span>版本配置</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-tumblr-square"></i>
+                                <span>标类型管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-bullseye"></i>
+                                <span>系统参数</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-bell-o"></i>
+                                <span>账单提醒设置</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-youtube"></i>
+                                <span>风险评估设置</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-question-circle"></i>
+                                <span>风险评估问题设置</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="firstmenu" href="javascript:;">
+                        <i class="fa fa-cny"></i>
+                        <span>财务管理</span>
+                    </a>
+                    <ul>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-credit-card"></i>
+                                <span>资金管理</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="../finance/rechargelist.html">充值记录</a></li>
+                                <li><a class="alast" href="../finance/withdrawaudit.html">提现审核</a></li>
+                                <li><a class="alast" href="../finance/withdrawlist.html">提现记录</a></li>
+                                <li><a class="alast" href="">资金明细记录</a></li>
+                                <li><a class="alast" href="">用户资金记录</a></li>
+                                <li><a class="alast" href="">平台账户以及收支统计</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-exchange"></i>
+                                <span>对账管理</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-warning"></i>
+                                <span>异常处理</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-minus-square-o"></i>
+                                <span>支付管理</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a class="alast" href="">支付通道参数配置</a></li>
+                                <li><a class="alast" href="">支付订单信息</a></li>
+                                <li><a class="alast" href="">批处理任务</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="firstmenu" href="javascript:;">
+                        <i class="fa fa-ticket"></i>
+                        <span>VIP管理</span>
+                    </a>
+                    <ul>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-align-justify"></i>
+                                <span>VIP用户列表</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-sort-numeric-asc"></i>
+                                <span>VIP等级配置</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a class="apl40" href="javascript:;">
+                                <i class="fa fa-gift"></i>
+                                <span>VIP礼包管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="" href="lock_screen.html">
+                        <i class="fa fa-lock"></i>
+                        <span>锁屏</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- sidebar menu end-->
+    </div>
+</aside>
+<!--sidebar end-->
+<!--main content start
+<div class="has-switch" tabindex="0"><div class="switch-on switch-animate"><span class="switch-left switch-success">ON</span><label for="change-color-switch">&nbsp;</label><span class="switch-right switch-danger">OFF</span><input type="checkbox" id="change-color-switch" checked="" data-on="default" data-off="primary"></div></div>
+-->
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row nav-wrap">
+            <div class="nav-title"><span class="title">乐享新品125号</span><span style="margin-left:10px;color:#333;">(LX125)</span></div>
+        </div>
+        <div class="light-bg panel-body" style="display:flex;">
+            <ul class="list-vertical" style="margin-right:40px;">
+                <li><span class="list-item header">创建时间</span><span class="list-item">2017-08-09 12:09</span></li>
+                <li><span class="list-item header">借款总额</span><span class="list-item">33330000.00元</span></li>
+                <li><span class="list-item header">借款利率</span><span class="list-item">12.00%</span></li>
+            </ul>
+            <ul class="list-vertical">
+                <li><span class="list-item header">项目状态</span><span class="list-item">募集中</span></li>
+                <li><span class="list-item header">借款期限</span><span class="list-item">90天</span></li>
+                <li><span class="list-item header">项目类型</span><span class="list-item">乐享至纯</span></li>
+            </ul>
+        </div>
+        <div class="tab-list" style="margin-bottom:20px;">
+            <a class="tab-item active" data-id="borrow">融资项目信息</a>
+            <a class="tab-item" data-id="bid">投标信息</a>
+            <a class="tab-item" data-id="transfer">债权转让</a>
+            <a class="tab-item" data-id="pay">还款信息</a>
+            <a class="tab-item" data-id="audit">审核日志</a>
+            <a class="tab-item" data-id="front">前端展示</a>
+        </div>
+        <div style="position:relative;">
+            <div class="form-horizontal tab-content" id="borrow">
+                <div class="light-bg item-box">
+                    <div class="box-title">项目基本信息:</div>
+                    <div class="row">
+                        <div class="form-group col-lg-5">
+                            <label class="col-sm-3 control-label col-lg-3">项目名称：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group" style="width: 250px">
+                                    <input type="text" class="form-control" placeholder="乐享心安125号" readonly >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-5">
+                            <label class="col-sm-3 control-label col-lg-3">项目代码：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group" style="width: 250px">
+                                    <input type="text" class="form-control" placeholder="125" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-5">
+                            <label class="col-sm-3 control-label col-lg-3">借款人：</label>
+                            <div class="col-lg-9" style="padding:8px;">
+                                <a style="margin-right: 20px;" class="link">张豪</a>
+                                手机<span style="margin-left:10px;margin-right:20px;">187****2548</span>
+                                身份证<span style="margin-left:10px;margin-right:20px;">362205********1526</span>
+                                <span style="margin-right:20px;">已实名</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-5">
+                            <div style="padding:8px;display:inline-block;">
+                                已绑卡<span style="margin-left:10px;margin-right:20px;">工商银行</span><span>6552 **** **** **** 312</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-5">
+                            <label class="col-lg-3 col-sm-3 control-label">项目类型：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group" style="width: 250px">
+                                    <input type="text" class="form-control" value="新手标" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-5">
+                            <label class="col-sm-3 control-label col-lg-3">借款期限类型：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group" style="width: 250px">
+                                    <input type="text" class="form-control" value="按天结算" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-5">
+                            <label class="col-sm-3 control-label col-lg-3">借款期限：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group input-position" style="width: 250px">
+                                    <input type="text" class="form-control" value="34" readonly><span class="input-span">天</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-5">
+                            <label class="col-sm-3 control-label col-lg-3">年化利率：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group input-position" style="width: 250px">
+                                    <input type="text" class="form-control" value="8.00" readonly><span class="input-span">%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-5">
+                            <label class="col-sm-3 control-label col-lg-3">还款方式：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group" style="width: 250px">
+                                    <input type="text" class="form-control"  readonly value="到期还本付息">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-5">
+                            <label class="col-sm-3 control-label col-lg-3">借款金额：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group input-position" style="width: 250px">
+                                    <input type="text" class="form-control" value="23000" readonly><span class="input-span">元</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-5">
+                            <label class="col-sm-3 control-label col-lg-3">借款利息：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group input-position" style="width: 250px">
+                                    <input type="text" class="form-control" readonly 
+                                    value="23000"><span class="input-span">元</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="form-group col-lg-5" style="padding-top:8px;color:#bb0d0d;">
+                            借款本金23,000.00元 支付利息231.12元
+                        </div> -->
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-5">
+                            <label class="col-sm-3 control-label col-lg-3">募集开始时间：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group" style="width: 250px">
+                                    <input type="text" class="form-control" value="2017-08-28 14:45" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-5">
+                            <label class="col-sm-3 control-label col-lg-3">募集结束时间：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group" style="width: 250px">
+                                    <input type="text" class="form-control" value="2017-08-28 14:45" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-5">
+                            <label class="col-sm-3 control-label col-lg-3">最低投资金额：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group input-position" style="width: 250px">
+                                    <input type="text" class="form-control" readonly
+                                    value="1000"><span class="input-span">元</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-5">
+                            <label class="col-sm-3 control-label col-lg-3">最高投资金额：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group input-position" style="width: 250px">
+                                    <input type="text" class="form-control" readonly
+                                    value="50000"><span class="input-span">元</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="light-bg item-box" style="margin-top:10px;">
+                    <div class="box-title">优惠促销信息:</div>
+                    <div class="row">
+                        <div class="form-group col-lg-5">
+                            <label class="col-lg-3 col-sm-3 control-label">红包：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group" style="width: 250px">
+                                    <input type="text" class="form-control"  readonly
+                                    value="支持">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-5">
+                            <label class="col-lg-3 col-sm-3 control-label">加息券：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group" style="width: 250px">
+                                    <input type="text" class="form-control"  readonly
+                                    value="支持">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-5">
+                            <label class="col-sm-3 control-label col-lg-3">平台补贴利率：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group input-position" style="width: 250px">
+                                    <input type="text" class="form-control" readonly
+                                    value="2.00"><span class="input-span">%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="light-bg item-box" style="margin-top:10px;">
+                    <div class="box-title">项目转让规则:</div>
+                    <div class="row">
+                        <div class="form-group col-lg-5">
+                            <label class="col-lg-3 col-sm-3 control-label">债券转让规则：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group" style="width: 250px">
+                                    <input type="text" class="form-control"  readonly
+                                    value="持有30天后可以转让">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="light-bg item-box" style="margin-top:10px;">
+                    <div class="box-title">项目展示推荐:</div>
+                    <div class="row">
+                        <div class="form-group col-lg-5">
+                            <label class="col-lg-3 col-sm-3 control-label">是否推荐到首页：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group" style="width: 250px">
+                                    <input type="text" class="form-control"  value="是" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-5">
+                            <label class="col-lg-3 col-sm-3 control-label">是否对外显示：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group" style="width: 250px">
+                                    <input type="text" class="form-control" value="显示"  readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-5">
+                            <label class="col-lg-3 col-sm-3 control-label">推荐广告语：</label>
+                            <div class="col-lg-7">
+                                <div class="input-group input-position" style="width: 250px">
+                                    <input type="text" class="form-control" value="中秋特辑" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="light-bg item-box" style="margin-top:10px;">
+                    <div class="box-title">相关项目资料:</div>
+                    <div class="box-title">封面资料:</div>
+                    <div class="row" style="margin-left:30px;display: flex;">
+                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                            </div>
+                            <p style="width:200px;text-align:center;font-size:14px;">营业执照</p>
+                        </div>
+                    </div>
+                    <div class="box-title">项目图片:</div>
+                    <div class="row" style="margin-left:30px;display: flex;">
+                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                            </div>
+                            <p style="width:200px;text-align:center;font-size:14px;">营业执照</p>
+                        </div>
+                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                            </div>
+                            <p style="width:200px;text-align:center;font-size:14px;">营业执照</p>
+                        </div>
+                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                            </div>
+                            <p style="width:200px;text-align:center;font-size:14px;">营业执照</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="light-bg item-box" style="margin-top:10px;">
+                    <div class="box-title">项目介绍:</div>
+                    <div class="row">
+                        <div class="form-group col-lg-1"><!-- <button class="btn btn-primary" style="display:inline-block;margin-left:30px;">预览</button> --></div>
+                        <div class="form-group col-lg-8">
+                            <textarea class="form-control ckeditor" name="editor1" rows="6"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="light-bg item-box" style="margin-top:10px;">
+                    <div class="box-title">安全保障:</div>
+                    <div class="row">
+                        <div class="form-group col-lg-1"><!-- <button class="btn btn-primary" style="display:inline-block;margin-left:30px;">预览</button> --></div>
+                        <div class="form-group col-lg-8">
+                            <textarea class="form-control ckeditor" name="editor1" rows="6"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content panel-body light-bg" id="bid" style="display:none;">
+                <div style="display:flex;">
+                    <ul class="list-vertical" style="margin-right:40px;">
+                        <li><span class="list-item header">募集状态</span><span class="list-item">募集中</span></li>
+                        <li><span class="list-item header">开始募集时间</span><span class="list-item">2017-02-09 14:23:45</span></li>
+                        <li><span class="list-item header">红包总额</span><span class="list-item">210</span></li>
+                        <li><span class="list-item header">投标人数</span><span class="list-item">21</span></li>
+                        <li><span class="list-item header">是否流标</span><span class="list-item">是</span></li>
+                        <li><span class="list-item header">流标操作人</span><span class="list-item">张立科</span></li>
+                        <li><span class="list-item header">流标备注</span><span class="list-item">客户解约</span></li>
+                    </ul>
+                    <ul class="list-vertical">
+                        <li><span class="list-item header">已投标金额</span><span class="list-item">34567</span></li>
+                        <li><span class="list-item header">结束募集时间</span><span class="list-item">2017-02-09 12:23:45</span></li>
+                        <li><span class="list-item header">应付加息利息</span><span class="list-item">230</span></li>
+                        <li><span class="list-item header">投标笔数</span><span class="list-item">25</span></li>
+                        <li><span class="list-item header">流标类型</span><span class="list-item">终审流标</span></li>
+                        <li><span class="list-item header">流标时间</span><span class="list-item">2017-02-09 12:23:45</span></li>
+                        <li><span class="list-item header"></span><span class="list-item"></span></li>
+                    </ul>
+                </div>
+                <section id="unseen">
+                    <table class="table table-bordered table-striped table-condensed table-new">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>投标编号</th>
+                            <th>投标时间</th>
+                            <th>投资人</th>
+                            <th>投资金额(元)</th>
+                            <th>红包金额(元)</th>
+                            <th>加息券</th>
+                            <th>投标状态</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>tb1225544</td>
+                                <td>2017-08-23 13:37:06</td>
+                                <td>方希林</td>
+                                <td>1234</td>
+                                <td>20</td>
+                                <td>12</td>
+                                <td>成功</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>tb1225544</td>
+                                <td>2017-08-23 13:37:06</td>
+                                <td>方希林</td>
+                                <td>1234</td>
+                                <td>20</td>
+                                <td>12</td>
+                                <td>成功</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>tb1225544</td>
+                                <td>2017-08-23 13:37:06</td>
+                                <td>方希林</td>
+                                <td>1234</td>
+                                <td>20</td>
+                                <td>12</td>
+                                <td>成功</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>tb1225544</td>
+                                <td>2017-08-23 13:37:06</td>
+                                <td>方希林</td>
+                                <td>1234</td>
+                                <td>20</td>
+                                <td>12</td>
+                                <td>成功</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>tb1225544</td>
+                                <td>2017-08-23 13:37:06</td>
+                                <td>方希林</td>
+                                <td>1234</td>
+                                <td>20</td>
+                                <td>12</td>
+                                <td>成功</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <ul class="pagination-sm"></ul>
+            </div>
+            <div class="tab-content" id="transfer" style="display:none;">
+                <div style="display:flex;" class="light-bg panel-body">
+                    <ul class="list-vertical" style="margin-right:40px;">
+                        <li><span class="list-item header">计息开始时间</span><span class="list-item">2017-02-09 14:23:45</span></li>
+                        <li><span class="list-item header">转让规则</span><span class="list-item">转让规则10</span></li>
+                    </ul>
+                    <ul class="list-vertical">
+                        <li><span class="list-item header">项目到期时间</span><span class="list-item">2017-02-09 12:23:45</span></li>
+                        <li><span class="list-item header">转让有效时间</span><span class="list-item">2017-02-09 12:23:45</span></li>
+                    </ul>
+                </div>
+                <div class="light-bg panel-body" style="margin-top:10px;">
+                    <div class="box-title">转让信息</div>
+                    <section id="unseen">
+                        <table class="table table-bordered table-striped table-condensed table-new">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>转让编号</th>
+                                <th>发起转让时间</th>
+                                <th>转让结束时间</th>
+                                <th>转让人</th>
+                                <th>转让金额(元)</th>
+                                <th>转让成交金额(元)</th>
+                                <th>转让状态</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>tb1225544</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>方希林</td>
+                                    <td>1236</td>
+                                    <td>321</td>
+                                    <td>全部转让</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>tb1225544</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>方希林</td>
+                                    <td>1236</td>
+                                    <td>321</td>
+                                    <td>部分转让</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>tb1225544</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>方希林</td>
+                                    <td>1236</td>
+                                    <td>321</td>
+                                    <td>转让中</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>tb1225544</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>方希林</td>
+                                    <td>1236</td>
+                                    <td>321</td>
+                                    <td>全部转让</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>tb1225544</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>方希林</td>
+                                    <td>1236</td>
+                                    <td>321</td>
+                                    <td>全部转让</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <ul class="pagination-sm"></ul>
+                </div>
+                <div class="light-bg panel-body" style="margin-top:10px;">
+                    <div class="box-title">转让成交信息</div>
+                    <section id="unseen">
+                        <table class="table table-bordered table-striped table-condensed table-new">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>转让编号</th>
+                                <th>发起转让时间</th>
+                                <th>转让人</th>
+                                <th>转让金额(元)</th>
+                                <th>承接成交时间</th>
+                                <th>承接人</th>
+                                <th>承接金额</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>tb1225544</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>方希林</td>
+                                    <td>1234</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>柯静</td>
+                                    <td>1234</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>tb1225544</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>方希林</td>
+                                    <td>1234</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>柯静</td>
+                                    <td>1234</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>tb1225544</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>方希林</td>
+                                    <td>1234</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>柯静</td>
+                                    <td>1234</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>tb1225544</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>方希林</td>
+                                    <td>1234</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>柯静</td>
+                                    <td>1234</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>tb1225544</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>方希林</td>
+                                    <td>1234</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>柯静</td>
+                                    <td>1234</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <ul class="pagination-sm"></ul>
+                </div>
+            </div>
+            <div class="tab-content" id="pay" style="display:none;">
+                <div style="display:flex;" class="light-bg panel-body">
+                    <ul class="list-vertical" style="margin-right:40px;">
+                        <li><span class="list-item header">借款人</span><span class="list-item">张三丰</span></li>
+                        <li><span class="list-item header">起息时间</span><span class="list-item">2017-02-09 14:23:45</span></li>
+                        <li><span class="list-item header">应还款总额</span><span class="list-item">324322</span></li>
+                        <li><span class="list-item header">计息开始时间</span><span class="list-item">2017-02-09 14:23:45</span></li>
+                    </ul>
+                    <ul class="list-vertical">
+                        <li><span class="list-item header">还款状态</span><span class="list-item">还款中</span></li>
+                        <li><span class="list-item header">到期时间</span><span class="list-item">2017-02-09 12:23:45</span></li>
+                        <li><span class="list-item header">已还款金额</span><span class="list-item">23462</span></li>
+                        <li><span class="list-item header">最近应还款期数</span><span class="list-item">2/5</span></li>
+                    </ul>
+                </div>
+                <div class="light-bg panel-body" style="margin-top:10px;">
+                    <div class="box-title">还款详情</div>
+                    <section id="unseen">
+                        <table class="table table-bordered table-striped table-condensed table-new">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>还款批次</th>
+                                <th>还款状态</th>
+                                <th>还款时间</th>
+                                <th>应还款时间</th>
+                                <th>应还款本金(元)</th>
+                                <th>应还款利息(元)</th>
+                                <th>应还款总额(元)</th>
+                                <th>是否逾期</th>
+                                <th>逾期天数</th>
+                                <th>逾期金额</th>
+                                <th>逾期利息</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1/5</td>
+                                    <td>已还款</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>1234</td>
+                                    <td>12.23</td>
+                                    <td>14.56</td>
+                                    <td>否</td>
+                                    <td></td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>2/5</td>
+                                    <td>已还款</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>1234</td>
+                                    <td>12.23</td>
+                                    <td>14.56</td>
+                                    <td>否</td>
+                                    <td></td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>3/5</td>
+                                    <td>待还款</td>
+                                    <td></td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>1234</td>
+                                    <td>12.23</td>
+                                    <td>14.56</td>
+                                    <td>是</td>
+                                    <td>2</td>
+                                    <td>234</td>
+                                    <td>123</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>4/5</td>
+                                    <td>待还款</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>1234</td>
+                                    <td>12.23</td>
+                                    <td>14.56</td>
+                                    <td>否</td>
+                                    <td></td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>5/5</td>
+                                    <td>待还款</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>1234</td>
+                                    <td>12.23</td>
+                                    <td>14.56</td>
+                                    <td>否</td>
+                                    <td></td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <ul class="pagination-sm"></ul>
+                </div>
+                <div class="light-bg panel-body" style="margin-top:10px;">
+                    <div class="box-title">催收详细</div>
+                    <section id="unseen">
+                        <table class="table table-bordered table-striped table-condensed table-new">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>还款批次</th>
+                                <th>催收时间</th>
+                                <th>应还款时间</th>
+                                <th>应还款金额(元)</th>
+                                <th>逾期金额(元)</th>
+                                <th>催收人</th>
+                                <th>承接人</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1/5</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>1234</td>
+                                    <td></td>
+                                    <td>柯静</td>
+                                    <td>134</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>2/5</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>1234</td>
+                                    <td></td>
+                                    <td>柯静</td>
+                                    <td>134</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>3/5</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>1234</td>
+                                    <td></td>
+                                    <td>柯静</td>
+                                    <td>134</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>4/5</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>1234</td>
+                                    <td></td>
+                                    <td>柯静</td>
+                                    <td>134</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>5/5</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>1234</td>
+                                    <td></td>
+                                    <td>柯静</td>
+                                    <td>134</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <ul class="pagination-sm"></ul>
+                </div>
+                <div class="light-bg panel-body" style="margin-top:10px;">
+                    <div class="box-title">催收详细:</div>
+                    <section id="unseen">
+                        <table class="table table-bordered table-striped table-condensed table-new">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>还款批次</th>
+                                <th>催收时间</th>
+                                <th>应还款时间</th>
+                                <th>应还款金额(元)</th>
+                                <th>逾期金额(元)</th>
+                                <th>催收人</th>
+                                <th>承接人</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1/5</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>1234</td>
+                                    <td></td>
+                                    <td>柯静</td>
+                                    <td>134</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>2/5</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>1234</td>
+                                    <td></td>
+                                    <td>柯静</td>
+                                    <td>134</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>3/5</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>1234</td>
+                                    <td></td>
+                                    <td>柯静</td>
+                                    <td>134</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>4/5</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>1234</td>
+                                    <td></td>
+                                    <td>柯静</td>
+                                    <td>134</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>5/5</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>1234</td>
+                                    <td></td>
+                                    <td>柯静</td>
+                                    <td>134</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <ul class="pagination-sm"></ul>
+                </div>
+            </div>
+            <div class="tab-content" id="audit" style="display:none;">
+                <div class="light-bg panel-body">
+                    <table class="table table-bordered table-count">
+                       <thead>
+                       <tr>
+                           <th>序号</th>
+                           <th>项目阶段</th>
+                           <th>相关人员</th>
+                           <th>审核结果</th>
+                           <th>操作时间</th>
+                           <th>备注</th>
+                       </tr>
+                       </thead>
+                       <tbody>
+                           <tr>
+                               <td>1</td>
+                               <td>发布项目</td>
+                               <td>张三丰</td>
+                               <td style="color:#2aa82a;">审核通过</td>
+                               <td>2917-06-13 15:23:45</td>
+                               <td>按月结算</td>
+                           </tr>
+                           <tr>
+                               <td>2</td>
+                               <td>融资初审</td>
+                               <td>张立科</td>
+                               <td style="color:#ff0000;">审核不通过</td>
+                               <td>2917-06-13 15:23:45</td>
+                               <td>按日结算</td>
+                           </tr>
+                           <tr>
+                               <td>3</td>
+                               <td>融资复审</td>
+                               <td>冯丽</td>
+                               <td style="color:#003399;">待审核</td>
+                               <td>-</td>
+                               <td></td>
+                           </tr>
+                           <tr>
+                               <td>4</td>
+                               <td>融资终审</td>
+                               <td>张素</td>
+                               <td>-</td>
+                               <td>-</td>
+                               <td></td>
+                           </tr>
+                       </tbody>
+                </table>
+                </div>
+                <div class="light-bg panel-body" style="margin-top:10px;">
+                    <div class="box-title">操作日志</div>
+                    <section id="unseen">
+                        <table class="table table-bordered table-striped table-condensed table-new">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>操作时间</th>
+                                <th>操作人</th>
+                                <th>操作类型</th>
+                                <th>动作</th>
+                                <th>详细</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>柯静</td>
+                                    <td>融资初审</td>
+                                    <td>通过</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>柯静</td>
+                                    <td>融资初审</td>
+                                    <td>通过</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>柯静</td>
+                                    <td>融资初审</td>
+                                    <td>通过</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>柯静</td>
+                                    <td>融资初审</td>
+                                    <td>通过</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>2017-08-23 13:37:06</td>
+                                    <td>柯静</td>
+                                    <td>融资初审</td>
+                                    <td>通过</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <ul class="pagination-sm"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+<!--main content end-->
+</section>
+<!-- Placed js at the end of the document so the pages load faster -->
+<!--Core js-->
+<script src="../js/lib/jquery-1.8.3.min.js"></script>
+<script src="../bs3/js/bootstrap.min.js"></script>
+<script src="../js/lib/jquery-ui-1.9.2.custom.min.js"></script>
+<script class="include" type="text/javascript" src="../js/accordion-menu/jquery.dcjqaccordion.2.7.js"></script>
+<script src="../js/scrollTo/jquery.scrollTo.min.js"></script>
+<script src="../assets/easypiechart/jquery.easypiechart.js"></script>
+<script src="../assets/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
+<script src="../js/nicescroll/jquery.nicescroll.js"></script>
+
+<script src="../assets/bootstrap-switch-master/build/js/bootstrap-switch.js"></script>
+
+<script type="text/javascript" src="../assets/fuelux/js/spinner.min.js"></script>
+<script type="text/javascript" src="../assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+<script type="text/javascript" src="../assets/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+<script type="text/javascript" src="../assets/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+<script type="text/javascript" src="../assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="../assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../assets/bootstrap-daterangepicker/moment.min.js"></script>
+<script type="text/javascript" src="../assets/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="../assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="../assets/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+<script type="text/javascript" src="../assets/jquery-multi-select/js/jquery.multi-select.js"></script>
+<script type="text/javascript" src="../assets/jquery-multi-select/js/jquery.quicksearch.js"></script>
+
+<script type="text/javascript" src="../assets/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+
+<script src="../assets/jquery-tags-input/jquery.tagsinput.js"></script>
+
+<script src="../assets/select2-master/select2.js"></script>
+<script src="../js/select2/select-init.js"></script>
+
+
+<!--common script init for all pages-->
+<script src="../js/scripts.js"></script>
+<script src="../js/jquery.twbsPagination.js"></script>
+
+<script src="../js/advanced-form/advanced-form.js"></script>
+<!--Easy Pie Chart-->
+<script src="../assets/easypiechart/jquery.easypiechart.js"></script>
+<!--Sparkline Chart-->
+<script src="../assets/sparkline/jquery.sparkline.js"></script>
+<!--jQuery Flot Chart-->
+<script src="../assets/flot-chart/jquery.flot.js"></script>
+<script src="../assets/flot-chart/jquery.flot.tooltip.min.js"></script>
+<script src="../assets/flot-chart/jquery.flot.resize.js"></script>
+<script src="../assets/flot-chart/jquery.flot.pie.resize.js"></script>
+
+<script type="text/javascript" src="../assets/ckeditor/ckeditor.js"></script>
+<!--icheck init radio -->
+<script src="../js/icheck/icheck-init.js"></script>
+<script src="../assets/iCheck-master/jquery.icheck.js"></script>business/
+<!--script for this page-->
+<script>
+    $(function () {
+        $('.pagination-sm').twbsPagination({
+            totalPages: 20,
+            first:"首页",
+            prev:"上一页",
+            next:"下一页",
+            last:"尾页"
+        })
+    });
+</script>
+</body>
+</html>

@@ -47,7 +47,6 @@
 <header class="header fixed-top clearfix">
 <!--logo start-->
 <div class="brand">
-
     <a href="index.html" class="logo">
         <img src="../images/logo.png" alt="">
     </a>
@@ -68,8 +67,8 @@
             </a>
             <ul class="dropdown-menu extended logout">
                 <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="login.html"><i class="fa fa-key"></i> 退出登录</a></li>
+                <li><a href="#"><i class="fa fa-cog"></i> 修改密码</a></li>
+                <li><a href="login.html"><i class="fa fa-key"></i>退出登录</a></li>
             </ul>
         </li>
         <!-- user login dropdown end -->
@@ -106,12 +105,12 @@
                             </a>
                             <ul class="sub">
                                 <li><a class="alast" href="borrow_order.html">融资预约</a></li>
-                                <li class="active"><a class="alast" href="opborrow_add.html">融资发布</a></li>
+                                <li><a class="alast" href="opborrow_add.html">融资发布</a></li>
                                 <li><a class="alast" href="borrow_published.html">已发布项目</a></li>
                                 <li><a class="alast" href="borrowlist.html">融资初审</a></li>
                                 <li><a class="alast" href="reborrowlist.html">融资复审</a></li>
                                 <li><a class="alast" href="raiselist.html">募集中项目</a></li>
-                                <li><a class="alast" href="bidlist.html">投标记录</a></li>
+                                <li class="active"><a class="alast" href="bidlist.html">投标记录</a></li>
                                 <li><a class="alast" href="finaborrowlist.html">融资终审</a></li>
                                 <li><a class="alast" href="abortivelist.html">流标记录</a></li>
                                 <li><a class="alast" href="advanced_search.html">项目高级搜索</a></li>
@@ -422,383 +421,146 @@
 <section id="main-content">
     <section class="wrapper">
         <!-- <div class="row nav-wrap">
-            <div class="nav-title"><span>发布融资信息</span></div>
+            <div class="nav-title"><span>融资初审</span></div>
         </div> -->
         <div class="tab-list" style="margin-bottom:20px;">
-            <a class="tab-item active">发布融资信息</a>
+            <a class="tab-item active">投标记录</a>
         </div>
-        <form class="form-horizontal" method="get">
-            <div class="light-bg item-box">
-                <div class="box-title">项目基本信息:</div>
-                <div class="row">
-                    <div class="form-group col-lg-5">
-                        <label class="col-sm-3 control-label col-lg-3">项目名称：</label>
-                        <div class="col-lg-7">
-                            <div class="input-group" style="width: 250px">
-                                <input type="text" class="form-control" placeholder="汉字、字母、数字,最长16字符">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group col-lg-5">
-                        <label class="col-sm-3 control-label col-lg-3">项目代码：</label>
-                        <div class="col-lg-7">
-                            <div class="input-group" style="width: 250px">
-                                <input type="text" class="form-control" placeholder="字母、数字,最长16字符">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-lg-5">
-                        <label class="col-sm-3 control-label col-lg-3">借款人：</label>
-                        <div class="col-lg-6">
-                            <select id="e1" class="populate searchSelect" style="width: 250px">
-                                <option value="1">杨小 135468545222</option>
-                                <option value="2">杨二 133468545222</option>
-                                <option value="3">杨三 134468578222</option>
-                                <option value="4">杨四 136468590222</option>
-                            </select>
-                        </div>
-                        <!-- <div class="col-lg-9" style="padding:8px;">
-                            <a style="margin-right: 20px;" class="link">张豪</a>
-                            手机<span style="margin-left:10px;margin-right:20px;">187****2548</span>
-                            身份证<span style="margin-left:10px;margin-right:20px;">362205********1526</span>
-                            <span style="margin-right:20px;">已实名</span>
-                        </div> -->
-                    </div>
-                    <!-- <div class="form-group col-lg-5">
-                        <div style="padding:8px;display:inline-block;">
-                            已绑卡<span style="margin-left:10px;margin-right:20px;">工商银行</span><span>6552 **** **** **** 312</span>
-                        </div>
-                        <a class="btn btn-primary" style="display:inline-block;" data-toggle="modal" data-target=".select_borrow">选择借款人</a>
-                    </div> -->
-                </div>
-                <div class="row">
-                    <div class="form-group col-lg-5">
-                        <label class="col-lg-3 col-sm-3 control-label">项目类型：</label>
-                        <div class="col-lg-6">
-                            <select class="form-control" style="width: 250px" id="source">
-                                <option value="AK">请选择项目类型</option>
-                                <option value="HI">产品类型2</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-lg-5">
-                        <label class="col-sm-3 control-label col-lg-3">借款期限类型：</label>
-                        <div class="col-lg-6">
-                            <select class="form-control" style="width: 250px" id="source">
-                                <option value="AK">请选择期限类型</option>
-                                <option value="HI">产品类型2</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group col-lg-5">
-                        <label class="col-sm-3 control-label col-lg-3">借款期限：</label>
-                        <div class="col-lg-7">
-                            <div class="input-group input-position" style="width: 250px">
-                                <input type="text" class="form-control" placeholder=""><span class="input-span">天</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-lg-5">
-                        <label class="col-sm-3 control-label col-lg-3">年化利率：</label>
-                        <div class="col-lg-7">
-                            <div class="input-group input-position" style="width: 250px">
-                                <input type="text" class="form-control" placeholder=""><span class="input-span">%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group col-lg-5">
-                        <label class="col-sm-3 control-label col-lg-3">还款方式：</label>
-                        <div class="col-lg-6">
-                            <select class="form-control" style="width: 250px" id="source">
-                                <option value="AK">方式1</option>
-                                <option value="HI">方式2</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-lg-5">
-                        <label class="col-sm-3 control-label col-lg-3">借款金额：</label>
-                        <div class="col-lg-7">
-                            <div class="input-group input-position" style="width: 250px">
-                                <input type="text" class="form-control" placeholder=""><span class="input-span">元</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group col-lg-5">
-                        <label class="col-sm-3 control-label col-lg-3">借款利息：</label>
-                        <div class="col-lg-7">
-                            <div class="input-group input-position" style="width: 250px">
-                                <input type="text" class="form-control" placeholder="" readonly><span class="input-span">元</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="form-group col-lg-5" style="padding-top:8px;color:#bb0d0d;">
-                        借款本金23,000.00元 支付利息231.12元
-                    </div> -->
-                </div>
-                <div class="row">
-                    <div class="form-group col-lg-5">
-                        <label class="col-sm-3 control-label col-lg-3">募集开始时间：</label>
-                        <input size="16" type="text" value="2017-08-28 14:45" readonly class="form_datetime form-control" 
-                        style="width: 250px;display: inline-block;margin-left: 15px;">
-                    </div>
-                    <div class="form-group col-lg-5">
-                        <label class="col-sm-3 control-label col-lg-3">募集结束时间：</label>
-                        <input size="16" type="text" value="2017-08-28 14:45" readonly class="form_datetime form-control" 
-                            style="width: 250px;display: inline-block;margin-left: 15px;">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-lg-5">
-                        <label class="col-sm-3 control-label col-lg-3">最低投资金额：</label>
-                        <div class="col-lg-7">
-                            <div class="input-group input-position" style="width: 250px">
-                                <input type="text" class="form-control" placeholder=""><span class="input-span">元</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group col-lg-5">
-                        <label class="col-sm-3 control-label col-lg-3">最高投资金额：</label>
-                        <div class="col-lg-7">
-                            <div class="input-group input-position" style="width: 250px">
-                                <input type="text" class="form-control" placeholder=""><span class="input-span">元</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="light-bg item-box" style="margin-top:10px;">
-                <div class="box-title">优惠促销信息:</div>
-                <div class="row">
-                    <div class="form-group col-lg-5">
-                        <label class="col-lg-3 col-sm-3 control-label">红包：</label>
-                        <div class="col-lg-6">
-                            <select class="form-control" style="width: 250px" id="source">
-                                <option value="AK">是否支持红包</option>
-                                <option value="HI">产品类型2</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group col-lg-5">
-                        <label class="col-lg-3 col-sm-3 control-label">加息券：</label>
-                        <div class="col-lg-6">
-                            <select class="form-control" style="width: 250px" id="source">
-                                <option value="AK">是否支持加息券</option>
-                                <option value="HI">产品类型2</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- <div class="form-group col-lg-5">
-                        <label class="col-lg-3 col-sm-3 control-label">优惠券：</label>
-                        <div class="col-lg-6">
-                            <select class="form-control" style="width: 250px" id="source">
-                                <option value="AK">不支持</option>
-                                <option value="HI">产品类型2</option>
-                            </select>
-                        </div>
-                    </div> -->
-                    <div class="form-group col-lg-5">
-                        <label class="col-sm-3 control-label col-lg-3">平台补贴利率：</label>
-                        <div class="col-lg-7">
-                            <div class="input-group input-position" style="width: 250px">
-                                <input type="text" class="form-control" placeholder=""><span class="input-span">%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="light-bg item-box" style="margin-top:10px;">
-                <div class="box-title">项目转让规则:</div>
-                <div class="row">
-                    <div class="form-group col-lg-5">
-                        <label class="col-lg-3 col-sm-3 control-label">债券转让规则：</label>
-                        <div class="col-lg-7">
-                            <select class="form-control" style="width: 250px; display:inline-block;margin-right:10px;" id="source">
-                                <option value="AK">请选择债权转让规则</option>
-                                <option value="HI">产品类型2</option>
-                            </select>
-                            <a href="#" class="link">查看规则</a>
-                        </div>
-                    </div>
-                    <!-- <div class="form-group col-lg-5">
-                        <label class="col-lg-3 col-sm-3 control-label">转让利率：</label>
-                        <div class="col-lg-7">
-                            <div class="input-group input-position" style="width: 250px">
-                                <input type="text" class="form-control" placeholder=""><span class="input-span">%</span>
-                            </div>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-            <div class="light-bg item-box" style="margin-top:10px;">
-                <div class="box-title">项目展示推荐:</div>
-                <div class="row">
-                    <div class="form-group col-lg-5">
-                        <label class="col-lg-3 col-sm-3 control-label">是否推荐到首页：</label>
-                        <div class="col-lg-7 icheck">
-                            <div class="minimal-blue">
-                                <div class="radio ">
-                                    <input tabindex="3" type="radio"  name="demo-radio">
-                                    <label>是</label>
-                                </div>
-                            </div>
-                            <div class="minimal-blue">
-                                <div class="radio ">
-                                    <input tabindex="3" type="radio"  name="demo-radio">
-                                    <label>否</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group col-lg-5">
-                        <label class="col-lg-3 col-sm-3 control-label">是否对外显示：</label>
-                        <div class="col-lg-7 icheck">
-                            <div class="minimal-blue">
-                                <div class="radio ">
-                                    <input tabindex="3" type="radio"  name="demo-radio">
-                                    <label>是</label>
-                                </div>
-                            </div>
-                            <div class="minimal-blue">
-                                <div class="radio ">
-                                    <input tabindex="3" type="radio"  name="demo-radio">
-                                    <label>否</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-lg-5">
-                        <label class="col-lg-3 col-sm-3 control-label">推荐广告语：</label>
-                        <div class="col-lg-7">
-                            <div class="input-group input-position" style="width: 250px">
-                                <input type="text" class="form-control" placeholder="请输入广告语">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="light-bg item-box" style="margin-top:10px;">
-                <div class="box-title">相关项目资料:</div>
-                <div class="box-title">封面资料:</div>
-                <div class="row" style="margin-left:30px;display: flex;flex-wrap: wrap;">
-                    <div class="fileupload fileupload-new" data-provides="fileupload" style="margin-right:10px;">
-                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
-                        </div>
-                        <div class="fileupload-preview fileupload-exists thumbnail" style="width: 200px; height: 150px; line-height: 20px;"></div>
-                        <div style="margin-bottom:10px;">
-                           <span class="btn btn-white btn-file">
-                           <span class="fileupload-new"><i class="fa fa-paper-clip"></i>添加图片</span>
-                           <span class="fileupload-exists"><i class="fa fa-undo"></i> 修改</span>
-                           <input type="file" class="default"  />
-                           </span>
-                            <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload" ><i class="fa fa-trash"></i> 删除</a>
-                        </div>
-                        <input type="text" placeholder="请输入图片标题" class="form-control">
-                    </div>
-                </div>
-                <div class="box-title">项目图片:</div>
-                <div class="row" style="margin-left:30px;display: flex;flex-wrap: wrap;">
-                    <div class="fileupload fileupload-new" data-provides="fileupload" style="margin-right:10px;">
-                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
-                        </div>
-                        <div class="fileupload-preview fileupload-exists thumbnail" style="width: 200px;height: 150px; line-height: 20px;"></div>
-                        <div style="margin-bottom:10px;">
-                           <span class="btn btn-white btn-file">
-                           <span class="fileupload-new"><i class="fa fa-paper-clip"></i>添加图片</span>
-                           <span class="fileupload-exists"><i class="fa fa-undo"></i> 修改</span>
-                           <input type="file" class="default"  />
-                           </span>
-                            <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload" ><i class="fa fa-trash"></i> 删除</a>
-                        </div>
-                        <input type="text" placeholder="请输入图片标题" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="light-bg item-box" style="margin-top:10px;">
-                <div class="box-title">项目介绍:</div>
-                <div class="row">
-                    <div class="form-group col-lg-1"><!-- <button class="btn btn-primary" style="display:inline-block;margin-left:30px;">预览</button> --></div>
-                    <div class="form-group col-lg-8">
-                        <textarea class="form-control ckeditor" name="editor1" rows="6"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="light-bg item-box" style="margin-top:10px;">
-                <div class="box-title">安全保障:</div>
-                <div class="row">
-                    <div class="form-group col-lg-1"><!-- <button class="btn btn-primary" style="display:inline-block;margin-left:30px;">预览</button> --></div>
-                    <div class="form-group col-lg-8">
-                        <textarea class="form-control ckeditor" name="editor1" rows="6"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" style="margin-top:20px;">
-                <label class="col-lg-2 col-sm-2 control-label"></label>
-                <div class="col-lg-3">
-                    <button type="button" class="btn btn-primary btn-lg btn-block">提交</button>
-                </div>
-                <div class="col-lg-3">
-                    <button type="button" class="btn btn-primary btn-lg btn-block">预览</button>
-                </div>
-            </div>
-        </form>
-    </section>
-</section>
-<!--main content end-->
-</section>
-<!-- Placed js at the end of the document so the pages load faster -->
-<!-- 选择借款人 -->
-<div class="modal fade select_borrow" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myLargeModalLabel">借款人查询</h4>
-            </div>
-            <div class="modal-body">
-                <section id="unseen">
+        <div class="panel-body light-bg">
+            <section id="unseen">
                 <div class="panel-body" style="padding-left:0;">
                     <div class="search-box">
                         <form class="form-inline" role="form">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="输入姓名或手机号">
+                                <label class="control-label">投资人：</label>
+                                <input type="text" class="form-control" placeholder="输入投资人姓名">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">项目名称：</label>
+                                <input type="text" class="form-control" placeholder="输入项目名称">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">投标状态：</label>
+                                <select class="form-control" id="source6">
+                                    <option value="1">请选择投标状态</option>
+                                    <option value="2">等待通过</option>
+                                    <option value="3">审核未通过</option>
+                                </select>
                             </div>
                             <div class="form-group">   
                                 <button type="submit" class="btn btn-primary">查询</button>
                                 <button class="btn btn-refresh">清空条件</button>
                             </div>
                             <div class="form-group fr">   
-                                <button class="btn btn-info">查看全部</button>
+                                <button class="btn btn-info">导出Excel</button>
                             </div>
                         </form>
                     </div>
-                    <div class="borrowbox">
-                        <div class="item">杨坤坤<span>134****2345</span></div>
-                        <div class="item">杨坤坤<span>134****2345</span></div>
-                        <div class="item">杨坤坤<span>134****2345</span></div>
-                        <div class="item">杨坤坤<span>134****2345</span></div>
-                        <div class="item">杨坤坤<span>134****2345</span></div>
-                    </div>
                 </div>
+                <table class="table table-bordered table-striped table-condensed table-new">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>投标编号</th>
+                        <th>投标时间</th>
+                        <th>投资人</th>
+                        <th>投资金额(元)</th>
+                        <th>红包金额(元)</th>
+                        <th>加息券利息</th>
+                        <th>投标状态</th>
+                        <th>项目名称</th>
+                        <th>项目状态</th>
+                        <th>借款金额(元)</th>
+                        <th>借款期限(天)</th>
+                        <th>年利率(%)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>tb1225544</td>
+                            <td>2017-08-23 13:37:06</td>
+                            <td><a href="#" class="link">方希林</a></td>
+                            <td>1234</td>
+                            <td>20</td>
+                            <td>12</td>
+                            <td>成功</td>
+                            <td><a href="#" class="link">江车贷123456</a></td>
+                            <td>募集中</td>
+                            <td>23,456</td>
+                            <td>120</td>
+                            <td>11.0</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>tb1225544</td>
+                            <td>2017-08-23 13:37:06</td>
+                            <td><a href="#" class="link">方希林</a></td>
+                            <td>1234</td>
+                            <td>20</td>
+                            <td>12</td>
+                            <td>成功</td>
+                            <td><a href="#" class="link">江车贷123456</a></td>
+                            <td>募集中</td>
+                            <td>23,456</td>
+                            <td>120</td>
+                            <td>11.0</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>tb1225544</td>
+                            <td>2017-08-23 13:37:06</td>
+                            <td><a href="#" class="link">方希林</a></td>
+                            <td>1234</td>
+                            <td>20</td>
+                            <td>12</td>
+                            <td>成功</td>
+                            <td><a href="#" class="link">江车贷123456</a></td>
+                            <td>募集中</td>
+                            <td>23,456</td>
+                            <td>120</td>
+                            <td>11.0</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>tb1225544</td>
+                            <td>2017-08-23 13:37:06</td>
+                            <td><a href="#" class="link">方希林</a></td>
+                            <td>1234</td>
+                            <td>20</td>
+                            <td>12</td>
+                            <td>成功</td>
+                            <td><a href="#" class="link">江车贷123456</a></td>
+                            <td>募集中</td>
+                            <td>23,456</td>
+                            <td>120</td>
+                            <td>11.0</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>tb1225544</td>
+                            <td>2017-08-23 13:37:06</td>
+                            <td><a href="#" class="link">方希林</a></td>
+                            <td>1234</td>
+                            <td>20</td>
+                            <td>12</td>
+                            <td>成功</td>
+                            <td><a href="#" class="link">江车贷123456</a></td>
+                            <td>募集中</td>
+                            <td>23,456</td>
+                            <td>120</td>
+                            <td>11.0</td></td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
             <ul class="pagination-sm"></ul>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div>
+        </div>
+    </section>
+</section>
+<!--main content end-->
+</section>
+<!-- Placed js at the end of the document so the pages load faster -->
 <!--Core js-->
 <script src="../js/lib/jquery-1.8.3.min.js"></script>
 <script src="../bs3/js/bootstrap.min.js"></script>
@@ -850,7 +612,18 @@
 <script type="text/javascript" src="../assets/ckeditor/ckeditor.js"></script>
 <!--icheck init radio -->
 <script src="../js/icheck/icheck-init.js"></script>
-<script src="../assets/iCheck-master/jquery.icheck.js"></script>business/
+<script src="../assets/iCheck-master/jquery.icheck.js"></script>
 <!--script for this page-->
+<script type="text/javascript">
+    $(function () {
+        $('.pagination-sm').twbsPagination({
+            totalPages: 20,
+            first:"首页",
+            prev:"上一页",
+            next:"下一页",
+            last:"尾页"
+        })
+    });
+</script>
 </body>
 </html>

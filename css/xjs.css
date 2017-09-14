@@ -7,7 +7,7 @@
 .nav-title{
     float:left;
 }
-.nav-title span{
+.nav-title .title{
     border-bottom:2px solid #1fb5ad;
     display:inline-block;
     margin-bottom:20px;
@@ -28,9 +28,9 @@
 	padding:20px 40px;
 }
 
-.item-box .box-title{
+.item-box .box-title, .panel-body .box-title{
     color: #333;
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 20px;
 }
 
@@ -50,6 +50,14 @@
 .tab-list .tab-item.active{
 	color: #1fb5ad;
 	border-bottom:2px solid #1fb5ad;
+}
+
+.tab-content{
+	position: absolute;
+	width: 98%;
+}
+.has-header{
+	top:85px;
 }
 /* 搜索框 */
 .search-box .form-group{
@@ -78,11 +86,16 @@
 	background-color: #ffcece;
 }
 
+.table-new tbody tr td{
+	font-size: 12px;
+	font-family: "宋体";
+}
+
 .link{
 	color:#1192ff;
 }
 .link:hover{
-	color:red;
+	color:#ff8167;
 	text-decoration: underline;
 }
 /* 统计数据 */
@@ -90,6 +103,10 @@
 	background: #f2f2f2;
     color: #333;
     font-size: 14px;
+}
+.table-count tr td{
+	font-size: 12px;
+	font-family: "宋体";
 }
 /* 定位input后面的单位 */
 .input-position{
@@ -102,4 +119,68 @@
 	position: absolute;
 	right: 5px;
 	top: 9px;
+}
+
+/* 弹窗表单样式 */
+.form-model .form-group{
+	margin-bottom: 10px;
+	margin-left:10px;
+}
+.form-model .form-group .control-label{
+	width:75px;
+}
+
+.borrowbox{
+	margin-top:10px;
+	padding:10px;
+	border:1px solid #dbdbdb;
+	display:flex;
+	flex-wrap:wrap;
+}
+
+.borrowbox .item{
+	width:170px;
+	margin-bottom: 10px;
+}
+
+.borrowbox .item span{
+	margin-left: 10px;
+}
+
+/* 改写搜索下拉框样式 */
+.searchSelect .select2-choice{
+	height: 34px;
+	border: 1px solid #e2e2e4;
+	line-height: 34px;
+	background-image: none;
+	border-radius: 4px;
+}
+.searchSelect .select2-choice .select2-arrow{
+	border-left: 1px solid #e2e2e4;
+}
+
+/* 详情页 */
+.list-vertical{
+	color:#333;
+	font-size: 14px;
+}
+
+.list-vertical li{
+	height: 50px;
+	line-height: 50px;
+	border:1px solid #dbdbdb;
+	width:440px;
+}
+.list-vertical li+li{
+	border-top:none;
+}
+.list-vertical li .list-item{
+	display: inline-block;
+	padding-left: 20px;
+	height: 48px;
+	width: 218px;
+}
+.list-vertical li  .header{
+	border-right: 1px solid #dbdbdb;
+	background-color: #f2f2f2;
 }
