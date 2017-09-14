@@ -366,3 +366,15 @@ var Script = function () {
 
 }();
 
+
+
+/*tab切换 by wuyf 20170914*/
+$(function(){
+    $('.tab-list').on('click','.tab-item',function(event){
+        $('.tab-list .tab-item').removeClass('active');
+        $('.tab-content').hide();
+        $(event.target).addClass('active');
+        var id = $(event.target).attr('data-id');
+        $('#'+id).show();
+    });
+});

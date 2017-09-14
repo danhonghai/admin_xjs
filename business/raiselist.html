@@ -83,6 +83,9 @@
         <!-- sidebar menu start-->
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
+                <!-- <li>
+                    <span style="display: block;line-height:30px; text-align:center;">一级菜单</span>
+                </li> -->
                 <li>
                     <a class="" href="index.html">
                         <i class="fa fa-home"></i>
@@ -104,9 +107,9 @@
                                 <li><a class="alast" href="borrow_order.html">融资预约</a></li>
                                 <li><a class="alast" href="opborrow_add.html">融资发布</a></li>
                                 <li><a class="alast" href="borrow_published.html">已发布项目</a></li>
-                                <li  class="active"><a class="alast" href="borrowlist.html">融资初审</a></li>
+                                <li><a class="alast" href="borrowlist.html">融资初审</a></li>
                                 <li><a class="alast" href="reborrowlist.html">融资复审</a></li>
-                                <li><a class="alast" href="raiselist.html">募集中项目</a></li>
+                                <li class="active"><a class="alast" href="raiselist.html">募集中项目</a></li>
                                 <li><a class="alast" href="bidlist.html">投标记录</a></li>
                                 <li><a class="alast" href="finaborrowlist.html">融资终审</a></li>
                                 <li><a class="alast" href="abortivelist.html">流标记录</a></li>
@@ -416,32 +419,44 @@
 <div class="has-switch" tabindex="0"><div class="switch-on switch-animate"><span class="switch-left switch-success">ON</span><label for="change-color-switch">&nbsp;</label><span class="switch-right switch-danger">OFF</span><input type="checkbox" id="change-color-switch" checked="" data-on="default" data-off="primary"></div></div>
 -->
 <section id="main-content">
-    <section class="wrapper" style="position:relative;">
+    <section class="wrapper">
         <!-- <div class="row nav-wrap">
             <div class="nav-title"><span>融资初审</span></div>
         </div> -->
         <div class="tab-list" style="margin-bottom:20px;">
-            <a class="tab-item active" data-id="audit">初审待审核</a>
-            <a class="tab-item" data-id="hadAudit">已审核信息</a>
+            <a class="tab-item active">募集项目</a>
         </div>
-        <!-- 初审待审核 -->
-        <div class="panel-body light-bg tab-content" id="audit" >
+        <div class="panel-body light-bg">
+            <table class="table table-bordered table-count">
+                   <thead>
+                   <tr>
+                       <th>募集中项目数</th>
+                       <th>募集项目总金额</th>
+                       <th>已募集金额</th>
+                       <th>待募集金额</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td>50</td>
+                           <td>124</td>
+                           <td>123.23</td>
+                           <td>21.23</td>
+                       </tr>
+                   </tbody>
+            </table>
             <section id="unseen">
                 <div class="panel-body" style="padding-left:0;">
                     <div class="search-box">
                         <form class="form-inline" role="form">
                             <div class="form-group">
-                                <label class="control-label">搜审核项目：</label>
+                                <label class="control-label">搜项目：</label>
                                 <input type="text" class="form-control" placeholder="输入项目名称">
                             </div>
                             <div class="form-group">
-                                <label class="control-label">借款人：</label>
-                                <input type="text" class="form-control" placeholder="输入姓名或手机号">
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">项目状态：</label>
+                                <label class="control-label">募集状态：</label>
                                 <select class="form-control" id="source6">
-                                    <option value="1">项目状态</option>
+                                    <option value="1">选择募集状态</option>
                                     <option value="2">等待通过</option>
                                     <option value="3">审核未通过</option>
                                 </select>
@@ -461,15 +476,16 @@
                     <tr>
                         <th>序号</th>
                         <th>项目名称</th>
-                        <th>项目类型</th>
-                        <th>借款人</th>
-                        <th>期限模式</th>
                         <th>借款期限(天)</th>
                         <th>借款金额(元)</th>
                         <th>年利率(%)</th>
                         <th>募集开始时间</th>
                         <th>募集结束时间</th>
-                        <th>项目状态</th>
+                        <th>投标金额</th>
+                        <th>红包金额</th>
+                        <th>加息券利息</th>
+                        <th>募集进度(%)</th>
+                        <th>状态</th>
                         <th>操作</th>
                     </tr>
                     </thead>
@@ -477,239 +493,92 @@
                         <tr>
                             <td>1</td>
                             <td><a href="#" class="link">江车贷123456</a></td>
-                            <td>新手标</td>
-                            <td><a href="#" class="link">方希林</a></td>
-                            <td>按月结算</td>
                             <td>120</td>
                             <td>23,456</td>
                             <td>11.0</td>
                             <td>2017-08-23 13:37:06</td>
                             <td>2017-08-23 14:37:06</td>
-                            <td>初审待审核</td>
+                            <td>23,456</td>
+                            <td>23</td>
+                            <td>123</td>
+                            <td>80.78</td>
+                            <td>募集中</td>
                             <td>
-                                <a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;">审核</a>
+                                <a href="bidlist.html" class="btn btn-round btn-primary" style="padding:0px 5px;">投标记录</a>
+                                <a class="btn btn-round btn-info" style="padding:0px 5px;" data-toggle="modal" data-target=".fail-model">流标</a>
                             </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td><a href="#" class="link">江车贷123456</a></td>
-                            <td>新手标</td>
-                            <td><a href="#" class="link">方希林</a></td>
-                            <td>按月结算</td>
                             <td>120</td>
                             <td>23,456</td>
                             <td>11.0</td>
                             <td>2017-08-23 13:37:06</td>
                             <td>2017-08-23 14:37:06</td>
-                            <td>初审待审核</td>
+                            <td>23,456</td>
+                            <td>23</td>
+                            <td>123</td>
+                            <td>80.78</td>
+                            <td>募集通过</td>
                             <td>
-                                <a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;">审核</a>
+                                <a href="bidlist.html" class="btn btn-round btn-primary" style="padding:0px 5px;">投标记录</a>
+                                <a class="btn btn-round btn-info" style="padding:0px 5px;" data-toggle="modal" data-target=".fail-model">流标</a>
                             </td>
                         </tr>
                         <tr>
                             <td>3</td>
                             <td><a href="#" class="link">江车贷123456</a></td>
-                            <td>新手标</td>
-                            <td><a href="#" class="link">方希林</a></td>
-                            <td>按月结算</td>
                             <td>120</td>
                             <td>23,456</td>
                             <td>11.0</td>
                             <td>2017-08-23 13:37:06</td>
                             <td>2017-08-23 14:37:06</td>
-                            <td>初审待审核</td>
+                            <td>23,456</td>
+                            <td>23</td>
+                            <td>123</td>
+                            <td>80.78</td>
+                            <td>募集结束</td>
                             <td>
-                                <a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;">审核</a>
+                                <a href="bidlist.html" class="btn btn-round btn-primary" style="padding:0px 5px;">投标记录</a>
+                                <a class="btn btn-round btn-info" style="padding:0px 5px;" data-toggle="modal" data-target=".fail-model">流标</a>
                             </td>
                         </tr>
                         <tr>
-                            <td>2</td>
+                            <td>4</td>
                             <td><a href="#" class="link">江车贷123456</a></td>
-                            <td>新手标</td>
-                            <td><a href="#" class="link">方希林</a></td>
-                            <td>按月结算</td>
                             <td>120</td>
                             <td>23,456</td>
                             <td>11.0</td>
                             <td>2017-08-23 13:37:06</td>
                             <td>2017-08-23 14:37:06</td>
-                            <td>初审待审核</td>
+                            <td>23,456</td>
+                            <td>23</td>
+                            <td>123</td>
+                            <td>80.78</td>
+                            <td>已流标</td>
                             <td>
-                                <a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;">审核</a>
+                                <a href="bidlist.html" class="btn btn-round btn-primary" style="padding:0px 5px;">投标记录</a>
+                                <a class="btn btn-round btn-info" style="padding:0px 5px;" data-toggle="modal" data-target=".fail-model">流标</a>
                             </td>
                         </tr>
                         <tr>
-                            <td>1</td>
+                            <td>4</td>
                             <td><a href="#" class="link">江车贷123456</a></td>
-                            <td>新手标</td>
-                            <td><a href="#" class="link">方希林</a></td>
-                            <td>按月结算</td>
                             <td>120</td>
                             <td>23,456</td>
                             <td>11.0</td>
                             <td>2017-08-23 13:37:06</td>
                             <td>2017-08-23 14:37:06</td>
-                            <td>初审待审核</td>
-                            <td>
-                                <a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;">审核</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><a href="#" class="link">江车贷123456</a></td>
-                            <td>新手标</td>
-                            <td><a href="#" class="link">方希林</a></td>
-                            <td>按月结算</td>
-                            <td>120</td>
                             <td>23,456</td>
-                            <td>11.0</td>
-                            <td>2017-08-23 13:37:06</td>
-                            <td>2017-08-23 14:37:06</td>
-                            <td>初审待审核</td>
-                            <td>
-                                <a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;">审核</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <ul class="pagination-sm"></ul>
-        </div>
-        <!-- 已审核信息 -->
-        <div class="panel-body light-bg tab-content" id="hadAudit" style="display:none">
-            <section id="unseen">
-                <div class="panel-body" style="padding-left:0;">
-                    <div class="search-box">
-                        <form class="form-inline" role="form">
-                            <div class="form-group">
-                                <label class="control-label">搜审核项目：</label>
-                                <input type="text" class="form-control" placeholder="输入项目名称">
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">借款人：</label>
-                                <input type="text" class="form-control" placeholder="输入姓名或手机号">
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">项目状态：</label>
-                                <select class="form-control" id="source6">
-                                    <option value="1">项目状态</option>
-                                    <option value="2">等待通过</option>
-                                    <option value="3">审核未通过</option>
-                                </select>
-                            </div>
-                            <div class="form-group">   
-                                <button type="submit" class="btn btn-primary">查询</button>
-                                <button class="btn btn-refresh">清空条件</button>
-                            </div>
-                            <div class="form-group fr">   
-                                <button class="btn btn-info">导出Excel</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <table class="table table-bordered table-striped table-condensed table-new">
-                    <thead>
-                    <tr>
-                        <th>序号</th>
-                        <th>项目名称</th>
-                        <th>项目类型</th>
-                        <th>借款人</th>
-                        <th>期限模式</th>
-                        <th>借款期限(天)</th>
-                        <th>借款金额(元)</th>
-                        <th>年利率(%)</th>
-                        <th>募集开始时间</th>
-                        <th>募集结束时间</th>
-                        <th>项目状态</th>
-                        <th>操作</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td><a href="#" class="link">江车贷123456</a></td>
-                            <td>新手标</td>
-                            <td><a href="#" class="link">方希林</a></td>
-                            <td>按月结算</td>
-                            <td>120</td>
-                            <td>23,456</td>
-                            <td>11.0</td>
-                            <td>2017-08-23 13:37:06</td>
-                            <td>2017-08-23 14:37:06</td>
-                            <td>复审通过</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><a href="#" class="link">江车贷123456</a></td>
-                            <td>新手标</td>
-                            <td><a href="#" class="link">方希林</a></td>
-                            <td>按月结算</td>
-                            <td>120</td>
-                            <td>23,456</td>
-                            <td>11.0</td>
-                            <td>2017-08-23 13:37:06</td>
-                            <td>2017-08-23 14:37:06</td>
-                            <td>复审不通过</td>
-                            <td>
-                                <a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;">审核</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td><a href="#" class="link">江车贷123456</a></td>
-                            <td>新手标</td>
-                            <td><a href="#" class="link">方希林</a></td>
-                            <td>按月结算</td>
-                            <td>120</td>
-                            <td>23,456</td>
-                            <td>11.0</td>
-                            <td>2017-08-23 13:37:06</td>
-                            <td>2017-08-23 14:37:06</td>
-                            <td>复审通过</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><a href="#" class="link">江车贷123456</a></td>
-                            <td>新手标</td>
-                            <td><a href="#" class="link">方希林</a></td>
-                            <td>按月结算</td>
-                            <td>120</td>
-                            <td>23,456</td>
-                            <td>11.0</td>
-                            <td>2017-08-23 13:37:06</td>
-                            <td>2017-08-23 14:37:06</td>
-                            <td>初审待审核</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td><a href="#" class="link">江车贷123456</a></td>
-                            <td>新手标</td>
-                            <td><a href="#" class="link">方希林</a></td>
-                            <td>按月结算</td>
-                            <td>120</td>
-                            <td>23,456</td>
-                            <td>11.0</td>
-                            <td>2017-08-23 13:37:06</td>
-                            <td>2017-08-23 14:37:06</td>
+                            <td>23</td>
+                            <td>123</td>
+                            <td>80.78</td>
                             <td>终审通过</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><a href="#" class="link">江车贷123456</a></td>
-                            <td>新手标</td>
-                            <td><a href="#" class="link">方希林</a></td>
-                            <td>按月结算</td>
-                            <td>120</td>
-                            <td>23,456</td>
-                            <td>11.0</td>
-                            <td>2017-08-23 13:37:06</td>
-                            <td>2017-08-23 14:37:06</td>
-                            <td>终审不通过</td>
-                            <td>-</td>
+                            <td>
+                                <a href="bidlist.html" class="btn btn-round btn-primary" style="padding:0px 5px;">投标记录</a>
+                                <a class="btn btn-round btn-info" style="padding:0px 5px;" data-toggle="modal" data-target=".fail-model">流标</a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -721,6 +590,56 @@
 <!--main content end-->
 </section>
 <!-- Placed js at the end of the document so the pages load faster -->
+<div class="modal fade fail-model" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myLargeModalLabel">流标操作</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div style="margin-left: 47px;margin-bottom: 15px;">
+                        提示：流标操作，一经执行，不可撤销，请谨慎处理。请勾选以下三次“确认流标”
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">流标备注：</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label col-lg-3">确认流标：</label>
+                        <div class="col-lg-9 icheck">
+                            <div class="minimal-blue">
+                                <div class="checkbox ">
+                                    <input type="checkbox" >
+                                    <label>确认流标</label>
+                                </div>
+                            </div>
+                            <div class="minimal-blue">
+                                <div class="checkbox ">
+                                    <input type="checkbox" >
+                                    <label>确认流标</label>
+                                </div>
+                            </div>
+                            <div class="minimal-blue">
+                                <div class="checkbox ">
+                                    <input type="checkbox" >
+                                    <label>确认流标</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-info">确认</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
 <!--Core js-->
 <script src="../js/lib/jquery-1.8.3.min.js"></script>
 <script src="../bs3/js/bootstrap.min.js"></script>

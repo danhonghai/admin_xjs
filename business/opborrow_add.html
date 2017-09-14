@@ -31,7 +31,8 @@
     
     <!-- MyStyle -->
     <link rel="stylesheet" type="text/css" href="../css/xjs.css" />
-
+    <!-- <base href="/"> -->
+    
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="js/ie8/ie8-responsive-file-warning.js"></script><![endif]-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -108,12 +109,12 @@
                                 <li class="active"><a class="alast" href="opborrow_add.html">融资发布</a></li>
                                 <li><a class="alast" href="borrow_published.html">已发布项目</a></li>
                                 <li><a class="alast" href="borrowlist.html">融资初审</a></li>
-                                <li><a class="alast" href="">融资复审</a></li>
-                                <li><a class="alast" href="">募集中项目</a></li>
-                                <li><a class="alast" href="">投标记录</a></li>
-                                <li><a class="alast" href="">融资终审</a></li>
-                                <li><a class="alast" href="">流标记录</a></li>
-                                <li><a class="alast" href="">项目高级搜索</a></li>
+                                <li><a class="alast" href="reborrowlist.html">融资复审</a></li>
+                                <li><a class="alast" href="raiselist.html">募集中项目</a></li>
+                                <li><a class="alast" href="bidlist.html">投标记录</a></li>
+                                <li><a class="alast" href="finaborrowlist.html">融资终审</a></li>
+                                <li><a class="alast" href="abortivelist.html">流标记录</a></li>
+                                <li><a class="alast" href="advanced_search.html">项目高级搜索</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -450,19 +451,27 @@
                 <div class="row">
                     <div class="form-group col-lg-5">
                         <label class="col-sm-3 control-label col-lg-3">借款人：</label>
-                        <div class="col-lg-9" style="padding:8px;">
+                        <div class="col-lg-6">
+                            <select id="e1" class="populate searchSelect" style="width: 250px">
+                                <option value="1">杨小 135468545222</option>
+                                <option value="2">杨二 133468545222</option>
+                                <option value="3">杨三 134468578222</option>
+                                <option value="4">杨四 136468590222</option>
+                            </select>
+                        </div>
+                        <!-- <div class="col-lg-9" style="padding:8px;">
                             <a style="margin-right: 20px;" class="link">张豪</a>
                             手机<span style="margin-left:10px;margin-right:20px;">187****2548</span>
                             身份证<span style="margin-left:10px;margin-right:20px;">362205********1526</span>
                             <span style="margin-right:20px;">已实名</span>
-                        </div>
+                        </div> -->
                     </div>
-                    <div class="form-group col-lg-5">
+                    <!-- <div class="form-group col-lg-5">
                         <div style="padding:8px;display:inline-block;">
                             已绑卡<span style="margin-left:10px;margin-right:20px;">工商银行</span><span>6552 **** **** **** 312</span>
                         </div>
                         <a class="btn btn-primary" style="display:inline-block;" data-toggle="modal" data-target=".select_borrow">选择借款人</a>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row">
                     <div class="form-group col-lg-5">
@@ -682,13 +691,13 @@
             <div class="light-bg item-box" style="margin-top:10px;">
                 <div class="box-title">相关项目资料:</div>
                 <div class="box-title">封面资料:</div>
-                <div class="row" style="margin-left:30px;display: flex;">
-                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="row" style="margin-left:30px;display: flex;flex-wrap: wrap;">
+                    <div class="fileupload fileupload-new" data-provides="fileupload" style="margin-right:10px;">
                         <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
                             <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
                         </div>
-                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                        <div>
+                        <div class="fileupload-preview fileupload-exists thumbnail" style="width: 200px; height: 150px; line-height: 20px;"></div>
+                        <div style="margin-bottom:10px;">
                            <span class="btn btn-white btn-file">
                            <span class="fileupload-new"><i class="fa fa-paper-clip"></i>添加图片</span>
                            <span class="fileupload-exists"><i class="fa fa-undo"></i> 修改</span>
@@ -696,16 +705,17 @@
                            </span>
                             <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload" ><i class="fa fa-trash"></i> 删除</a>
                         </div>
+                        <input type="text" placeholder="请输入图片标题" class="form-control">
                     </div>
                 </div>
                 <div class="box-title">项目图片:</div>
-                <div class="row" style="margin-left:30px;display: flex;">
-                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="row" style="margin-left:30px;display: flex;flex-wrap: wrap;">
+                    <div class="fileupload fileupload-new" data-provides="fileupload" style="margin-right:10px;">
                         <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
                             <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
                         </div>
-                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                        <div>
+                        <div class="fileupload-preview fileupload-exists thumbnail" style="width: 200px;height: 150px; line-height: 20px;"></div>
+                        <div style="margin-bottom:10px;">
                            <span class="btn btn-white btn-file">
                            <span class="fileupload-new"><i class="fa fa-paper-clip"></i>添加图片</span>
                            <span class="fileupload-exists"><i class="fa fa-undo"></i> 修改</span>
@@ -713,6 +723,7 @@
                            </span>
                             <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload" ><i class="fa fa-trash"></i> 删除</a>
                         </div>
+                        <input type="text" placeholder="请输入图片标题" class="form-control">
                     </div>
                 </div>
             </div>
@@ -841,25 +852,5 @@
 <script src="../js/icheck/icheck-init.js"></script>
 <script src="../assets/iCheck-master/jquery.icheck.js"></script>business/
 <!--script for this page-->
-<script>
-    function addImage(obj){
-        var imgModel = '<div class="fileupload fileupload-new" data-provides="fileupload">'+
-                        '<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">'+
-                            '<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />'+
-                        '</div>'+
-                        '<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>'+
-                        '<div>'+
-                           '<span class="btn btn-white btn-file">'+
-                           '<span class="fileupload-new"><i class="fa fa-paper-clip"></i>添加图片</span>'+
-                           '<span class="fileupload-exists"><i class="fa fa-undo"></i> 修改</span>'+
-                           '<input type="file" class="default" onchange="addImage()" />'+
-                           '</span>'+
-                            '<a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> 删除</a>'+
-                        '</div>'+
-                    '</div>';
-       $('#imgList').append(imgModel);
-    }
-
-</script>
 </body>
 </html>
