@@ -35,7 +35,7 @@
         }
 
 
-        var barChartData = {
+        var barChartData1 = {
             labels : ["January","February","March","April","May","June","July"],
             datasets : [
                 {
@@ -47,12 +47,61 @@
                     fillColor : "#79D1CF",
                     strokeColor : "#79D1CF",
                     data : [28,48,40,19,96,27,100]
+                },
+                {
+                    fillColor : "#79D1CF",
+                    strokeColor : "#79D1CF",
+                    data : [28,48,40,19,96,27,100]
+                }
+            ]
+
+        }
+        var barChartData2 = {
+            labels : ["January","February","March","April","May","June","July"],
+            datasets : [
+                {
+                    fillColor : "#E67A77",
+                    strokeColor : "#E67A77",
+                    data : [65,59,90,81,56,55,40]
+                },
+                {
+                    fillColor : "#79D1CF",
+                    strokeColor : "#79D1CF",
+                    data : [28,48,40,19,96,27,100]
+                },
+                {
+                    fillColor : "#79D1CF",
+                    strokeColor : "#79D1CF",
+                    data : [28,48,40,19,96,27,100]
+                }
+            ]
+
+        }
+        var barChartData3 = {
+            labels : ["January","February","March","April","May","June","July"],
+            datasets : [
+                {
+                    fillColor : "#E67A77",
+                    strokeColor : "#E67A77",
+                    data : [65,59,90,81,56,55,40]
+                },
+                {
+                    fillColor : "#79D1CF",
+                    strokeColor : "#79D1CF",
+                    data : [28,48,40,19,96,27,100]
+                },
+                {
+                    fillColor : "#79D1CF",
+                    strokeColor : "#79D1CF",
+                    data : [28,48,40,19,96,27,100]
                 }
             ]
 
         }
 
-        var myLine = new Chart(document.getElementById("bar-chart-js").getContext("2d")).Bar(barChartData);
+        var myLine = new Chart(document.getElementById("bar-chart-js1").getContext("2d")).Bar(barChartData1);
+        var myLine = new Chart(document.getElementById("bar-chart-js2").getContext("2d")).Bar(barChartData2);
+        var myLine = new Chart(document.getElementById("bar-chart-js3").getContext("2d")).Bar(barChartData3);
 
 
         var Linedata = {
