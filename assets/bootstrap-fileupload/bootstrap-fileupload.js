@@ -68,11 +68,11 @@
       var file = e.target.files !== undefined ? e.target.files[0] : (e.target.value ? { name: e.target.value.replace(/^.+\\/, '') } : null)
       if (invoked === 'clear') return
       
+      
       if (!file) {
         this.clear()
         return
       }
-      
       this.$hidden.val('')
       this.$hidden.attr('name', '')
       this.$input.attr('name', this.name)
@@ -81,7 +81,24 @@
         var reader = new FileReader()
         var preview = this.$preview
         var element = this.$element
-
+        
+        if(!preview.html()){
+            var imgModel = '<div class="fileupload fileupload-new" data-provides="fileupload">'+
+                '<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">'+
+                    '<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />'+
+                '</div>'+
+                '<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>'+
+                '<div>'+
+                   '<span class="btn btn-white btn-file">'+
+                   '<span class="fileupload-new"><i class="fa fa-paper-clip"></i>添加图片</span>'+
+                   '<span class="fileupload-exists"><i class="fa fa-undo"></i> 修改</span>'+
+                   '<input type="file" class="default" />'+
+                   '</span>'+
+                    '<a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i> 删除</a>'+
+                '</div>'+
+            '</div>';
+            element.parent().append(imgModel);
+        }
         reader.onload = function(e) {
           preview.html('<img src="' + e.target.result + '" ' + (preview.css('max-height') != 'none' ? 'style="max-height: ' + preview.css('max-height') + ';"' : '') + ' />')
           element.addClass('fileupload-exists').removeClass('fileupload-new')
@@ -89,8 +106,8 @@
 
         reader.readAsDataURL(file)
       } else {
-        this.$preview.text(file.name)
-        this.$element.addClass('fileupload-exists').removeClass('fileupload-new')
+        //this.$preview.text(file.name)
+        //this.$element.addClass('fileupload-exists').removeClass('fileupload-new')
       }
     },
 
@@ -111,7 +128,9 @@
 
       this.$preview.html('')
       this.$element.addClass('fileupload-new').removeClass('fileupload-exists')
-
+      //update by wuyf 20170913
+      this.$element.remove();
+      /*end*/
       if (e) {
         this.$input.trigger('change', [ 'clear' ])
         e.preventDefault()
@@ -158,7 +177,6 @@
       var $this = $(this)
       if ($this.data('fileupload')) return
       $this.fileupload($this.data())
-      
       var $target = $(e.target).is('[data-dismiss=fileupload],[data-trigger=fileupload]') ?
         $(e.target) : $(e.target).parents('[data-dismiss=fileupload],[data-trigger=fileupload]').first()
       if ($target.length > 0) {
