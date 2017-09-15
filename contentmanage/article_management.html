@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="../images/favicon.png">
     <title>后台管理系统</title>
     <!--Core CSS -->
-
+    
     <link href="../bs3/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/bootstrap-reset.css" rel="stylesheet">
     <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -29,10 +29,11 @@
     <!-- Custom styles for this template -->
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/style-responsive.css" rel="stylesheet" />
-
+    
     <!-- MyStyle -->
     <link rel="stylesheet" type="text/css" href="../css/xjs.css" />
     <!-- <base href="/"> -->
+
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="js/ie8/ie8-responsive-file-warning.js"></script><![endif]-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -419,70 +420,70 @@
 <section id="main-content">
     <section class="wrapper">
         <div class="tab-list" style="margin-bottom:20px;">
-            <a class="tab-item active">合同发布</a>
+            <a class="tab-item active">文章管理</a>
         </div>
         <div class="panel-body light-bg">
             <section id="unseen">
-                <form class="form-horizontal" method="get">
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-1">合同名称：</label>
-                        <div class="col-lg-7">
-                            <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control" required>
+                <div class="panel-body" style="padding-left:0;">
+                    <div class="search-box">
+                        <form class="form-inline fl" role="form">
+                            <div class="form-group">
+                            	<lable>文章标题</lable>
+                            	<input type="text" class="form-control" placeholder="">
                             </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-1">合同编号：</label>
-                        <div class="col-lg-7">
-                            <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control">
+                            <div class="form-group">
+                            	<lable>文章栏目</lable>
+                                <select class="form-control" id="source6">
+                                    <option value="1">张三</option>
+                                    <option value="2">李四</option>
+                                    <option value="3">王五</option>
+                                </select>
                             </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-1">合同类型：</label>
-                        <div class="col-lg-6">
-                            <select class="form-control"  id="source" style="width: 250px">
-                                <option value="1">123</option>
-                                <option value="2">654</option>
-                                <option value="3">798</option>
-                                <option value="4">159654</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-1">合同内容：</label>
-                        <div class="col-lg-7">
-		                        <textarea class="form-control ckeditor" name="editor1" rows="6"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-1">合同状态:</label>
-                        <div class="col-lg-9 icheck">
-                            <div class="minimal-blue">
-                                <div class="radio ">
-                                    <input tabindex="3" type="radio"  name="demo-radio">
-                                    <label>启用</label>
-                                </div>
+                            <div class="form-group">   
+                                <button type="submit" class="btn btn-primary">搜索</button>
                             </div>
-                            <div class="minimal-blue">
-                                <div class="radio ">
-                                    <input tabindex="3" type="radio"  name="demo-radio">
-                                    <label>停用</label>
-                                </div>
-                            </div>
-                        </div>
+                        </form>
+                    <div class="form-group fr">   
+                        <a class="btn btn-info" href="articles_published.html">发布文章</a>
                     </div>
-                </form>
-                <div class="form-group col-lg-8">
-	                <div class="col-lg-3">
-	                	<button type="submit" class="btn btn-info" style="width:100%;" >确认</button>
-	                </div>
-	                <div class="col-lg-3">
-	                	<button type="button" class="btn btn-default"  style="width:100%;">取消</button>
-	                </div>
+                    </div>
                 </div>
+                <table class="table table-bordered table-striped table-condensed table-new">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>文章标题</th>
+                        <th>文章栏目</th>
+                        <th>来源</th>
+                        <th>作者</th>
+                        <th>文章状态</th>
+                        <th>发布时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="vertical-align: middle;">1</td>
+                            <td style="vertical-align: middle;">新金所响应国家关于推进普惠金融的号召</td>
+                            <td style="vertical-align: middle;">公司新闻</td>
+                            <td style="vertical-align: middle;">投资者报</td>
+                            <td style="vertical-align: middle;">夏磊</td>
+                            <td style="vertical-align: middle;">正常</td>
+                            <td style="vertical-align: middle;">2017-08-23 13:37:06</td>
+                            <td ><a class="btn btn-round btn-info" href="articles_published.html"  style="padding:0 5px;">修改</a></td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: middle;">2</td>
+                            <td style="vertical-align: middle;">新金所响应国家关于推进普惠金融的号召</td>
+                            <td style="vertical-align: middle;">公司新闻</td>
+                            <td style="vertical-align: middle;">投资者报</td>
+                            <td style="vertical-align: middle;">夏磊</td>
+                            <td style="vertical-align: middle;">正常</td>
+                            <td style="vertical-align: middle;">2017-08-23 13:37:06</td>
+                            <td><a class="btn btn-round btn-info" href="articles_published.html" style="padding:0 5px;">修改</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
             <ul class="pagination-sm"></ul>
         </div>
@@ -543,6 +544,26 @@
 <!--icheck init radio -->
 <script src="../js/icheck/icheck-init.js"></script>
 <script src="../assets/iCheck-master/jquery.icheck.js"></script>
+<script type="text/javascript">
+    $("#datetimeStart").datetimepicker({
+//      format: 'yyyy-mm-dd',
+        minView:'month',
+        language: 'zh-CN',
+//      autoclose:true,
+        startDate:new Date()
+    }).on("click",function(){
+        $("#datetimeStart").datetimepicker("setEndDate",$("#datetimeEnd").val())
+    });
+    $("#datetimeEnd").datetimepicker({
+//      format: 'yyyy-mm-dd',
+        minView:'month',
+        language: 'zh-CN',
+//      autoclose:true,
+        startDate:new Date()
+    }).on("click",function(){
+        $("#datetimeEnd").datetimepicker("setStartDate",$("#datetimeStart").val())
+    });
+</script>
 <!--script for this page-->
 </body>
 </html>
