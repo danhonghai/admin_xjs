@@ -45,45 +45,36 @@
 <section id="container">
 <!--header start-->
 <header class="header fixed-top clearfix">
-    <!--logo start-->
-    <div class="brand">
-
-        <a href="../index.html" class="logo">
-            <img src="../images/logo.png" alt="">
-        </a>
-        <div class="sidebar-toggle-box">
-            <div class="fa fa-bars"></div>
-        </div>
+<!--logo start-->
+<div class="brand">
+    <a href="index.html" class="logo">
+        <img src="../images/logo.png" alt="">
+    </a>
+    <div class="sidebar-toggle-box">
+        <div class="fa fa-bars"></div>
     </div>
-    <!--logo end-->
-    <div class="top-nav clearfix">
-        <!--search & user info start-->
-        <ul class="nav pull-right top-menu">
-            <li>
-                <input type="text" class="form-control search" placeholder=" Search">
-            </li>
-            <!-- user login dropdown start-->
-            <li class="dropdown">
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                    <img alt="" src="../images/avatar1_small.jpg">
-                    <span class="username">John Doe</span>
-                    <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu extended logout">
-                    <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                    <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                    <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
-                </ul>
-            </li>
-            <!-- user login dropdown end -->
-            <li>
-                <div class="toggle-right-box">
-                    <div class="fa fa-bars"></div>
-                </div>
-            </li>
-        </ul>
-        <!--search & user info end-->
-    </div>
+</div>
+<!--logo end-->
+<div class="top-nav clearfix">
+    <!--search & user info start-->
+    <ul class="nav pull-right top-menu">
+        <!-- user login dropdown start-->
+        <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <img alt="" src="../images/avatar1_small.jpg">
+                <span class="username">John Doe</span>
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu extended logout">
+                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                <li><a href="#"><i class="fa fa-cog"></i> 修改密码</a></li>
+                <li><a href="login.html"><i class="fa fa-key"></i>退出登录</a></li>
+            </ul>
+        </li>
+        <!-- user login dropdown end -->
+    </ul>
+    <!--search & user info end-->
+</div>
 </header>
 <!--header end-->
 <!--sidebar start-->
@@ -102,7 +93,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="firstmenu" href="javascript:;">
+                    <a class="firstmenu active" href="javascript:;">
                         <i class="fa fa-briefcase"></i>
                         <span>业务管理</span>
                     </a>
@@ -113,25 +104,27 @@
                                 <span>融资管理</span>
                             </a>
                             <ul class="sub">
+                                <li><a class="alast" href="borrow_order.html">融资预约</a></li>
                                 <li><a class="alast" href="opborrow_add.html">融资发布</a></li>
+                                <li><a class="alast" href="borrow_published.html">已发布项目</a></li>
                                 <li><a class="alast" href="borrowlist.html">融资初审</a></li>
-                                <li><a class="alast" href="">融资复审</a></li>
-                                <li><a class="alast" href="">融资预约</a></li>
-                                <li><a class="alast" href="">投标记录</a></li>
-                                <li><a class="alast" href="">手动流标</a></li>
-                                <li><a class="alast" href="">投标状态</a></li>
-                                <li><a class="alast" href="">流标记录</a></li>
+                                <li><a class="alast" href="reborrowlist.html">融资复审</a></li>
+                                <li><a class="alast" href="raiselist.html">募集中项目</a></li>
+                                <li><a class="alast" href="bidlist.html">投标记录</a></li>
+                                <li><a class="alast" href="finaborrowlist.html">融资终审</a></li>
+                                <li><a class="alast" href="abortivelist.html">流标记录</a></li>
+                                <li><a class="alast" href="advanced_search.html">项目高级搜索</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
-                            <a class="apl40" href="javascript:;">
+                            <a class="apl40 active" href="javascript:;">
                                 <i class="fa fa-retweet"></i>
                                 <span>债权转让</span>
                             </a>
                             <ul class="sub">
-                                <li><a class="alast" href="">债权转让列表</a></li>
-                                <li><a class="alast" href="">债权转让合同设置</a></li>
-                                <li><a class="alast" href="">债权转让规则配置</a></li>
+                                <li><a class="alast" href="transferlist.html">债权转让列表</a></li>
+                                <li><a class="alast" href="transfer_deal.html">转让成交明细</a></li>
+                                <li class="active"><a class="alast" href="transfer_add.html">债权转让规则设置</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -254,23 +247,23 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="firstmenu  active" href="javascript:;">
+                    <a class="firstmenu" href="javascript:;">
                         <i class="fa fa-user"></i>
                         <span>用户管理</span>
                     </a>
                     <ul>
                         <li class="sub-menu">
-                            <a class="apl40  active" href="javascript:;">
+                            <a class="apl40" href="javascript:;">
                                 <i class="fa fa-user"></i>
                                 <span>用户列表</span>
                             </a>
                             <ul class="sub">
                                 <li><a class="alast" href="">前台用户</a></li>
-                                <li class="active"><a class="alast" href="userlist.html">后台用户</a></li>
+                                <li><a class="alast" href="../admin/userlist.html">后台用户</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="apl40" href="role.html">
+                            <a class="apl40" href="../admin/role.html">
                                 <i class="fa fa-male"></i>
                                 <span>角色管理</span>
                             </a>
@@ -351,9 +344,9 @@
                                 <span>资金管理</span>
                             </a>
                             <ul class="sub">
-                                <li><a class="alast" href="rechargelist.html">充值记录</a></li>
-                                <li><a class="alast" href="withdrawaudit.html">提现审核</a></li>
-                                <li><a class="alast" href="withdrawlist.html">提现记录</a></li>
+                                <li><a class="alast" href="../finance/rechargelist.html">充值记录</a></li>
+                                <li><a class="alast" href="../finance/withdrawaudit.html">提现审核</a></li>
+                                <li><a class="alast" href="../finance/withdrawlist.html">提现记录</a></li>
                                 <li><a class="alast" href="">资金明细记录</a></li>
                                 <li><a class="alast" href="">用户资金记录</a></li>
                                 <li><a class="alast" href="">平台账户以及收支统计</a></li>
@@ -427,99 +420,91 @@
 -->
 <section id="main-content">
     <section class="wrapper">
+        <!-- <div class="row nav-wrap">
+            <div class="nav-title"><span>融资初审</span></div>
+        </div> -->
         <div class="tab-list" style="margin-bottom:20px;">
-            <a class="tab-item active">后台管理员</a>
+            <a class="tab-item active" style="width:150px;">债权转让规则设置</a>
         </div>
         <div class="panel-body light-bg">
             <section id="unseen">
                 <div class="panel-body">
                     <div class="search-box">
-                        <div class="form-inline">
+                        <form class="form-inline" role="form">
                             <div class="form-group fr">   
-                                <button type="button" class="btn btn-info" data-toggle="modal" data-target=".add-admin-modal"><i class="fa fa-plus"></i>增加管理员</button>
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target=".add-transfer"><i class="fa fa-plus"></i>新增规则</button>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
                 <table class="table table-bordered table-striped table-condensed table-new">
                     <thead>
                     <tr>
                         <th>序号</th>
-                        <th>登录名</th>
-                        <th>状态</th>
-                        <th>角色权限</th>
-                        <th>姓名</th>
-                        <th>修改时间</th>
-                        <th>最近登录时间</th>
-                        <th>最近登录IP</th>
+                        <th>规则名称</th>
+                        <th>规则编号</th>
+                        <th>至少持有时间(天)</th>
+                        <th>剩余时间(天)</th>
+                        <th>转让服务费率(%)</th>
+                        <th>规则状态</th>
+                        <th>规则修改时间</th>
                         <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>lesifu</td>
-                            <td>正常</td>
-                            <td>管理员,客服,财务</td>
-                            <td>杨静</td>
-                            <td>2017-02-24 14:54:32</td>
-                            <td>2017-02-24 14:54:32</td>
-                            <td>162.23.24.25 杭州电信</td>
-                            <td>
-                                <button type="button" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".add-admin-modal">修改</button>
-                            </td>
+                            <td>转让规则123</td>
+                            <td>zl1234</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>11.12</td>
+                            <td>启用</td>
+                            <td>2017-08-23 13:37:06</td>
+                            <td><button type="button" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".add-transfer">修改</button></td>
                         </tr>
                         <tr>
-                             <td>2</td>
-                            <td>kengl</td>
-                            <td>正常</td>
-                            <td>管理员,客服,财务</td>
-                            <td>柯京</td>
-                            <td>2017-02-24 14:54:32</td>
-                            <td>2017-02-24 14:54:32</td>
-                            <td>162.23.24.25 杭州电信</td>
-                            <td>
-                                <button type="button" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".add-admin-modal">修改</button>
-                            </td>
+                            <td>2</td>
+                            <td>转让规则123</td>
+                            <td>zl1234</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>11.12</td>
+                            <td>启用</td>
+                            <td>2017-08-23 13:37:06</td>
+                            <td><button type="button" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".add-transfer">修改</button></td>
+                        <tr>
+                            <td>3</td>
+                            <td>转让规则123</td>
+                            <td>zl1234</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>11.12</td>
+                            <td>启用</td>
+                            <td>2017-08-23 13:37:06</td>
+                            <td><button type="button" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".add-transfer">修改</button></td>
                         </tr>
                         <tr>
-                             <td>3</td>
-                            <td>wangle</td>
-                            <td>正常</td>
-                            <td>管理员,客服,财务</td>
-                            <td>王海</td>
-                            <td>2017-02-24 14:54:32</td>
-                            <td>2017-02-24 14:54:32</td>
-                            <td>162.23.24.25 杭州电信</td>
-                            <td>
-                                <button type="button" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".add-admin-modal">修改</button>
-                            </td>
+                            <td>4</td>
+                            <td>转让规则123</td>
+                            <td>zl1234</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>11.12</td>
+                            <td>启用</td>
+                            <td>2017-08-23 13:37:06</td>
+                            <td><button type="button" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".add-transfer">修改</button></td>
                         </tr>
                         <tr>
-                             <td>4</td>
-                            <td>mongge</td>
-                            <td>关闭</td>
-                            <td>管理员,客服,财务</td>
-                            <td>马果</td>
-                            <td>2017-02-24 14:54:32</td>
-                            <td>2017-02-24 14:54:32</td>
-                            <td>162.23.24.25 杭州电信</td>
-                            <td>
-                                <button type="button" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".add-admin-modal">修改</button>
-                            </td>
-                        </tr>
-                        <tr>
-                             <td>5</td>
-                            <td>sda</td>
-                            <td>正常</td>
-                            <td>管理员,客服,财务</td>
-                            <td>洪金吧</td>
-                            <td>2017-02-24 14:54:32</td>
-                            <td>2017-02-24 14:54:32</td>
-                            <td>162.23.24.25 杭州电信</td>
-                            <td>
-                                <button type="button" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".add-admin-modal">修改</button>
-                            </td>
+                            <td>4</td>
+                            <td>转让规则123</td>
+                            <td>zl1234</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>11.12</td>
+                            <td>启用</td>
+                            <td>2017-08-23 13:37:06</td>
+                            <td><button type="button" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".add-transfer">修改</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -531,109 +516,68 @@
 <!--main content end-->
 </section>
 <!-- Placed js at the end of the document so the pages load faster -->
-<div class="modal fade add-admin-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+<div class="modal fade add-transfer" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myLargeModalLabel">新增管理员</h4>
+                <h4 class="modal-title" id="myLargeModalLabel">规则设置</h4>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" method="get">
                     <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">登录名：</label>
+                        <label class="col-sm-3 control-label col-lg-3">规则名称：</label>
                         <div class="col-lg-7">
                             <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control" placeholder="请输入登录名">
+                                <input type="text" class="form-control" placeholder="请输入规则名称">
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">姓名：</label>
+                        <label class="col-sm-3 control-label col-lg-3">规则编号：</label>
                         <div class="col-lg-7">
                             <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control" placeholder="请输入姓名">
+                                <input type="text" class="form-control" placeholder="请输入规则编号">
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">手机号：</label>
+                        <label class="col-sm-3 control-label col-lg-3">至少持有时间：</label>
                         <div class="col-lg-7">
-                            <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control" placeholder="请输入手机号">
+                            <div class="input-group input-position" style="width: 350px">
+                                <input type="text" class="form-control" placeholder=""><span class="input-span">天</span>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">邮箱：</label>
+                        <label class="col-sm-3 control-label col-lg-3">至少持有时间：</label>
                         <div class="col-lg-7">
-                            <div class="input-group" style="width: 350px">
-                                <input type="text" class="form-control" placeholder="请输入邮箱">
+                            <div class="input-group input-position" style="width: 350px">
+                                <input type="text" class="form-control" placeholder=""><span class="input-span">天</span>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">密码：</label>
+                        <label class="col-sm-3 control-label col-lg-3">转让服务费率：</label>
                         <div class="col-lg-7">
                             <div class="input-group" style="width: 350px">
-                                <input type="password" class="form-control" placeholder="请输入密码">
+                                <input type="text" class="form-control" placeholder="请输入转让服务费率">
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">账户状态：</label>
+                        <label class="col-sm-3 control-label col-lg-3">规则状态：</label>
                         <div class="col-lg-9 icheck">
                             <div class="minimal-blue">
                                 <div class="radio ">
                                     <input tabindex="3" type="radio"  name="demo-radio">
-                                    <label>正常</label>
+                                    <label>启用</label>
                                 </div>
                             </div>
                             <div class="minimal-blue">
                                 <div class="radio ">
                                     <input tabindex="3" type="radio"  name="demo-radio">
                                     <label>停用</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">角色权限：</label>
-                        <div class="col-lg-9 icheck">
-                            <div class="minimal-blue">
-                                <div class="checkbox ">
-                                    <input type="checkbox" >
-                                    <label>初级管理员</label>
-                                </div>
-                            </div>
-                            <div class="minimal-blue">
-                                <div class="checkbox ">
-                                    <input type="checkbox" >
-                                    <label>市场人员</label>
-                                </div>
-                            </div>
-                            <div class="minimal-blue">
-                                <div class="checkbox ">
-                                    <input type="checkbox" >
-                                    <label>超级管理员</label>
-                                </div>
-                            </div>
-                            <div class="minimal-blue">
-                                <div class="checkbox ">
-                                    <input type="checkbox" >
-                                    <label>初级管理员</label>
-                                </div>
-                            </div>
-                            <div class="minimal-blue">
-                                <div class="checkbox ">
-                                    <input type="checkbox" >
-                                    <label>市场人员</label>
-                                </div>
-                            </div>
-                            <div class="minimal-blue">
-                                <div class="checkbox ">
-                                    <input type="checkbox" >
-                                    <label>超级管理员</label>
                                 </div>
                             </div>
                         </div>
@@ -648,7 +592,6 @@
     </div><!-- /.modal-dialog -->
 </div>
 <!--Core js-->
-<script src="../js/lib/jquery.js"></script>
 <script src="../js/lib/jquery-1.8.3.min.js"></script>
 <script src="../bs3/js/bootstrap.min.js"></script>
 <script src="../js/lib/jquery-ui-1.9.2.custom.min.js"></script>
@@ -656,7 +599,6 @@
 <script src="../js/scrollTo/jquery.scrollTo.min.js"></script>
 <script src="../assets/easypiechart/jquery.easypiechart.js"></script>
 <script src="../assets/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
-<script src="../js/nicescroll/jquery.nicescroll.js"></script>
 <script src="../js/nicescroll/jquery.nicescroll.js"></script>
 
 <script src="../assets/bootstrap-switch-master/build/js/bootstrap-switch.js"></script>
@@ -680,10 +622,11 @@
 
 <script src="../assets/select2-master/select2.js"></script>
 <script src="../js/select2/select-init.js"></script>
+
+
 <!--common script init for all pages-->
 <script src="../js/scripts.js"></script>
 <script src="../js/jquery.twbsPagination.js"></script>
-<!-- <script src="js/toggle-button/toggle-init.js"></script> -->
 
 <script src="../js/advanced-form/advanced-form.js"></script>
 <!--Easy Pie Chart-->
@@ -695,8 +638,9 @@
 <script src="../assets/flot-chart/jquery.flot.tooltip.min.js"></script>
 <script src="../assets/flot-chart/jquery.flot.resize.js"></script>
 <script src="../assets/flot-chart/jquery.flot.pie.resize.js"></script>
+
 <script type="text/javascript" src="../assets/ckeditor/ckeditor.js"></script>
-<!--icheck init -->
+<!--icheck init radio -->
 <script src="../js/icheck/icheck-init.js"></script>
 <script src="../assets/iCheck-master/jquery.icheck.js"></script>
 <!--script for this page-->
