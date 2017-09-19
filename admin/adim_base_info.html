@@ -419,57 +419,36 @@
 -->
 <section id="main-content">
     <section class="wrapper">
-        <div class="tab-list" style="height:70px;">
-            <form class="form-inline fl" role="form">
-                <div class="form-group">
-                	<lable>投资人</lable>
-                    <input type="text" class="form-control" placeholder="输入投资人姓名">
-                </div>
-           </form>
+        <div class="row nav-wrap">
+            <div class="nav-title"><span class="title"><img src="../assets/advanced-datatable/examples/examples_support/vv.png"/>张三丰(个人信息汇总)</span></div>
         </div>
         <div class="panel-body light-bg">
-            <section id="unseen">
-                <div class="panel-body" style="padding-left:0;text-align: center;">
-                    <div style="margin:0 auto; width:50px;height:50px">
-                    	<img src="../assets/advanced-datatable/examples/examples_support/vv.png"/>
-                    </div>
-                   <span>张三丰</span>
-
-                </div>
-                <table class="table table-bordered table-striped table-condensed table-new">
-                    <thead></thead>
-                    <tbody>
-                        <tr>
-                        	<td>姓名</td>
-                        	<td>张三丰</td>
-                        	<td>手机号</td>
-                        	<td>13587652312 杭州移动</td>
-                        </tr>
-                        <tr>
-                        	<td>用户类型</td>
-                        	<td>投资用户</td>
-                        	<td>用户状态</td>
-                        	<td>正常 <span>操作</span></td>
-                        </tr>
-                        <tr>
-                        	<td>邮箱</td>
-                        	<td>3132112@qq.com</td>
-                        	<td>注册时间</td>
-                        	<td>2017-02-09 14:23:45</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section>
-                <div class="panel-body" style="padding-left:0;">
-                    <div class="tab-list">
-                    	<a href="adim_base_info.html" class="tab-item active">账号信息</a>
-                    	<a href="adim_invest.html" class="tab-item">投资信息</a>
-                    	<a href="borrow_info.html" class="tab-item">借款信息</a>
-                    	<a href="account_capital.html" class="tab-item">资金流水</a>
-                    </div>
-                </div>
-                <table class="table table-bordered table-striped table-condensed table-new">
+            <div class="box-title">登录信息:</div>
+            <div style="display:flex;">
+                <ul class="list-vertical" style="margin-right:40px;">
+                    <li><span class="list-item header">姓名</span><span class="list-item">张三丰</span></li>
+                    <li><span class="list-item header">用户类型</span><span class="list-item">投资用户</span></li>
+                    <li><span class="list-item header">邮箱</span><span class="list-item">3132112@qq.com</span></li>
+                </ul>
+                <ul class="list-vertical">
+                    <li><span class="list-item header">手机号</span><span class="list-item">13587652312 杭州移动</span></li>
+                    <li><span class="list-item header">用户状态</span><span class="list-item">正常<a href="#" class="btn btn-round btn-danger" style="padding:0px 5px;margin-left:30px;">操作</a></span></li>
+                    <li><span class="list-item header">注册时间</span><span class="list-item">2017-02-09 14:23:45</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel-body" >
+            <div class="tab-list">
+                <a class="tab-item active" data-id="info1">账号信息</a>
+                <a class="tab-item" data-id="info2">投资信息</a>
+                <a class="tab-item" data-id="info3">借款信息</a>
+                <a class="tab-item" data-id="info4">资金流水</a>
+            </div>
+        </div>
+        <section style="position:relative;">
+            <div class="tab-content  light-bg panel-body" id="info1" >
+                <!-- 账号信息 -->
+                <table class="table table-bordered table-striped table-condensed table-new" >
                     <thead></thead>
                     <tbody>
                         <tr>
@@ -522,9 +501,354 @@
                         </tr>
                     </tbody>
                 </table>
-            </section>
-            <ul class="pagination-sm"></ul>
-        </div>
+                <ul class="pagination-sm"></ul>
+            </div>
+            <div class="tab-content  light-bg panel-body" id="info2" style="display:none;">
+                <!-- 投资信息 -->
+                <div style="display:flex;">
+                    <ul class="list-vertical" style="margin-right:40px;">
+                        <li><span class="list-item header">累计投资金额</span><span class="list-item">32432423</span></li>
+                        <li><span class="list-item header">累计获取利息</span><span class="list-item">2.34</span></li>
+                        <li><span class="list-item header">逾期未回收金额</span><span class="list-item">12345</span></li>
+                        <li><span class="list-item header">持有红包</span><span class="list-item">3</span></li>
+                    </ul>
+                    <ul class="list-vertical">
+                        <li><span class="list-item header">累计投资次数</span><span class="list-item">13</span></li>
+                        <li><span class="list-item header">待回收金额</span><span class="list-item">1234</span></li>
+                        <li><span class="list-item header">逾期未回收利息</span><span class="list-item">12345</span></li>
+                        <li><span class="list-item header">持有加息券</span><span class="list-item">5</span></li>
+                    </ul>
+                </div>
+                <div class="box-title">投标明细:</div>
+                <table class="table table-bordered table-striped table-condensed table-new">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>投标编号</th>
+                            <th>投资类型</th>
+                            <th>投资时间</th>
+                            <th>投资金额</th>
+                            <th>项目名称</th>
+                            <th>项目类型</th>
+                            <th>借款金额</th>
+                            <th>借款期限</th>
+                            <th>年利率</th>
+                            <th>红包</th>
+                            <th>加息劵</th>
+                            <th>状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>td124442</td>
+                            <td>承接转让</td>
+                            <td>2017-12-12</td>
+                            <td>1234</td>
+                            <td>江车贷2151</td>
+                            <td>普通标</td>
+                            <td>23,456元</td>
+                            <td>120天</td>
+                            <td>11%</td>
+                            <td>50</td>
+                            <td>1%</td>
+                            <td>募集中</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>td124442</td>
+                            <td>承接转让</td>
+                            <td>2017-12-12</td>
+                            <td>1234</td>
+                            <td>江车贷2151</td>
+                            <td>普通标</td>
+                            <td>23,456元</td>
+                            <td>120天</td>
+                            <td>11%</td>
+                            <td>50</td>
+                            <td>1%</td>
+                            <td>募集中</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>td124442</td>
+                            <td>承接转让</td>
+                            <td>2017-12-12</td>
+                            <td>1234</td>
+                            <td>江车贷2151</td>
+                            <td>普通标</td>
+                            <td>23,456元</td>
+                            <td>120天</td>
+                            <td>11%</td>
+                            <td>50</td>
+                            <td>1%</td>
+                            <td>募集中</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination-sm"></ul>
+            </div>
+            <div class="tab-content  light-bg panel-body" id="info3" style="display:none;">
+                <!-- 借款信息 -->
+                <div style="display:flex;">
+                    <ul class="list-vertical" style="margin-right:40px;">
+                        <li><span class="list-item header">借款次数</span><span class="list-item">3</span></li>
+                        <li><span class="list-item header">待还款金额</span><span class="list-item">560000</span></li>
+                        <li><span class="list-item header">逾期金额</span><span class="list-item">3200</span></li>
+                        <li><span class="list-item header">催收次数</span><span class="list-item">54600</span></li>
+                    </ul>
+                    <ul class="list-vertical">
+                        <li><span class="list-item header">累计借款金额</span><span class="list-item">655221*****762</span></li>
+                        <li><span class="list-item header">还款状态</span><span class="list-item">还款中</span></li>
+                        <li><span class="list-item header">逾期天数</span><span class="list-item">3天</span></li>
+                        <li><span class="list-item header"></span><span class="list-item"></span></li>
+                    </ul>
+                </div>
+                <div class="box-title">借款明细:</div>
+                <table class="table table-bordered table-striped table-condensed table-new">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>项目名称</th>
+                            <th>项目类型</th>
+                            <th>借款金额</th>
+                            <th>借款期限</th>
+                            <th>年利率</th>
+                            <th>总利息</th>
+                            <th>项目起息日</th>
+                            <th>项目到期日</th>
+                            <th>项目状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <tr>
+                        <td>1</td>
+                        <td>江车贷13456</td>
+                        <td>普通标</td>
+                        <td>23,245</td>
+                        <td>120天</td>
+                        <td>11.0%</td>
+                        <td>43121</td>
+                        <td>2017-0908</td>
+                        <td>2017-09-08</td>
+                        <td>还款中</td>
+                       </tr>
+                       <tr>
+                        <td>1</td>
+                        <td>江车贷13456</td>
+                        <td>普通标</td>
+                        <td>23,245</td>
+                        <td>120天</td>
+                        <td>11.0%</td>
+                        <td>43121</td>
+                        <td>2017-0908</td>
+                        <td>2017-09-08</td>
+                        <td>还款中</td>
+                       </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination-sm"></ul>
+                <div class="box-title">还款明细:</div>
+                <table class="table table-bordered table-striped table-condensed table-new">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>还款编号</th>
+                            <th>标题</th>
+                            <th>借款人</th>
+                            <th>应还款时间</th>
+                            <th>应还款期数</th>
+                            <th>应还款余额</th>
+                            <th>实际到款时间</th>
+                            <th>实际还款金额</th>
+                            <th>是否逾期</th>
+                            <th>逾期天数</th>
+                            <th>逾期利息</th>
+                            <th>还款状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                           <td>1</td>
+                           <td>hk1345</td>
+                           <td>江车贷122</td>
+                           <td>张克富</td>
+                           <td>08-23 14:37:06</td>
+                           <td>1/5</td>
+                           <td>435.321</td>
+                           <td>08-23 14:37:06</td>
+                           <td>234.56</td>
+                           <td>是</td>
+                           <td>2</td>
+                           <td>21.3</td>
+                           <td>已还款</td>
+                        </tr>
+                        <tr>
+                           <td>2</td>
+                           <td>hk1345</td>
+                           <td>江车贷122</td>
+                           <td>张克富</td>
+                           <td>08-23 14:37:06</td>
+                           <td>1/5</td>
+                           <td>435.321</td>
+                           <td>08-23 14:37:06</td>
+                           <td>234.56</td>
+                           <td>是</td>
+                           <td>2</td>
+                           <td>21.3</td>
+                           <td>已还款</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination-sm"></ul>
+                <div class="box-title">催收明细:</div>
+                <table class="table table-bordered table-striped table-condensed table-new">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>催收编号</th>
+                            <th>还款编号</th>
+                            <th>项目名称</th>
+                            <th>借款人</th>
+                            <th>逾期天数</th>
+                            <th>应还款时间</th>
+                            <th>催收备注</th>
+                            <th>催收时间</th>
+                            <th>催收人</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>cs213</td>
+                            <td>yq4323</td>
+                            <td>江车贷23</td>
+                            <td>方溪领</td>
+                            <td>1/5</td>
+                            <td>2017-08-23 14:37:06</td>
+                            <td>催收</td>
+                            <td>2017-08-23 14:37:06</td>
+                            <td>张克福</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>cs213</td>
+                            <td>yq4323</td>
+                            <td>江车贷23</td>
+                            <td>方溪领</td>
+                            <td>1/5</td>
+                            <td>2017-08-23 14:37:06</td>
+                            <td>催收</td>
+                            <td>2017-08-23 14:37:06</td>
+                            <td>张克福</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>cs213</td>
+                            <td>yq4323</td>
+                            <td>江车贷23</td>
+                            <td>方溪领</td>
+                            <td>1/5</td>
+                            <td>2017-08-23 14:37:06</td>
+                            <td>催收</td>
+                            <td>2017-08-23 14:37:06</td>
+                            <td>张克福</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination-sm"></ul>
+            </div>
+            <div class="tab-content  light-bg panel-body" id="info4" style="display:none;">
+                <!-- 资金流水 -->
+                <div style="display:flex;">
+                    <ul class="list-vertical" style="margin-right:40px;">
+                        <li><span class="list-item header">银行</span><span class="list-item">工商银行</span></li>
+                        <li><span class="list-item header">总资产</span><span class="list-item">560000</span></li>
+                        <li><span class="list-item header">提现冻结金额</span><span class="list-item">3200</span></li>
+                        <li><span class="list-item header">累计充值金额</span><span class="list-item">54600</span></li>
+                    </ul>
+                    <ul class="list-vertical">
+                        <li><span class="list-item header">卡号</span><span class="list-item">655221*****762</span></li>
+                        <li><span class="list-item header">可用金额</span><span class="list-item">2000</span></li>
+                        <li><span class="list-item header">投资冻结金额</span><span class="list-item">100</span></li>
+                        <li><span class="list-item header">累计提现金额</span><span class="list-item">34500</span></li>
+                    </ul>
+                </div>
+                <div class="box-title">充值明细:</div>
+                <table class="table table-bordered table-striped table-condensed table-new">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>订单提交时间</th>
+                            <th>订单编号</th>
+                            <th>充值成功时间</th>
+                            <th>充值状态</th>
+                            <th>充值金额</th>
+                            <th>充值渠道</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <tr>
+                        <td>1</td>
+                        <td>20170904 10:35:09</td>
+                        <td>2346654321</td>
+                        <td>20170904 10:35:09</td>
+                        <td>成功</td>
+                        <td>21230</td>
+                        <td></td>
+                       </tr>
+                       <tr>
+                        <td>1</td>
+                        <td>20170904 10:35:09</td>
+                        <td>2346654321</td>
+                        <td>20170904 10:35:09</td>
+                        <td>成功</td>
+                        <td>21230</td>
+                        <td></td>
+                       </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination-sm"></ul>
+                <div class="box-title">取现明细:</div>
+                <table class="table table-bordered table-striped table-condensed table-new">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>订单提交时间</th>
+                            <th>订单编号</th>
+                            <th>提现成功时间</th>
+                            <th>提现状态</th>
+                            <th>提现金额</th>
+                            <th>充值手续费</th>
+                            <th>提现方式</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <tr>
+                        <td>1</td>
+                        <td>20170904 10:35:09</td>
+                        <td>2346654321</td>
+                        <td>20170904 10:35:09</td>
+                        <td>成功</td>
+                        <td>21230</td>
+                        <td></td>
+                        <td></td>
+                       </tr>
+                       <tr>
+                        <td>1</td>
+                        <td>20170904 10:35:09</td>
+                        <td>2346654321</td>
+                        <td>20170904 10:35:09</td>
+                        <td>成功</td>
+                        <td>21230</td>
+                        <td></td>
+                        <td></td>
+                       </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination-sm"></ul>
+            </div>
+        </section>
     </section>
 </section>
 <!--main content end-->
@@ -583,6 +907,15 @@
 <script src="../js/icheck/icheck-init.js"></script>
 <script src="../assets/iCheck-master/jquery.icheck.js"></script>
 <script type="text/javascript">
+    $(function () {
+        $('.pagination-sm').twbsPagination({
+            totalPages: 20,
+            first:"首页",
+            prev:"上一页",
+            next:"下一页",
+            last:"尾页"
+        })
+    });
     $("#datetimeStart").datetimepicker({
 //      format: 'yyyy-mm-dd',
         minView:'month',

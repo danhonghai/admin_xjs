@@ -344,11 +344,11 @@
                             </a>
                             <ul class="sub">
                                 <li><a class="alast" href="rechargelist.html">充值记录</a></li>
-                                <li class="active"><a class="alast" href="withdrawaudit.html">提现审核</a></li>
                                 <li><a class="alast" href="withdrawlist.html">提现记录</a></li>
-                                <li><a class="alast" href="">资金明细记录</a></li>
-                                <li><a class="alast" href="">用户资金记录</a></li>
-                                <li><a class="alast" href="">平台账户以及收支统计</a></li>
+                                <li><a class="alast" href="withdrawaudit.html">提现审核</a></li>
+                                <li><a class="alast" href="capitalchange_detail.html">用户资金变动明细</a></li>
+                                <li><a class="alast" href="platform_account.html">平台账户收支</a></li>
+                                <li class="active"><a class="alast" href="funds_reconciliation.html">平台资金对账</a></li>
                             </ul>
                         </li>
                         <li>
@@ -419,116 +419,125 @@
 -->
 <section id="main-content">
     <section class="wrapper">
-        <div class="tab-list" style="margin-bottom:20px;">
-            <a class="tab-item active">全部用户</a>
+        <div class="row nav-wrap">
+            <div class="nav-title"><span class="title">平台资金对账</span></div>
         </div>
         <div class="panel-body light-bg">
+            <table class="table table-bordered table-count">
+                   <thead>
+                   <tr>
+                       <th>登录用户数</th>
+                       <th>注册用户数</th>
+                       <th>实名认证人数</th>
+                       <th>绑卡人数</th>
+                       <th>投资人数</th>
+                       <th>提现人数</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td>50</td>
+                           <td>124</td>
+                           <td>123</td>
+                           <td>21</td>
+                           <td>21</td>
+                           <td>21</td>
+                       </tr>
+                   </tbody>
+            </table>
+            <div class="tab-list" style="margin-bottom:20px;">
+                <a class="tab-item active">充值异常数据</a>
+                <a class="tab-item">提现异常数据</a>
+                <a class="tab-item" style="width:155px;">用户资金异常数据</a>
+            </div>
             <section id="unseen">
-                <div class="panel-body" style="padding-left:0;">
+                <!-- <div class="panel-body">
                     <div class="search-box">
-                        <form class="form-inline fl" role="form">
+                        <form class="form-inline" role="form">
                             <div class="form-group">
-                            	<lable>用户姓名</lable>
-                            	<input type="text" class="form-control" placeholder="输入投资人姓名">
+                                <label class="control-label">投资人：</label>
+                                <input type="text" class="form-control" placeholder="输入投资人姓名、手机号">
                             </div>
                             <div class="form-group">
-                            	<lable>用户类型</lable>
+                                <label class="control-label">变动类别：</label>
                                 <select class="form-control" id="source6">
-                                    <option value="1">请选择用户类型</option>
-                                    <option value="2">李四</option>
-                                    <option value="3">王五</option>
+                                    <option value="1">变动类别</option>
+                                    <option value="2">充值</option>
+                                    <option value="3">还款</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                            	<lable>排序字段</lable>
+                                <label class="control-label">变动类型：</label>
                                 <select class="form-control" id="source6">
-                                    <option value="1">请选择排序字段</option>
-                                    <option value="2">等待通过</option>
-                                    <option value="3">审核未通过</option>
+                                    <option value="1">申请提现</option>
+                                    <option value="2">充值</option>
+                                    <option value="3">还款</option>
                                 </select>
                             </div>
                             <div class="form-group">   
-	                        <select class="form-control" id="source6">
-	                            <option value="1">更多字段</option>
-	                            <option value="2">等待通过</option>
-	                            <option value="3">审核未通过</option>
-	                        </select>
-	                    </div>
+                                <button type="submit" class="btn btn-primary">查询</button>
+                                <button class="btn btn-refresh">清空条件</button>
+                            </div>
                         </form>
-	                    <div class="form-group fr">   
-	                        <button type="submit" class="btn btn-primary">刷新数据</button>
-	                    </div>
-	                    <div class="form-group fr">   
-	                        <button type="submit" class="btn btn-primary">导出Excel</button>
-	                    </div>
-                    	<div class="form-group fr">   
-                        	<button type="submit" class="btn btn-primary">搜索</button>
-                   		 </div>
                     </div>
-                </div>
+                </div> -->
                 <table class="table table-bordered table-striped table-condensed table-new">
                     <thead>
                     <tr>
                         <th>序号</th>
-                        <th>用户名称</th>
-                        <th>用户类型</th>
-                        <th>实名状态</th>
-                        <th>绑卡状态</th>
-                        <th>注册日期</th>
-                        <th>累积投资金额</th>
-                        <th>总资产</th>
-                        <th>账户余额</th>
-                        <th>冻结金额</th>
-                        <th>待收金额</th>
-                        <th>待还金额</th>
-                        <th>最近登录时间</th>
+                        <th>收支编号</th>
+                        <th>资金变动</th>
+                        <th>变动类别</th>
+                        <th>变动时间</th>
+                        <th>变动类型</th>
+                        <th>状态</th>
                     </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td><a href="adim_base_info.html" class="link">可敬</a></td>
-                            <td>投资人</td>
-                            <td>是</td>
-                            <td>是</td>
-                            <td>2017-1-01-12</td>
-                            <td>50000</td>
-                            <td>12000</td>
-                            <td>211</td>
-                            <td>2000</td>
-                            <td>211</td>
-                            <td>113</td>
-                            <td>2017-09-12</td>
+                            <td>zj2324223</td>
+                            <td>100</td>
+                            <td>收入</td>
+                            <td>2017-09-04 10:35:09</td>
+                            <td>红包支出</td>
+                            <td>成功</td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td><a href="adim_base_info.html" class="link">可敬</a></td>
-                            <td>投资人</td>
-                            <td>是</td>
-                            <td>是</td>
-                            <td>2017-1-01-12</td>
-                            <td>50000</td>
-                            <td>12000</td>
-                            <td>211</td>
-                            <td>2000</td>
-                            <td>211</td>
-                            <td>113</td>
-                            <td>2017-09-12</td>
+                            <td>2</td>
+                            <td>zj2324223</td>
+                            <td>100</td>
+                            <td>收入</td>
+                            <td>2017-09-04 10:35:09</td>
+                            <td>加息利息</td>
+                            <td>成功</td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td><a href="adim_base_info.html" class="link">可敬</a></td>
-                            <td>投资人</td>
-                            <td>是</td>
-                            <td>是</td>
-                            <td>2017-1-01-12</td>
-                            <td>50000</td>
-                            <td>12000</td>
-                            <td>211</td>
-                            <td>2000</td>
-                            <td>211</td>
-                            <td>113</td>
-                            <td>2017-09-12</td>
+                            <td>3</td>
+                            <td>zj2324223</td>
+                            <td>100</td>
+                            <td>收入</td>
+                            <td>2017-09-04 10:35:09</td>
+                            <td>提现手续费</td>
+                            <td>成功</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>zj2324223</td>
+                            <td>100</td>
+                            <td>收入</td>
+                            <td>2017-09-04 10:35:09</td>
+                            <td>平台利息补贴</td>
+                            <td>成功</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>zj2324223</td>
+                            <td>100</td>
+                            <td>收入</td>
+                            <td>2017-09-04 10:35:09</td>
+                            <td>红包支出</td>
+                            <td>成功</td>
                         </tr>
                     </tbody>
                 </table>
@@ -593,5 +602,16 @@
 <script src="../js/icheck/icheck-init.js"></script>
 <script src="../assets/iCheck-master/jquery.icheck.js"></script>
 <!--script for this page-->
+<script type="text/javascript">
+    $(function () {
+        $('.pagination-sm').twbsPagination({
+            totalPages: 20,
+            first:"首页",
+            prev:"上一页",
+            next:"下一页",
+            last:"尾页"
+        })
+    });
+</script>
 </body>
 </html>

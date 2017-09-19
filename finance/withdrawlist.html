@@ -344,11 +344,11 @@
                             </a>
                             <ul class="sub">
                                 <li><a class="alast" href="rechargelist.html">充值记录</a></li>
-                                <li><a class="alast" href="withdrawaudit.html">提现审核</a></li>
                                 <li class="active"><a class="alast" href="withdrawlist.html">提现记录</a></li>
-                                <li><a class="alast" href="">资金明细记录</a></li>
-                                <li><a class="alast" href="">用户资金记录</a></li>
-                                <li><a class="alast" href="">平台账户以及收支统计</a></li>
+                                <li><a class="alast" href="withdrawaudit.html">提现审核</a></li>
+                                <li><a class="alast" href="capitalchange_detail.html">用户资金变动明细</a></li>
+                                <li><a class="alast" href="platform_account.html">平台账户收支</a></li>
+                                <li><a class="alast" href="funds_reconciliation.html">平台资金对账</a></li>
                             </ul>
                         </li>
                         <li>
@@ -428,9 +428,11 @@
                     <div class="search-box">
                         <form class="form-inline" role="form">
                             <div class="form-group">
+                                <label class="control-label">投资人：</label>
                                 <input type="text" class="form-control" placeholder="输入投资人姓名">
                             </div>
                             <div class="form-group">
+                                <label class="control-label">审核状态：</label>
                                 <select class="form-control" id="source6">
                                     <option value="1">审核状态</option>
                                     <option value="2">等待通过</option>
@@ -438,8 +440,9 @@
                                 </select>
                             </div>
                             <div class="form-group">
+                                <label class="control-label">提现渠道：</label>
                                 <select class="form-control" id="source6">
-                                    <option value="1">提现状态</option>
+                                    <option value="1">提现渠道</option>
                                     <option value="2">等待通过</option>
                                     <option value="3">审核未通过</option>
                                 </select>
@@ -461,8 +464,9 @@
                         <th>提现金额</th>
                         <th>手续费</th>
                         <th>审核状态</th>
-                        <th>提现状态</th>
                         <th>提现成功时间</th>
+                        <th>提现状态</th>
+                        <th>渠道返回信息</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -474,8 +478,9 @@
                             <td>21230</td>
                             <td>3</td>
                             <td>待审核</td>
-                            <td>-</td>
                             <td>2017-08-24 13:37:06</td>
+                            <td>-</td>
+                            <td>-</td>
                         </tr>
                         <tr>
                             <td>2</td>
@@ -483,10 +488,11 @@
                             <td>2017-08-23 13:37:06</td>
                             <td>21023252222222</td>
                             <td>21230</td>
-                            <td>2</td>
+                            <td>3</td>
                             <td>待审核</td>
-                            <td>-</td>
                             <td>2017-08-24 13:37:06</td>
+                            <td>-</td>
+                            <td>-</td>
                         </tr>
                         <tr>
                             <td>3</td>
@@ -494,10 +500,11 @@
                             <td>2017-08-23 13:37:06</td>
                             <td>21023252222222</td>
                             <td>21230</td>
-                            <td>1</td>
-                            <td>自动审核通过</td>
-                            <td>成功</td>
+                            <td>3</td>
+                            <td>待审核</td>
                             <td>2017-08-24 13:37:06</td>
+                            <td>成功</td>
+                            <td>提现成功</td>
                         </tr>
                         <tr>
                             <td>4</td>
@@ -506,9 +513,10 @@
                             <td>21023252222222</td>
                             <td>21230</td>
                             <td>3</td>
-                            <td>人工审核通过</td>
-                            <td>成功</td>
+                            <td>待审核</td>
                             <td>2017-08-24 13:37:06</td>
+                            <td>成功</td>
+                            <td>提现成功</td>
                         </tr>
                         <tr>
                             <td>5</td>
@@ -517,9 +525,10 @@
                             <td>21023252222222</td>
                             <td>21230</td>
                             <td>3</td>
-                            <td>自动审核通过</td>
+                            <td>待审核</td>
+                            <td>-</td>
                             <td>失败</td>
-                            <td>2017-08-24 13:37:06</td>
+                            <td>错误代码21231</td>
                         </tr>
                     </tbody>
                 </table>

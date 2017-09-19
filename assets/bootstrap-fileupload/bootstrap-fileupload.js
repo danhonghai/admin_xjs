@@ -64,7 +64,7 @@
       if (this.$remove) this.$remove.on('click.fileupload', $.proxy(this.clear, this))
     },
     
-    change: function(e, invoked) {
+    change: function(e, invoked) {debugger;
       var file = e.target.files !== undefined ? e.target.files[0] : (e.target.value ? { name: e.target.value.replace(/^.+\\/, '') } : null)
       if (invoked === 'clear') return
       
@@ -75,7 +75,7 @@
       }
       this.$hidden.val('')
       this.$hidden.attr('name', '')
-      this.$input.attr('name', this.name)
+      this.$input.attr('name', this.name);
 
       if (this.type === "image" && this.$preview.length > 0 && (typeof file.type !== "undefined" ? file.type.match('image.*') : file.name.match('\\.(gif|png|jpe?g)$')) && typeof FileReader !== "undefined") {
         var reader = new FileReader()

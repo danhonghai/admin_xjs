@@ -452,7 +452,7 @@
                     <div class="form-group col-lg-5">
                         <label class="col-sm-3 control-label col-lg-3">借款人：</label>
                         <div class="col-lg-6">
-                            <select id="e1" class="populate searchSelect" style="width: 250px">
+                            <select id="e1" class="populate searchSelect" style="width: 250px" onChange="aa()">
                                 <option value="1">杨小 135468545222</option>
                                 <option value="2">杨二 133468545222</option>
                                 <option value="3">杨三 134468578222</option>
@@ -852,5 +852,10 @@
 <script src="../js/icheck/icheck-init.js"></script>
 <script src="../assets/iCheck-master/jquery.icheck.js"></script>
 <!--script for this page-->
+<script>
+    function aa(){
+        alert(12);
+    }
+</script>
 </body>
 </html>

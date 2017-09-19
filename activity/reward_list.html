@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="ThemeBucket">
-    <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="shortcut icon" href="images/favicon.png">
     <title>后台管理系统</title>
     <!--Core CSS -->
-    
     <link href="../bs3/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/bootstrap-reset.css" rel="stylesheet">
     <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -33,7 +32,7 @@
     <!-- MyStyle -->
     <link rel="stylesheet" type="text/css" href="../css/xjs.css" />
     <!-- <base href="/"> -->
-
+    
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="js/ie8/ie8-responsive-file-warning.js"></script><![endif]-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -105,14 +104,16 @@
                                 <span>融资管理</span>
                             </a>
                             <ul class="sub">
-                                <li><a class="alast" href="../business/opborrow_add.html">融资发布</a></li>
-                                <li><a class="alast" hhref="../business/borrowlist.html">融资初审</a></li>
-                                <li><a class="alast" href="">融资复审</a></li>
-                                <li><a class="alast" href="">融资预约</a></li>
-                                <li><a class="alast" href="">投标记录</a></li>
-                                <li><a class="alast" href="">手动流标</a></li>
-                                <li><a class="alast" href="">投标状态</a></li>
-                                <li><a class="alast" href="">流标记录</a></li>
+                                <li><a class="alast" href="borrow_order.html">融资预约</a></li>
+                                <li><a class="alast" href="opborrow_add.html">融资发布</a></li>
+                                <li><a class="alast" href="borrow_published.html">已发布项目</a></li>
+                                <li><a class="alast" href="borrowlist.html">融资初审</a></li>
+                                <li><a class="alast" href="reborrowlist.html">融资复审</a></li>
+                                <li><a class="alast" href="raiselist.html">募集中项目</a></li>
+                                <li><a class="alast" href="bidlist.html">投标记录</a></li>
+                                <li><a class="alast" href="finaborrowlist.html">融资终审</a></li>
+                                <li><a class="alast" href="abortivelist.html">流标记录</a></li>
+                                <li><a class="alast" href="advanced_search.html">项目高级搜索</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -121,9 +122,9 @@
                                 <span>债权转让</span>
                             </a>
                             <ul class="sub">
-                                <li><a class="alast" href="">债权转让列表</a></li>
-                                <li><a class="alast" href="">债权转让合同设置</a></li>
-                                <li><a class="alast" href="">债权转让规则配置</a></li>
+                                <li><a class="alast" href="transferlist.html">债权转让列表</a></li>
+                                <li><a class="alast" href="transfer_deal.html">转让成交明细</a></li>
+                                <li><a class="alast" href="transfer_add.html">债权转让规则设置</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -132,16 +133,17 @@
                                 <span>贷后管理</span>
                             </a>
                             <ul class="sub">
-                                <li><a class="alast" href="">还款中明细</a></li>
-                                <li><a class="alast" href="">已还款明细</a></li>
-                                <li><a class="alast" href="">逾期管理</a></li>
-                                <li><a class="alast" href="">催收管理</a></li>
+                                <li><a class="alast" href="repayment_in.html">还款中明细</a></li>
+                                <li><a class="alast" href="repayment_detail.html">还款明细</a></li>
+                                <li><a class="alast" href="repayment_end.html">已还款项目</a></li>
+                                <li><a class="alast" href="repayment_over.html">逾期管理</a></li>
+                                <li><a class="alast" href="collection.html">催收管理</a></li>
                             </ul>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a class="firstmenu" href="javascript:;">
+                    <a class="firstmenu active" href="javascript:;">
                         <i class="fa fa-keyboard-o"></i>
                         <span>运营管理</span>
                     </a>
@@ -187,22 +189,16 @@
                             </ul>
                         </li>
                         <li class="sub-menu">
-                            <a class="apl40" href="javascript:;">
+                            <a class="apl40 active" href="javascript:;">
                                 <i class="fa fa-gift"></i>
                                 <span>活动管理</span>
                             </a>
                             <ul class="sub">
-                                <li><a class="alast" href="">红包规则配置</a></li>
-                                <li><a class="alast" href="">红包明细查询</a></li>
-                                <li><a class="alast" href="">红包场景设置</a></li>
-                                <li><a class="alast" href="">积分规则配置</a></li>
-                                <li><a class="alast" href="">积分明细查询</a></li>
-                                <li><a class="alast" href="">积分明细查询</a></li>
-                                <li><a class="alast" href="">加息券规则设置</a></li>
-                                <li><a class="alast" href="">加息券场景设置</a></li>
-                                <li><a class="alast" href="">加息券明细查询</a></li>
-                                <li><a class="alast" href="">每日签到</a></li>
-                                <li><a class="alast" href="">天天摇</a></li>
+                                <li><a class="alast" href="activity_list.html">活动统计</a></li>
+                                <li><a class="alast" href="userdiscount_list.html">用户活动优惠统计</a></li>
+                                <li><a class="alast" href="redpacket_list.html">红包统计</a></li>
+                                <li><a class="alast" href="coupon_list.html">加息券统计</a></li>
+                                <li class="active"><a class="alast" href="reward_list.html">推广奖励统计</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -332,20 +328,20 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="firstmenu active" href="javascript:;">
+                    <a class="firstmenu" href="javascript:;">
                         <i class="fa fa-cny"></i>
                         <span>财务管理</span>
                     </a>
                     <ul>
                         <li class="sub-menu">
-                            <a class="apl40 active" href="javascript:;">
+                            <a class="apl40" href="javascript:;">
                                 <i class="fa fa-credit-card"></i>
                                 <span>资金管理</span>
                             </a>
                             <ul class="sub">
-                                <li><a class="alast" href="rechargelist.html">充值记录</a></li>
-                                <li class="active"><a class="alast" href="withdrawaudit.html">提现审核</a></li>
-                                <li><a class="alast" href="withdrawlist.html">提现记录</a></li>
+                                <li><a class="alast" href="../finance/rechargelist.html">充值记录</a></li>
+                                <li><a class="alast" href="../finance/withdrawaudit.html">提现审核</a></li>
+                                <li><a class="alast" href="../finance/withdrawlist.html">提现记录</a></li>
                                 <li><a class="alast" href="">资金明细记录</a></li>
                                 <li><a class="alast" href="">用户资金记录</a></li>
                                 <li><a class="alast" href="">平台账户以及收支统计</a></li>
@@ -419,116 +415,102 @@
 -->
 <section id="main-content">
     <section class="wrapper">
+        <!-- <div class="row nav-wrap">
+            <div class="nav-title"><span>融资初审</span></div>
+        </div> -->
         <div class="tab-list" style="margin-bottom:20px;">
-            <a class="tab-item active">全部用户</a>
+            <a class="tab-item active">推广奖励统计</a>
         </div>
         <div class="panel-body light-bg">
             <section id="unseen">
-                <div class="panel-body" style="padding-left:0;">
+                <div class="panel-body">
                     <div class="search-box">
-                        <form class="form-inline fl" role="form">
+                        <form class="form-inline" role="form">
                             <div class="form-group">
-                            	<lable>用户姓名</lable>
-                            	<input type="text" class="form-control" placeholder="输入投资人姓名">
-                            </div>
-                            <div class="form-group">
-                            	<lable>用户类型</lable>
-                                <select class="form-control" id="source6">
-                                    <option value="1">请选择用户类型</option>
-                                    <option value="2">李四</option>
-                                    <option value="3">王五</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                            	<lable>排序字段</lable>
-                                <select class="form-control" id="source6">
-                                    <option value="1">请选择排序字段</option>
-                                    <option value="2">等待通过</option>
-                                    <option value="3">审核未通过</option>
-                                </select>
+                                <label class="control-label">投资人：</label>
+                                <input type="text" class="form-control" placeholder="输入投资人">
                             </div>
                             <div class="form-group">   
-	                        <select class="form-control" id="source6">
-	                            <option value="1">更多字段</option>
-	                            <option value="2">等待通过</option>
-	                            <option value="3">审核未通过</option>
-	                        </select>
-	                    </div>
+                                <button type="submit" class="btn btn-primary">查询</button>
+                                <button class="btn btn-refresh">清空条件</button>
+                            </div>
                         </form>
-	                    <div class="form-group fr">   
-	                        <button type="submit" class="btn btn-primary">刷新数据</button>
-	                    </div>
-	                    <div class="form-group fr">   
-	                        <button type="submit" class="btn btn-primary">导出Excel</button>
-	                    </div>
-                    	<div class="form-group fr">   
-                        	<button type="submit" class="btn btn-primary">搜索</button>
-                   		 </div>
                     </div>
                 </div>
                 <table class="table table-bordered table-striped table-condensed table-new">
                     <thead>
                     <tr>
                         <th>序号</th>
-                        <th>用户名称</th>
-                        <th>用户类型</th>
-                        <th>实名状态</th>
-                        <th>绑卡状态</th>
-                        <th>注册日期</th>
-                        <th>累积投资金额</th>
-                        <th>总资产</th>
-                        <th>账户余额</th>
-                        <th>冻结金额</th>
-                        <th>待收金额</th>
-                        <th>待还金额</th>
-                        <th>最近登录时间</th>
+                        <th>奖励编号</th>
+                        <th>推广人姓名</th>
+                        <th>推广ID</th>
+                        <th>被推广人姓名</th>
+                        <th>首次充值金额(元)</th>
+                        <th>首次充值时间</th>
+                        <th>有效推广奖励(元)</th>
+                        <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td><a href="adim_base_info.html" class="link">可敬</a></td>
-                            <td>投资人</td>
-                            <td>是</td>
-                            <td>是</td>
-                            <td>2017-1-01-12</td>
-                            <td>50000</td>
-                            <td>12000</td>
-                            <td>211</td>
-                            <td>2000</td>
-                            <td>211</td>
-                            <td>113</td>
-                            <td>2017-09-12</td>
+                            <td>tg9089871</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>ewesa213w</td>
+                            <td><a href="#" class="link">李克刚</a></td>
+                            <td>1000</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>20</td>
+                            <td><a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".forzen-modal">冻结</a>
+                            </td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td><a href="adim_base_info.html" class="link">可敬</a></td>
-                            <td>投资人</td>
-                            <td>是</td>
-                            <td>是</td>
-                            <td>2017-1-01-12</td>
-                            <td>50000</td>
-                            <td>12000</td>
-                            <td>211</td>
-                            <td>2000</td>
-                            <td>211</td>
-                            <td>113</td>
-                            <td>2017-09-12</td>
+                            <td>2</td>
+                            <td>tg9089871</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>ewesa213w</td>
+                            <td><a href="#" class="link">李克刚</a></td>
+                            <td>1000</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>20</td>
+                            <td><a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".forzen-modal">冻结</a>
+                            </td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td><a href="adim_base_info.html" class="link">可敬</a></td>
-                            <td>投资人</td>
-                            <td>是</td>
-                            <td>是</td>
-                            <td>2017-1-01-12</td>
-                            <td>50000</td>
-                            <td>12000</td>
-                            <td>211</td>
-                            <td>2000</td>
-                            <td>211</td>
-                            <td>113</td>
-                            <td>2017-09-12</td>
+                            <td>3</td>
+                            <td>tg9089871</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>ewesa213w</td>
+                            <td><a href="#" class="link">李克刚</a></td>
+                            <td>1000</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>20</td>
+                            <td><a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".forzen-modal">冻结</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>tg9089871</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>ewesa213w</td>
+                            <td><a href="#" class="link">李克刚</a></td>
+                            <td>1000</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>20</td>
+                            <td><a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".forzen-modal">冻结</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>tg9089871</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>ewesa213w</td>
+                            <td><a href="#" class="link">李克刚</a></td>
+                            <td>1000</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>20</td>
+                            <td><a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".forzen-modal">冻结</a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -540,6 +522,23 @@
 <!--main content end-->
 </section>
 <!-- Placed js at the end of the document so the pages load faster -->
+<div class="modal fade forzen-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myLargeModalLabel">操作确认</h4>
+            </div>
+            <div class="modal-body" style="font-size:16px;">
+                您正在解冻该红包，确认后生效。
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-info">确认</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
 <!--Core js-->
 <script src="../js/lib/jquery-1.8.3.min.js"></script>
 <script src="../bs3/js/bootstrap.min.js"></script>
@@ -593,5 +592,16 @@
 <script src="../js/icheck/icheck-init.js"></script>
 <script src="../assets/iCheck-master/jquery.icheck.js"></script>
 <!--script for this page-->
+<script type="text/javascript">
+    $(function () {
+        $('.pagination-sm').twbsPagination({
+            totalPages: 20,
+            first:"首页",
+            prev:"上一页",
+            next:"下一页",
+            last:"尾页"
+        })
+    });
+</script>
 </body>
 </html>

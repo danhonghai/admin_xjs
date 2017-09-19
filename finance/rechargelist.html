@@ -344,11 +344,11 @@
                             </a>
                             <ul class="sub">
                                 <li class="active"><a class="alast" href="rechargelist.html">充值记录</a></li>
-                                <li><a class="alast" href="withdrawaudit.html">提现审核</a></li>
                                 <li><a class="alast" href="withdrawlist.html">提现记录</a></li>
-                                <li><a class="alast" href="">资金明细记录</a></li>
-                                <li><a class="alast" href="">用户资金记录</a></li>
-                                <li><a class="alast" href="">平台账户以及收支统计</a></li>
+                                <li><a class="alast" href="withdrawaudit.html">提现审核</a></li>
+                                <li><a class="alast" href="capitalchange_detail.html">用户资金变动明细</a></li>
+                                <li><a class="alast" href="platform_account.html">平台账户收支</a></li>
+                                <li><a class="alast" href="funds_reconciliation.html">平台资金对账</a></li>
                             </ul>
                         </li>
                         <li>
@@ -428,9 +428,11 @@
                     <div class="search-box">
                         <form class="form-inline" role="form">
                             <div class="form-group">
+                                <label class="control-label">用户：</label>
                                 <input type="text" class="form-control" placeholder="输入姓名、手机号">
                             </div>
                             <div class="form-group">
+                                <label class="control-label">充值状态：</label>
                                 <select class="form-control" id="source6">
                                     <option value="1">充值状态</option>
                                     <option value="2">等待通过</option>
@@ -438,6 +440,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
+                                <label class="control-label">充值渠道：</label>
                                 <select class="form-control" id="source6">
                                     <option value="1">充值渠道</option>
                                     <option value="2">等待通过</option>
@@ -445,10 +448,12 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <input size="16" type="text" placeholder="订单起始时间" readonly class="form_datetime form-control">
+                                <label class="control-label">订单起始时间：</label>
+                                <input size="16" type="text"  readonly class="form_datetime form-control">
                             </div>
                             <div class="form-group">
-                                <input size="16" type="text" placeholder="订单结束时间" readonly class="form_datetime form-control">
+                                <label class="control-label">订单结束时间：</label>
+                                <input size="16" type="text" readonly class="form_datetime form-control">
                             </div>
                             <div class="form-group">   
                                 <button type="submit" class="btn btn-primary">查询</button>
@@ -462,11 +467,11 @@
                     <tr>
                         <th>序号</th>
                         <th>用户姓名</th>
+                        <th>充值金额</th>
                         <th>订单提交时间</th>
-                        <th>订单编号</th>
                         <th>充值成功时间</th>
                         <th>充值状态</th>
-                        <th>充值金额</th>
+                        <th>渠道返回信息</th>
                         <th>充值渠道</th>
                     </tr>
                     </thead>
@@ -474,51 +479,51 @@
                         <tr>
                             <td>1</td>
                             <td><a href="#" class="link">张立科</a></td>
+                            <td>21230</td>
                             <td>2017-08-23 13:37:06</td>
-                            <td>21023252222222</td>
                             <td>2017-08-24 13:37:06</td>
                             <td>成功</td>
-                            <td>21230</td>
+                            <td>21023252222222</td>
                             <td>支付宝</td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td><a href="#" class="link">张立科</a></td>
+                            <td>21230</td>
                             <td>2017-08-23 13:37:06</td>
-                            <td>21023252222222</td>
                             <td>2017-08-24 13:37:06</td>
                             <td>成功</td>
-                            <td>21230</td>
+                            <td>21023252222222</td>
                             <td>微信</td>
                         </tr>
                         <tr>
                             <td>3</td>
                             <td><a href="#" class="link">张立科</a></td>
+                            <td>21230</td>
                             <td>2017-08-23 13:37:06</td>
-                            <td>21023252222222</td>
                             <td>2017-08-24 13:37:06</td>
                             <td>成功</td>
-                            <td>21230</td>
+                            <td>21023252222222</td>
                             <td>银联</td>
                         </tr>
                         <tr>
                             <td>4</td>
                             <td><a href="#" class="link">张立科</a></td>
-                            <td>2017-08-23 13:37:06</td>
-                            <td>21023252222222</td>
-                            <td>-</td>
-                            <td>失败</td>
                             <td>21230</td>
+                            <td>2017-08-23 13:37:06</td>
+                            <td>2017-08-24 13:37:06</td>
+                            <td>成功</td>
+                            <td>21023252222222</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>5</td>
                             <td><a href="#" class="link">张立科</a></td>
+                            <td>21230</td>
                             <td>2017-08-23 13:37:06</td>
-                            <td>21023252222222</td>
                             <td>2017-08-24 13:37:06</td>
                             <td>成功</td>
-                            <td>21230</td>
+                            <td>21023252222222</td>
                             <td></td>
                         </tr>
                     </tbody>

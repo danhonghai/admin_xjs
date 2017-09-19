@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="ThemeBucket">
-    <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="shortcut icon" href="images/favicon.png">
     <title>后台管理系统</title>
     <!--Core CSS -->
-    
     <link href="../bs3/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/bootstrap-reset.css" rel="stylesheet">
     <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -33,7 +32,7 @@
     <!-- MyStyle -->
     <link rel="stylesheet" type="text/css" href="../css/xjs.css" />
     <!-- <base href="/"> -->
-
+    
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="js/ie8/ie8-responsive-file-warning.js"></script><![endif]-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -105,14 +104,16 @@
                                 <span>融资管理</span>
                             </a>
                             <ul class="sub">
-                                <li><a class="alast" href="../business/opborrow_add.html">融资发布</a></li>
-                                <li><a class="alast" hhref="../business/borrowlist.html">融资初审</a></li>
-                                <li><a class="alast" href="">融资复审</a></li>
-                                <li><a class="alast" href="">融资预约</a></li>
-                                <li><a class="alast" href="">投标记录</a></li>
-                                <li><a class="alast" href="">手动流标</a></li>
-                                <li><a class="alast" href="">投标状态</a></li>
-                                <li><a class="alast" href="">流标记录</a></li>
+                                <li><a class="alast" href="borrow_order.html">融资预约</a></li>
+                                <li><a class="alast" href="opborrow_add.html">融资发布</a></li>
+                                <li><a class="alast" href="borrow_published.html">已发布项目</a></li>
+                                <li><a class="alast" href="borrowlist.html">融资初审</a></li>
+                                <li><a class="alast" href="reborrowlist.html">融资复审</a></li>
+                                <li><a class="alast" href="raiselist.html">募集中项目</a></li>
+                                <li><a class="alast" href="bidlist.html">投标记录</a></li>
+                                <li><a class="alast" href="finaborrowlist.html">融资终审</a></li>
+                                <li><a class="alast" href="abortivelist.html">流标记录</a></li>
+                                <li><a class="alast" href="advanced_search.html">项目高级搜索</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -121,9 +122,9 @@
                                 <span>债权转让</span>
                             </a>
                             <ul class="sub">
-                                <li><a class="alast" href="">债权转让列表</a></li>
-                                <li><a class="alast" href="">债权转让合同设置</a></li>
-                                <li><a class="alast" href="">债权转让规则配置</a></li>
+                                <li><a class="alast" href="transferlist.html">债权转让列表</a></li>
+                                <li><a class="alast" href="transfer_deal.html">转让成交明细</a></li>
+                                <li><a class="alast" href="transfer_add.html">债权转让规则设置</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -132,16 +133,17 @@
                                 <span>贷后管理</span>
                             </a>
                             <ul class="sub">
-                                <li><a class="alast" href="">还款中明细</a></li>
-                                <li><a class="alast" href="">已还款明细</a></li>
-                                <li><a class="alast" href="">逾期管理</a></li>
-                                <li><a class="alast" href="">催收管理</a></li>
+                                <li><a class="alast" href="repayment_in.html">还款中明细</a></li>
+                                <li><a class="alast" href="repayment_detail.html">还款明细</a></li>
+                                <li><a class="alast" href="repayment_end.html">已还款项目</a></li>
+                                <li><a class="alast" href="repayment_over.html">逾期管理</a></li>
+                                <li><a class="alast" href="collection.html">催收管理</a></li>
                             </ul>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a class="firstmenu" href="javascript:;">
+                    <a class="firstmenu active" href="javascript:;">
                         <i class="fa fa-keyboard-o"></i>
                         <span>运营管理</span>
                     </a>
@@ -187,22 +189,16 @@
                             </ul>
                         </li>
                         <li class="sub-menu">
-                            <a class="apl40" href="javascript:;">
+                            <a class="apl40 active" href="javascript:;">
                                 <i class="fa fa-gift"></i>
                                 <span>活动管理</span>
                             </a>
                             <ul class="sub">
-                                <li><a class="alast" href="">红包规则配置</a></li>
-                                <li><a class="alast" href="">红包明细查询</a></li>
-                                <li><a class="alast" href="">红包场景设置</a></li>
-                                <li><a class="alast" href="">积分规则配置</a></li>
-                                <li><a class="alast" href="">积分明细查询</a></li>
-                                <li><a class="alast" href="">积分明细查询</a></li>
-                                <li><a class="alast" href="">加息券规则设置</a></li>
-                                <li><a class="alast" href="">加息券场景设置</a></li>
-                                <li><a class="alast" href="">加息券明细查询</a></li>
-                                <li><a class="alast" href="">每日签到</a></li>
-                                <li><a class="alast" href="">天天摇</a></li>
+                                <li><a class="alast" href="activity_list.html">活动统计</a></li>
+                                <li><a class="alast" href="userdiscount_list.html">用户活动优惠统计</a></li>
+                                <li class="active"><a class="alast" href="redpacket_list.html">红包统计</a></li>
+                                <li><a class="alast" href="coupon_list.html">加息券统计</a></li>
+                                <li><a class="alast" href="reward_list.html">推广奖励统计</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -332,20 +328,20 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="firstmenu active" href="javascript:;">
+                    <a class="firstmenu" href="javascript:;">
                         <i class="fa fa-cny"></i>
                         <span>财务管理</span>
                     </a>
                     <ul>
                         <li class="sub-menu">
-                            <a class="apl40 active" href="javascript:;">
+                            <a class="apl40" href="javascript:;">
                                 <i class="fa fa-credit-card"></i>
                                 <span>资金管理</span>
                             </a>
                             <ul class="sub">
-                                <li><a class="alast" href="rechargelist.html">充值记录</a></li>
-                                <li class="active"><a class="alast" href="withdrawaudit.html">提现审核</a></li>
-                                <li><a class="alast" href="withdrawlist.html">提现记录</a></li>
+                                <li><a class="alast" href="../finance/rechargelist.html">充值记录</a></li>
+                                <li><a class="alast" href="../finance/withdrawaudit.html">提现审核</a></li>
+                                <li><a class="alast" href="../finance/withdrawlist.html">提现记录</a></li>
                                 <li><a class="alast" href="">资金明细记录</a></li>
                                 <li><a class="alast" href="">用户资金记录</a></li>
                                 <li><a class="alast" href="">平台账户以及收支统计</a></li>
@@ -419,151 +415,112 @@
 -->
 <section id="main-content">
     <section class="wrapper">
-        <div class="tab-list" style="height:70px;">
-            <form class="form-inline fl" role="form">
-                <div class="form-group">
-                	<lable>投资人</lable>
-                    <input type="text" class="form-control" placeholder="输入投资人姓名">
-                </div>
-           </form>
+        <!-- <div class="row nav-wrap">
+            <div class="nav-title"><span>融资初审</span></div>
+        </div> -->
+        <div class="tab-list" style="margin-bottom:20px;">
+            <a class="tab-item active">红包统计</a>
         </div>
         <div class="panel-body light-bg">
             <section id="unseen">
-                <div class="panel-body" style="padding-left:0;text-align: center;">
-                    <div style="margin:0 auto; width:50px;height:50px">
-                    	<img src="../assets/advanced-datatable/examples/examples_support/vv.png"/>
-                    </div>
-                   <span>张三丰</span>
-                    		
-                </div>
-                <table class="table table-bordered table-striped table-condensed table-new">
-                    <thead></thead>
-                    <tbody>
-                        <tr>
-                        	<td>姓名</td>
-                        	<td>张三丰</td>
-                        	<td>手机号</td>
-                        	<td>13587652312 杭州移动</td>
-                        </tr>
-                        <tr>
-                        	<td>用户类型</td>
-                        	<td>投资用户</td>
-                        	<td>用户状态</td>
-                        	<td>正常 <span>操作</span></td>
-                        </tr>
-                        <tr>
-                        	<td>邮箱</td>
-                        	<td>3132112@qq.com</td>
-                        	<td>注册时间</td>
-                        	<td>2017-02-09 14:23:45</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section>
-                <div class="panel-body" style="padding-left:0;">
-                    <div class="tab-list">
-                    	<a href="adim_base_info.html" class="tab-item">账号信息</a>
-                    	<a href="adim_invest.html" class="tab-item active">投资信息</a>
-                    	<a href="borrow_info.html" class="tab-item">借款信息</a>
-                    	<a href="account_capital.html" class="tab-item">资金流水</a>
+                <div class="panel-body">
+                    <div class="search-box">
+                        <form class="form-inline" role="form">
+                            <div class="form-group">
+                                <label class="control-label">投资人：</label>
+                                <input type="text" class="form-control" placeholder="输入投资人">
+                            </div>
+                            <div class="form-group">   
+                                <button type="submit" class="btn btn-primary">查询</button>
+                                <button class="btn btn-refresh">清空条件</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <table class="table table-bordered table-striped table-condensed table-new">
-                    <thead></thead>
-                    <tbody>
-                        <tr>
-                        	<td>累积投资金额</td>
-                        	<td>7234567</td>
-                        	<td>累积投资次数</td>
-                        	<td>34</td>
-                        </tr>
-                        <tr>
-                        	<td>累积获取利息</td>
-                        	<td>2.34</td>
-                        	<td>待回收金额</td>
-                        	<td>2344</td>
-                        </tr>
-                        <tr>
-                        	<td>逾期未回收金额</td>
-                        	<td>12345</td>
-                        	<td>逾期未回收利息</td>
-                        	<td>6456</td>
-                        </tr>
-                        <tr>
-                        	<td>持有红包</td>
-                        	<td>3</td>
-                        	<td>持有加息劵</td>
-                        	<td>5</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="tab-list" style="margin-bottom:20px;">
-           			 <a class="tab-item active">投标明细</a>
-       			 </div>
                 <table class="table table-bordered table-striped table-condensed table-new">
                     <thead>
-                    	<tr>
-                    		<th>序号</th>
-                    		<th>投标编号</th>
-                    		<th>投资类型</th>
-                    		<th>投资时间</th>
-                    		<th>投资金额</th>
-                    		<th>项目名称</th>
-                    		<th>项目类型</th>
-                    		<th>借款金额</th>
-                    		<th>借款期限</th>
-                    		<th>年利率</th>
-                    		<th>红包</th>
-                    		<th>加息劵</th>
-                    		<th>状态</th>
-                    	</tr>
+                    <tr>
+                        <th>序号</th>
+                        <th>红包编号</th>
+                        <th>用户姓名</th>
+                        <th>红包金额</th>
+                        <th>赠送时间</th>
+                        <th>过期时间</th>
+                        <th>活动名称</th>
+                        <th>状态</th>
+                        <th>使用时间</th>
+                        <th>项目名称</th>
+                        <th>操作</th>
+                    </tr>
                     </thead>
                     <tbody>
                         <tr>
-                        	<td>1</td>
-                        	<td>td124442</td>
-                        	<td>承接转让</td>
-                        	<td>2017-12-12</td>
-                        	<td>1234</td>
-                        	<td>江车贷2151</td>
-                        	<td>普通标</td>
-                        	<td>23,456元</td>
-                        	<td>120天</td>
-                        	<td>11%</td>
-                        	<td>50</td>
-                        	<td>1%</td>
-                        	<td>募集中</td>
+                            <td>1</td>
+                            <td>hb17862813</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>10.00</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>2017-09-06 11:49</td>
+                            <td><a href="#" class="link">2017中秋特惠</a></td>
+                            <td>未使用</td>
+                            <td></td>
+                            <td></td>
+                            <td><a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".forzen-modal">冻结</a>
+                            </td>
                         </tr>
                         <tr>
-                        	<td>1</td>
-                        	<td>td124442</td>
-                        	<td>承接转让</td>
-                        	<td>2017-12-12</td>
-                        	<td>1234</td>
-                        	<td>江车贷2151</td>
-                        	<td>普通标</td>
-                        	<td>23,456元</td>
-                        	<td>120天</td>
-                        	<td>11%</td>
-                        	<td>50</td>
-                        	<td>1%</td>
-                        	<td>募集中</td>
+                            <td>2</td>
+                            <td>hb17862813</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>10.00</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>2017-09-06 11:49</td>
+                            <td><a href="#" class="link">2017中秋特惠</a></td>
+                            <td>已冻结</td>
+                            <td></td>
+                            <td></td>
+                            <td><a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".forzen-modal">解冻</a>
+                            </td>
                         </tr>
                         <tr>
-                        	<td>1</td>
-                        	<td>td124442</td>
-                        	<td>承接转让</td>
-                        	<td>2017-12-12</td>
-                        	<td>1234</td>
-                        	<td>江车贷2151</td>
-                        	<td>普通标</td>
-                        	<td>23,456元</td>
-                        	<td>120天</td>
-                        	<td>11%</td>
-                        	<td>50</td>
-                        	<td>1%</td>
-                        	<td>募集中</td>
+                            <td>3</td>
+                            <td>hb17862813</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>10.00</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>2017-09-06 11:49</td>
+                            <td><a href="#" class="link">2017中秋特惠</a></td>
+                             <td>已使用</td>
+                            <td>2017-09-06 11:49</td>
+                            <td><a href="#" class="link">乐平98878号</a></td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>hb17862813</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>10.00</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>2017-09-06 11:49</td>
+                            <td><a href="#" class="link">2017中秋特惠</a></td>
+                            <td>已过期</td>
+                            <td></td>
+                            <td></td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>hb17862813</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>10.00</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>2017-09-06 11:49</td>
+                            <td><a href="#" class="link">2017中秋特惠</a></td>
+                            <td>未使用</td>
+                            <td></td>
+                            <td></td>
+                            <td><a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".forzen-modal">冻结</a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -575,6 +532,23 @@
 <!--main content end-->
 </section>
 <!-- Placed js at the end of the document so the pages load faster -->
+<div class="modal fade forzen-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myLargeModalLabel">操作确认</h4>
+            </div>
+            <div class="modal-body" style="font-size:16px;">
+                您正在解冻该红包，确认后生效。
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-info">确认</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
 <!--Core js-->
 <script src="../js/lib/jquery-1.8.3.min.js"></script>
 <script src="../bs3/js/bootstrap.min.js"></script>
@@ -628,5 +602,16 @@
 <script src="../js/icheck/icheck-init.js"></script>
 <script src="../assets/iCheck-master/jquery.icheck.js"></script>
 <!--script for this page-->
+<script type="text/javascript">
+    $(function () {
+        $('.pagination-sm').twbsPagination({
+            totalPages: 20,
+            first:"首页",
+            prev:"上一页",
+            next:"下一页",
+            last:"尾页"
+        })
+    });
+</script>
 </body>
 </html>
