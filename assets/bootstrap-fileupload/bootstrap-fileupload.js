@@ -64,7 +64,7 @@
       if (this.$remove) this.$remove.on('click.fileupload', $.proxy(this.clear, this))
     },
     
-    change: function(e, invoked) {debugger;
+    change: function(e, invoked) {
       var file = e.target.files !== undefined ? e.target.files[0] : (e.target.value ? { name: e.target.value.replace(/^.+\\/, '') } : null)
       if (invoked === 'clear') return
       

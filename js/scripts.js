@@ -10,9 +10,6 @@ $(function() {
         autoExpand: true,
         classExpand: 'dcjq-current-parent'
     });
-
-
-
 });
 
 
@@ -378,3 +375,13 @@ $(function(){
         $('#'+id).show();
     });
 });
+/*封装消息提示框*/
+function alertFun(content,title){
+    title = title || '提示信息';
+    content = content || '';
+    $('#alertModal').find('.modal-title').text(title);
+    $('#alertModal').find('.modal-body').text(content);
+    $('#alertModal').modal({
+        backdrop:false
+    });
+}

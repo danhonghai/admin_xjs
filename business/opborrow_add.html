@@ -31,6 +31,7 @@
     
     <!-- MyStyle -->
     <link rel="stylesheet" type="text/css" href="../css/xjs.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/fileInput/fileinput.css" />
     <!-- <base href="/"> -->
     
     <!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -452,7 +453,7 @@
                     <div class="form-group col-lg-5">
                         <label class="col-sm-3 control-label col-lg-3">借款人：</label>
                         <div class="col-lg-6">
-                            <select id="e1" class="populate searchSelect" style="width: 250px" onChange="aa()">
+                            <select id="e1" class="populate searchSelect" style="width: 250px">
                                 <option value="1">杨小 135468545222</option>
                                 <option value="2">杨二 133468545222</option>
                                 <option value="3">杨三 134468578222</option>
@@ -691,40 +692,15 @@
             <div class="light-bg item-box" style="margin-top:10px;">
                 <div class="box-title">相关项目资料:</div>
                 <div class="box-title">封面资料:</div>
-                <div class="row" style="margin-left:30px;display: flex;flex-wrap: wrap;">
-                    <div class="fileupload fileupload-new" data-provides="fileupload" style="margin-right:10px;">
-                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
-                        </div>
-                        <div class="fileupload-preview fileupload-exists thumbnail" style="width: 200px; height: 150px; line-height: 20px;"></div>
-                        <div style="margin-bottom:10px;">
-                           <span class="btn btn-white btn-file">
-                           <span class="fileupload-new"><i class="fa fa-paper-clip"></i>添加图片</span>
-                           <span class="fileupload-exists"><i class="fa fa-undo"></i> 修改</span>
-                           <input type="file" class="default"  />
-                           </span>
-                            <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload" ><i class="fa fa-trash"></i> 删除</a>
-                        </div>
-                        <input type="text" placeholder="请输入图片标题" class="form-control">
+                <div class="row" style="margin-left:30px;">
+                    <input type="hidden">
+                    <div style="width:260px;">
+                        <input id="input-b1" name="input-b1" type="file" class="file imgFile" >
                     </div>
                 </div>
-                <div class="box-title">项目图片:</div>
-                <div class="row" style="margin-left:30px;display: flex;flex-wrap: wrap;">
-                    <div class="fileupload fileupload-new" data-provides="fileupload" style="margin-right:10px;">
-                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
-                        </div>
-                        <div class="fileupload-preview fileupload-exists thumbnail" style="width: 200px;height: 150px; line-height: 20px;"></div>
-                        <div style="margin-bottom:10px;">
-                           <span class="btn btn-white btn-file">
-                           <span class="fileupload-new"><i class="fa fa-paper-clip"></i>添加图片</span>
-                           <span class="fileupload-exists"><i class="fa fa-undo"></i> 修改</span>
-                           <input type="file" class="default"  />
-                           </span>
-                            <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload" ><i class="fa fa-trash"></i> 删除</a>
-                        </div>
-                        <input type="text" placeholder="请输入图片标题" class="form-control">
-                    </div>
+                <div class="box-title" style="margin-top:20px;">项目图片:</div>
+                <div class="row" style="margin-left:30px;display: flex;flex-wrap: wrap;" id="imgWrap" >
+                    <input id="input-b5" name="input-b5[]" type="file" class="imgFileMul" multiple >
                 </div>
             </div>
             <div class="light-bg item-box" style="margin-top:10px;">
@@ -851,11 +827,43 @@
 <!--icheck init radio -->
 <script src="../js/icheck/icheck-init.js"></script>
 <script src="../assets/iCheck-master/jquery.icheck.js"></script>
+<script src="../assets/fileInput/fileinput.js"></script>
+<script src="../assets/fileInput/zh.js"></script>
 <!--script for this page-->
 <script>
-    function aa(){
-        alert(12);
-    }
+    $(function(){
+        //单个文件上传
+        $('.imgFile').fileinput({
+            language: 'zh', //设置语言
+            showUpload:true, //是否显示上传按钮
+            allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
+            showClose:false,//是否显示关闭按钮
+            dropZoneEnabled:false,
+            uploadUrl:'http://www.baiducom'
+        }).on("fileuploaded", function (event, data, previewId, index){
+            debugger;  
+        });
+        //多个文件上传
+        $('.imgFileMul').fileinput({
+            language: 'zh', //设置语言
+            allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
+            showClose:false,//是否显示关闭按钮
+            maxFileCount: 10,
+            dropZoneEnabled:false,
+            uploadUrl:'http://www.baiducom'
+        }).on("filebatchselected", function(event, files) {
+            console.log(files);
+            $('#imgWrap .kv-preview-thumb').each(function(index, el) {
+                var str = '<input type="text" class="form-control" placeholder="图片标题" style="margin-bottom:20px;">';
+                var _self = $(this);
+                if(_self.find('.form-control').length == 0){
+                    _self.prepend(str);
+                }
+            });
+        }).on("fileuploaded", function (event, data, previewId, index){
+            debugger;  
+        });
+    })
 </script>
 </body>
 </html>

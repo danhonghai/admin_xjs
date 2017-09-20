@@ -641,7 +641,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-info">确认</button>
+                <button type="submit" class="btn btn-info" id="saveBtn">确认</button>
                 <button type="button" class="btn btn-info" data-dismiss="modal">取消</button>
             </div>
         </div><!-- /.modal-content -->
@@ -699,6 +699,22 @@
 <!--icheck init -->
 <script src="../js/icheck/icheck-init.js"></script>
 <script src="../assets/iCheck-master/jquery.icheck.js"></script>
+<!-- 消息提示框 -->
+<div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" style="margin-top:200px;">
+        <div class="modal-content" style="border: 1px solid #dbdbdb;box-shadow: 3px 5px 10px #ccc;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h5 class="modal-title"></h5>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" data-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!--script for this page-->
 <script type="text/javascript">
     $(function () {
@@ -709,6 +725,10 @@
             next:"下一页",
             last:"尾页"
         })
+       
+        $('#saveBtn').click(function(){
+             alertFun("字段非空");
+        });
     });
 </script>
 </body>
