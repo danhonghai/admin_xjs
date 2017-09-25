@@ -1,83 +1,57 @@
 var Script = function () {
 
     $.validator.setDefaults({
+        debug:true,
         submitHandler: function() { alert("submitted!"); }
     });
+   
+    jQuery.extend(jQuery.validator.messages, {  
+        required: "必填字段",  
+        remote: "请修正该字段",  
+        email: "请输入正确格式的电子邮件",  
+        url: "请输入合法的网址",  
+        date: "请输入合法的日期",  
+        dateISO: "请输入合法的日期 (ISO).",  
+        number: "请输入合法的数字",  
+        digits: "只能输入整数",  
+        creditcard: "请输入合法的信用卡号",  
+        equalTo: "请再次输入相同的值",  
+        accept: "请输入拥有合法后缀名的字符串",  
+        maxlength: jQuery.validator.format("请输入一个长度最多是 {0} 的字符串"),  
+        minlength: jQuery.validator.format("请输入一个长度最少是 {0} 的字符串"),  
+        rangelength: jQuery.validator.format("请输入一个长度介于 {0} 和 {1} 之间的字符串"),  
+        range: jQuery.validator.format("请输入一个介于 {0} 和 {1} 之间的值"),  
+        max: jQuery.validator.format("请输入一个最大为 {0} 的值"),  
+        min: jQuery.validator.format("请输入一个最小为 {0} 的值")  
+    }); 
 
-    $().ready(function() {
-        // validate the comment form when it is submitted
-        $("#commentForm").validate();
+    // 手机号码验证   
+    jQuery.validator.addMethod("phoneValid", function(value, element) {   
+        var tel = /^0?1[3|4|5|8][0-9]\d{8}$/;
+        return this.optional(element) || (tel.test(value));
+    }, "你输入的手机格式不正确");
 
-        // validate signup form on keyup and submit
-        $("#signupForm").validate({
-            rules: {
-                firstname: "required",
-                lastname: "required",
-                username: {
-                    required: true,
-                    minlength: 2
-                },
-                password: {
-                    required: true,
-                    minlength: 5
-                },
-                confirm_password: {
-                    required: true,
-                    minlength: 5,
-                    equalTo: "#password"
-                },
-                email: {
-                    required: true,
-                    email: true
-                },
-                topic: {
-                    required: "#newsletter:checked",
-                    minlength: 2
-                },
-                agree: "required"
-            },
-            messages: {
-                firstname: "Please enter your firstname",
-                lastname: "Please enter your lastname",
-                username: {
-                    required: "Please enter a username",
-                    minlength: "Your username must consist of at least 2 characters"
-                },
-                password: {
-                    required: "Please provide a password",
-                    minlength: "Your password must be at least 5 characters long"
-                },
-                confirm_password: {
-                    required: "Please provide a password",
-                    minlength: "Your password must be at least 5 characters long",
-                    equalTo: "Please enter the same password as above"
-                },
-                email: "Please enter a valid email address",
-                agree: "Please accept our policy"
-            }
-        });
+    // 密码验证   
+    jQuery.validator.addMethod("pwdValid", function(value, element) {   
+        var pwd = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/;
+        return this.optional(element) || (pwd.test(value));
+    }, "密码为6到16为数字字母组合");
 
-        // propose username by combining first- and lastname
-        $("#username").focus(function() {
-            var firstname = $("#firstname").val();
-            var lastname = $("#lastname").val();
-            if(firstname && lastname && !this.value) {
-                this.value = firstname + "." + lastname;
-            }
-        });
+    // 汉字、字母、数字   
+    jQuery.validator.addMethod("textValid", function(value, element) {   
+        var text = /^[a-zA-Z0-9\u4e00-\u9fa5]+$/;
+        return this.optional(element) || (text.test(value));
+    }, "请输入汉字或字母或数字");
 
-        //code to hide topic selection, disable for demo
-        var newsletter = $("#newsletter");
-        // newsletter topics are optional, hide at first
-        var inital = newsletter.is(":checked");
-        var topics = $("#newsletter_topics")[inital ? "removeClass" : "addClass"]("gray");
-        var topicInputs = topics.find("input").attr("disabled", !inital);
-        // show when newsletter is checked
-        newsletter.click(function() {
-            topics[this.checked ? "removeClass" : "addClass"]("gray");
-            topicInputs.attr("disabled", !this.checked);
-        });
-    });
-
+     //字母、数字   
+    jQuery.validator.addMethod("lettersNumValid", function(value, element) {   
+        var letters = /^[a-zA-Z0-9]+$/;
+        return this.optional(element) || (letters.test(value));
+    }, "请输入字母或数字");
+    
+    //保留两位小数
+    jQuery.validator.addMethod("lrunlv", function(value, element) {         
+        return this.optional(element) || /^\d+(\.\d{1,2})?$/.test(value);         
+    }, "小数位不能超过两位");   
 
 }();

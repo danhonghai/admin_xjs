@@ -900,11 +900,29 @@
             <div class="modal-body">
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" type="button" data-dismiss="modal">确定</button>
+                <button class="btn btn-primary okBtn" type="button" data-dismiss="modal">确定</button>
             </div>
         </div>
     </div>
 </div>
+<!-- confirm提示框 -->
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" style="margin-top:200px;">
+        <div class="modal-content" style="border: 1px solid #dbdbdb;box-shadow: 3px 5px 10px #ccc;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h5 class="modal-title"></h5>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-default cancleBtn" type="button">取消</button>
+                <button class="btn btn-primary okBtn" type="button" data-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--Core js-->
 <script src="js/lib/jquery.js"></script>
 <script src="assets/jquery-ui/jquery-ui-1.10.1.custom.min.js"></script>
@@ -945,7 +963,18 @@
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
 <script>
-    alertFun("字段非空");
+    
+    confirmFun({
+        content:"字段非空",
+        callBackFun:function(){
+            alertFun({
+                content:"字段非空",
+                callBackFun:function(){
+                    alert('成功');
+                }
+            });
+        }
+    });
 </script>
 
 <!--script for this page-->

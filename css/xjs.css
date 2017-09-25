@@ -184,3 +184,8 @@
 	border-right: 1px solid #dbdbdb;
 	background-color: #f2f2f2;
 }
+
+/* 改写表单校验样式 */
+.help-block {
+    float: left;
+}

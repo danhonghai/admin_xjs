@@ -374,14 +374,41 @@ $(function(){
         var id = $(event.target).attr('data-id');
         $('#'+id).show();
     });
+
+    //form表单checkbox选中事件
+    $('.checkboxWrap input:checkbox').on('ifChecked ifUnchecked', function(event){
+        var checkStr = event.type.replace('if', '').toLowerCase()
+        if(checkStr == 'checked'){
+            $(this).attr("checked",true);
+        }else{
+            $(this).attr("checked",false);
+        }
+    });
 });
 /*封装消息提示框*/
-function alertFun(content,title){
-    title = title || '提示信息';
-    content = content || '';
+function alertFun(paramsObj){
+    var title = paramsObj.title || '提示信息';
+    var content = paramsObj.content || '';
     $('#alertModal').find('.modal-title').text(title);
     $('#alertModal').find('.modal-body').text(content);
     $('#alertModal').modal({
         backdrop:false
     });
+    $('#alertModal .okBtn,#alertModal .close').click(function(event) {
+        paramsObj.callBackFun && paramsObj.callBackFun()
+    });
 }
+/*封装消息提示框*/
+function  confirmFun(paramsObj){
+    var title = paramsObj.title || '提示信息';
+    var content = paramsObj.content || '';
+    $('#confirmModal').find('.modal-title').text(title);
+    $('#confirmModal').find('.modal-body').text(content);
+    $('#confirmModal').modal({
+        backdrop:false
+    });
+    $('#confirmModal .okBtn').click(function(event) {
+        paramsObj.callBackFun && paramsObj.callBackFun()
+    });
+}
+
