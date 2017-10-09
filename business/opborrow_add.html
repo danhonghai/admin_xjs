@@ -642,6 +642,7 @@
 <script type="text/javascript" src="../js/jquery-validate/jquery.validate.min.js"></script>
 <script src="../js/jquery-validate/validation-init.js"></script>
 <script>
+    var imgSrc = 'https://huzidaha.github.io/static/assets/img/wechat-user.jpeg';
     //单个文件上传
     $('.imgFile').fileinput({
         language: 'zh', //设置语言
@@ -649,7 +650,14 @@
         allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
         showClose:false,//是否显示关闭按钮
         dropZoneEnabled:false,
-        uploadUrl:'http://www.baiducom'
+        uploadUrl:'http://www.baiducom',
+        initialPreview: ["<img src="+imgSrc+" class='file-preview-image' style='width:200px;'>"],  
+        initialPreviewConfig: [{  
+           caption: 'desert.jpg',// 展示的图片名称  
+        }],
+        layoutTemplates:{
+            actionDelete:''
+        }  
     }).on("fileuploaded", function (event, data, previewId, index){
         debugger;  
     });
@@ -684,3 +692,4 @@
 </script>
 </body>
 </html>
+

@@ -155,10 +155,10 @@
                     </a>
                     <ul>
                         <li><a class="apl40" href="activity_list.html">活动统计</a></li>
-                        <li><a class="apl40" href="userdiscount_list.html">用户活动优惠统计</a></li>
+                        <li><a class="apl40" href="userdiscount_list.html">用户参与活动统计</a></li>
                         <li><a class="apl40 active" href="redpacket_list.html">红包统计</a></li>
                         <li><a class="apl40" href="coupon_list.html">加息券统计</a></li>
-                        <li><a class="apl40" href="reward_list.html">推广奖励统计</a></li>
+                        <li><a class="apl40" href="reward_list.html">积分统计</a></li>
                     </ul>
                 </li>
                 <li>
@@ -364,8 +364,20 @@
                     <div class="search-box">
                         <form class="form-inline" role="form">
                             <div class="form-group">
-                                <label class="control-label">投资人：</label>
-                                <input type="text" class="form-control" placeholder="输入投资人">
+                                <label class="control-label">用户姓名：</label>
+                                <input type="text" class="form-control" placeholder="输入用户姓名或手机号">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">活动名称：</label>
+                                <input type="text" class="form-control" placeholder="输入活动名称">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">红包状态：</label>
+                                <select class="form-control" >
+                                    <option value="1">请选择红包状态</option>
+                                    <option value="2">等待通过</option>
+                                    <option value="3">审核未通过</option>
+                                </select>
                             </div>
                             <div class="form-group">   
                                 <button type="submit" class="btn btn-primary">查询</button>
@@ -386,7 +398,7 @@
                         <th>活动名称</th>
                         <th>状态</th>
                         <th>使用时间</th>
-                        <th>项目名称</th>
+                        <th>投资编号 </th>
                         <th>操作</th>
                     </tr>
                     </thead>
@@ -402,7 +414,7 @@
                             <td>未使用</td>
                             <td></td>
                             <td></td>
-                            <td><a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".forzen-modal">冻结</a>
+                            <td><a class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".forzen-modal">冻结</a>
                             </td>
                         </tr>
                         <tr>
@@ -416,7 +428,7 @@
                             <td>已冻结</td>
                             <td></td>
                             <td></td>
-                            <td><a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".forzen-modal">解冻</a>
+                            <td><a class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".forzen-modal">解冻</a>
                             </td>
                         </tr>
                         <tr>
@@ -456,7 +468,7 @@
                             <td>未使用</td>
                             <td></td>
                             <td></td>
-                            <td><a href="opborrow_audit.html" class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".forzen-modal">冻结</a>
+                            <td><a class="btn btn-round btn-primary" style="padding:0px 5px;" data-toggle="modal" data-target=".forzen-modal">冻结</a>
                             </td>
                         </tr>
                     </tbody>
@@ -606,11 +618,11 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label" style="width:91px">红包总数：</label>
-                    <input type="text" class="form-control" value="5"  >
+                    <input type="text" class="form-control" value="5" style="width: 170px" >
                 </div>
                 <div class="form-group">
                     <label class="control-label" style="width:91px">已使用数量：</label>
-                    <input type="text" class="form-control" value="2" readonly >
+                    <input type="text" class="form-control" value="2" readonly style="width: 170px" >
                 </div>
                 <div class="form-group">
                     <label class="control-label" style="width:91px">活动上下架：</label>
@@ -632,16 +644,16 @@
                 <div class="form-group">
                     <label class="control-label" style="width:91px">活动开始时间：</label>
                     <input size="16" type="text" value="" readonly class="form_datetime form-control required" 
-                        style="width: 180px;display: inline-block;" name="startDate">
+                        style="width: 170px;display: inline-block;" name="startDate">
                 </div>
                 <div class="form-group">
                     <label class="control-label" style="width:91px">活动结束时间：</label>
                     <input size="16" type="text" value="" readonly class="form_datetime form-control required" 
-                            style="width: 180px;display: inline-block;" name="endDate">
+                            style="width: 170px;display: inline-block;" name="endDate">
                 </div>
                 <div class="form-group">
                     <label class="control-label" style="width:91px">活动备注：</label>
-                    <input type="text" class="form-control" value="长期进行" >
+                    <input type="text" class="form-control" value="长期进行" style="width:449px">
                 </div>
             </div>
             <div class="modal-footer">
@@ -657,15 +669,64 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myLargeModalLabel">操作确认</h4>
+                <h4 class="modal-title" id="myLargeModalLabel">红包方案设置</h4>
             </div>
-            <div class="modal-body" style="font-size:16px;">
-                您正在解冻该红包，确认后生效。
+            <form class="form-inline form-model" >
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="control-label" style="width:91px">方案名称：</label>
+                    <input type="text" class="form-control" value="RZ0001" style="width:170px;">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" style="width:91px">红包类型：</label>
+                    <select class="form-control" style="width: 170px" name="loanMothed">
+                        <option value="AK">方式1</option>
+                        <option value="HI">方式2</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" style="width:91px">发放方式：</label>
+                    <select class="form-control" style="width: 170px" name="loanMothed">
+                        <option value="AK">方式1</option>
+                        <option value="HI">方式2</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" style="width:91px">红包金额：</label>
+                    <input type="text" class="form-control" value="5" style="width: 170px" >
+                </div>
+                <div class="form-group input-position">
+                    <label class="control-label" style="width:91px">奖券有效期：</label>
+                    <input type="text" class="form-control" value="2" style="width: 170px" >
+                    <span class="input-span">天</span>
+                </div>
+                <div class="form-group ">
+                    <label class="control-label" style="width:91px">使用投资金额：</label>
+                    <input type="text" class="form-control" value="1200" style="width: 170px" >
+                </div>
+                <div class="form-group">
+                    <label class="control-label" style="width:91px">方案启用状态：</label>
+                    <div class="icheck form-control" style="border:none;">
+                            <div class="minimal-blue">
+                                <div class="radio ">
+                                    <input tabindex="3" type="radio"  name="demo-radio" checked="">
+                                    <label>启用</label>
+                                </div>
+                            </div>
+                            <div class="minimal-blue">
+                                <div class="radio ">
+                                    <input tabindex="3" type="radio"  name="demo-radio" >
+                                    <label>停用</label>
+                                </div>
+                            </div>
+                        </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-info">确认</button>
                 <button type="button" class="btn btn-info" data-dismiss="modal">取消</button>
             </div>
+            </form>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div>

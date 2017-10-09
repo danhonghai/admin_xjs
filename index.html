@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="ThemeBucket">
     <link rel="shortcut icon" href="images/favicon.png">
+    <!-- <base href="/"> -->
     <title>后台管理系统</title>
     <!--Core CSS -->
     <link href="bs3/css/bootstrap.min.css" rel="stylesheet">
@@ -152,10 +153,10 @@
                     </a>
                     <ul>
                         <li><a class="apl40" href="activity/activity_list.html">活动统计</a></li>
-                        <li><a class="apl40" href="activity/userdiscount_list.html">用户活动优惠统计</a></li>
+                        <li><a class="apl40" href="activity/userdiscount_list.html">用户活动参与统计</a></li>
                         <li><a class="apl40" href="activity/redpacket_list.html">红包统计</a></li>
                         <li><a class="apl40" href="activity/coupon_list.html">加息券统计</a></li>
-                        <li><a class="apl40" href="activity/reward_list.html">推广奖励统计</a></li>
+                        <li><a class="apl40" href="activity/reward_list.html">积分统计</a></li>
                     </ul>
                 </li>
                 <li>
@@ -900,29 +901,12 @@
             <div class="modal-body">
             </div>
             <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-default cancleBtn" type="button" style="display:none">取消</button>
                 <button class="btn btn-primary okBtn" type="button" data-dismiss="modal">确定</button>
             </div>
         </div>
     </div>
 </div>
-<!-- confirm提示框 -->
-<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm" style="margin-top:200px;">
-        <div class="modal-content" style="border: 1px solid #dbdbdb;box-shadow: 3px 5px 10px #ccc;">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h5 class="modal-title"></h5>
-            </div>
-            <div class="modal-body">
-            </div>
-            <div class="modal-footer">
-                <button data-dismiss="modal" class="btn btn-default cancleBtn" type="button">取消</button>
-                <button class="btn btn-primary okBtn" type="button" data-dismiss="modal">确定</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!--Core js-->
 <script src="js/lib/jquery.js"></script>
 <script src="assets/jquery-ui/jquery-ui-1.10.1.custom.min.js"></script>
@@ -963,16 +947,11 @@
 <!--common script init for all pages-->
 <script src="js/scripts.js"></script>
 <script>
-    
-    confirmFun({
+
+    ConfirmFun({
         content:"字段非空",
         callBackFun:function(){
-            alertFun({
-                content:"字段非空",
-                callBackFun:function(){
-                    alert('成功');
-                }
-            });
+            alert(12)
         }
     });
 </script>
