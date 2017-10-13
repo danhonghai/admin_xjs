@@ -6,7 +6,7 @@ if (top.location != location) {
 $(function(){
     window.prettyPrint && prettyPrint();
     $('.default-date-picker').datepicker({
-        format: 'mm-dd-yyyy'
+        format: 'yyyy-mm-dd'
     });
     $('.dpYears').datepicker();
     $('.dpMonths').datepicker();
@@ -167,14 +167,6 @@ $('#spinner2').spinner({disabled: true});
 $('#spinner3').spinner({value:0, min: 0, max: 10});
 $('#spinner4').spinner({value:0, step: 5, min: 0, max: 200});
 //spinner end
-
-
-
-//wysihtml5 start
-
-$('.wysihtml5').wysihtml5();
-
-//wysihtml5 end
 
 
 //tag input

@@ -344,7 +344,7 @@
                         <label class="col-sm-3 control-label col-lg-3">借款利息：</label>
                         <div class="col-lg-7">
                             <div class="input-group input-position" style="width: 250px">
-                                <input type="text" class="form-control required lrunlv" placeholder="" readonly name="lixi"><span class="input-span">元</span>
+                                <input type="text" class="form-control" placeholder="" readonly name="lixi"><span class="input-span">元</span>
                             </div>
                         </div>
                     </div>
@@ -685,6 +685,9 @@
     $(function(){
         $('#borrowFrom').validate({
             submitHandler: function() { 
+                for ( instance in CKEDITOR.instances ) {
+                    CKEDITOR.instances[instance].updateElement(); 
+                }
                 console.log($("#borrowFrom").serialize());
             }
         });

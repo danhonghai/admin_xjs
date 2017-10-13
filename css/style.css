@@ -3399,7 +3399,7 @@ ul.clock-category li a:hover i,ul.clock-category li a.active i {
     right:10px;
 }
 .weather-full-info {
-    color:#cbcbcb;
+    color:#666;
 }
 .weather-full-info h1 {
     font-size:14px;
@@ -3412,43 +3412,28 @@ ul.clock-category li a:hover i,ul.clock-category li a.active i {
     font-weight:300;
     margin:0 0 5px 0;
 }
-.weather-full-info .today-status i {
-    font-size:40px;
-    color:#1fb5ad;
-}
-.weather-full-info .degree {
-    font-size:30px;
-    font-weight:600;
-    display:inline-block;
-    padding-left:20px;
-}
-.weather-full-info .degree:after {
-    content:"o";
-    position:relative;
-    top:-12px;
-    font-size:16px;
-}
 .weather-full-info ul {
     margin-bottom:0;
 }
 .weather-full-info ul li {
     display:inline-block;
-    width:16%;
+    width:24%;
     text-align:center;
-    border-left:1px solid #f1f2f7;
+    border-left:1px solid #dbdbdb;
 }
-.weather-full-info ul li i {
-    font-size:25px;
+.weather-full-info ul li:first-child{
+    border-left: none;
+}
+.weather-full-info ul li .num {
+    font-size:18px;
 }
 .weather-full-info .statistics {
     padding-top:5px;
 }
-.weather-full-info .statistics:after {
-    content:"o";
-    position:relative;
-    top:-5px;
-    font-size:10px;
+.weather-full-info span {
+    margin-right: 10px;
 }
+
 .prd-row {
     position:relative;
 }

@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="ThemeBucket">
-    <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="shortcut icon" href="images/favicon.png">
     <title>后台管理系统</title>
     <!--Core CSS -->
-    
     <link href="../bs3/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/bootstrap-reset.css" rel="stylesheet">
     <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -33,7 +32,7 @@
     <!-- MyStyle -->
     <link rel="stylesheet" type="text/css" href="../css/xjs.css" />
     <!-- <base href="/"> -->
-
+    
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="js/ie8/ie8-responsive-file-warning.js"></script><![endif]-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -88,7 +87,7 @@
                     <span style="display: block;line-height:30px; text-align:center;">一级菜单</span>
                 </li> -->
                 <li>
-                    <a class="active" href="index.html">
+                    <a href="../index.html">
                         <i class="fa fa-home"></i>
                         <span>首页</span>
                     </a>
@@ -150,16 +149,18 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="firstmenu" href="javascript:;">
+                    <a class="firstmenu active" href="javascript:;">
                         <i class="fa fa-gift"></i>
                         <span>活动管理</span>
                     </a>
                     <ul>
-                        <li><a class="apl40" href="activity/activity_list.html">活动统计</a></li>
-                        <li><a class="apl40" href="activity/userdiscount_list.html">用户活动优惠统计</a></li>
-                        <li><a class="apl40" href="activity/redpacket_list.html">红包统计</a></li>
-                        <li><a class="apl40" href="activity/coupon_list.html">加息券统计</a></li>
-                        <li><a class="apl40" href="activity/reward_list.html">推广奖励统计</a></li>
+                        <li><a class="apl40" href="activity_list.html">活动统计</a></li>
+                        <li><a class="apl40" href="userdiscount_list.html">用户活动参与统计</a></li>
+                        <li><a class="apl40" href="redpacket_list.html">红包统计</a></li>
+                        <li><a class="apl40" href="coupon_list.html">加息券统计</a></li>
+                        <li><a class="apl40" href="reward_list.html">积分统计</a></li>
+                        <li><a class="apl40" href="sign.html">每日签到</a></li>
+                        <li><a class="apl40 active" href="extension_analysis.html">推广分析</a></li>
                     </ul>
                 </li>
                 <li>
@@ -229,151 +230,201 @@
 <div class="has-switch" tabindex="0"><div class="switch-on switch-animate"><span class="switch-left switch-success">ON</span><label for="change-color-switch">&nbsp;</label><span class="switch-right switch-danger">OFF</span><input type="checkbox" id="change-color-switch" checked="" data-on="default" data-off="primary"></div></div>
 -->
 <section id="main-content">
-    <section class="wrapper">
+    <section class="wrapper" style="position:relative;">
         <div class="tab-list" style="margin-bottom:20px;">
-            <a class="tab-item active">资金统计</a>
+            <a class="tab-item active" data-id="redpacket1"  style="width:150px;">用户推广明细</a>
+            <a class="tab-item" data-id="redpacket2" style="width:150px;">用户推广统计</a>
+            <a class="tab-item" data-id="redpacket3" style="width:150px;">用户推广分析</a>
         </div>
-        <div class="panel-body light-bg">
+       <!--  用户推广明细 -->
+        <div class="panel-body light-bg tab-content" id="redpacket1" >
             <section id="unseen">
-                <div class="panel-body" style="padding-left:0;">
+                <div class="panel-body">
                     <div class="search-box">
-                        <form class="form-inline" role="form">
+                        <form class="form-inline" role="form" id="baseListForm">
                             <div class="form-group">
-                            	<lable>统计周期:</lable>
-                            	<button type="submit" class="btn">今日</button>
-                            	<button type="submit" class="btn">昨日</button>
-                            	<button type="submit" class="btn">近7天</button>
-                            	<button type="submit" class="btn">近30天</button>
-                            	<button type="submit" class="btn">全部</button>
-                            	<button type="submit" class="btn">自定义区间</button>
+                                <label class="control-label">推广人姓名：</label>
+                                <input type="text" class="form-control" placeholder="输入推广人姓名">
                             </div>
                             <div class="form-group">
-                            	<input type="text" class="form-control form_datetime" placeholder="操作开始时间" id="datetimeStart">
-                            	<input type="text" class="form-control form_datetime" placeholder="操作结束时间" id="datetimeEnd"/>
+                                <label class="control-label">推广状态：</label>
+                                <select class="form-control" >
+                                    <option value="1">全部</option>
+                                    <option value="2">等待通过</option>
+                                    <option value="3">审核未通过</option>
+                                </select>
                             </div>
-                            
                             <div class="form-group">   
-                                <button type="submit" class="btn btn-primary">搜索</button>
+                                <button type="submit" class="btn btn-primary">查询</button>
+                                <a class="btn btn-refresh" onclick="clearFrom('baseListForm')">清空条件</a>
                             </div>
                         </form>
                     </div>
                 </div>
                 <table class="table table-bordered table-striped table-condensed table-new">
-                    <thead></thead>
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>被推广人姓名</th>
+                        <th>推广人姓名</th>
+                        <th>推广ID</th>
+                        <th>注册时间</th>
+                        <th>累积投资金额</th>
+                        <th>推广状态</th>
+                    </tr>
+                    </thead>
                     <tbody>
                         <tr>
-                            <td>12</td>
-                            <td>2234</td>
-                            <td>12</td>
-                            <td>13</td>
-                            <td>12</td>
-                            <td>13</td>
-                            <td></td>
+                            <td>1</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>1212122</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>100</td>
+                            <td>有效推广</td>
                         </tr>
                         <tr>
-                            <td>充值金额</td>
-                            <td>投资金额</td>
-                            <td>提现金额</td>
-                            <td>充值人数</td>
-                            <td>投资人数</td>
-                            <td>提现人数</td>
-                            <td></td>
+                            <td>2</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>1212122</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>100</td>
+                            <td>有效推广</td>
                         </tr>
                         <tr>
-                            <td>12</td>
-                            <td>2234</td>
-                            <td>12</td>
-                            <td>13</td>
-                            <td>12</td>
-                            <td>13</td>
-                            <td></td>
+                            <td>3</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>1212122</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>100</td>
+                            <td>有效推广</td>
                         </tr>
                         <tr>
-                            <td>放款金额</td>
-                            <td>还款金额</td>
-                            <td>放款项目数</td>
-                            <td>放款笔数</td>
-                            <td>红包使用</td>
-                            <td>加息劵利息</td>
-                            <td>推广奖励</td>
+                            <td>4</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>1212122</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>100</td>
+                            <td>有效推广</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>1212122</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>100</td>
+                            <td>有效推广</td>
                         </tr>
                     </tbody>
                 </table>
-                
             </section>
             <ul class="pagination-sm"></ul>
-	        <div class="tab-list" style="margin-bottom:20px;">
-	            <a class="tab-item active" style="width:200px;">月度投资金额走势图</a>
-	        </div>
-	        <!--柱状图  开始-->
-	        <div class="row">
-	            <div class="col-sm-12">
-	                <section class="panel">
-	                    <header class="panel-heading">
-	                        Bar Chart
-	                        <span class="tools pull-right">
-	                            <a href="javascript:;" class="fa fa-chevron-down"></a>
-	                            <a href="javascript:;" class="fa fa-cog"></a>
-	                            <a href="javascript:;" class="fa fa-times"></a>
-	                         </span>
-	                    </header>
-	                    <div class="panel-body">
-	                        <div class="chartJS2">
-	                            <canvas id="bar-chart-js1" height="250" width="800" ></canvas>
-	                        </div>
-	                    </div>
-	                </section>
-	            </div>
-        	</div>
-        	<!--柱状图 结束-->
-	        <div class="tab-list" style="margin-bottom:20px;">
-	            <a class="tab-item active"  style="width:200px;">月度提现金额走势图</a>
-	        </div>
-	        <!--柱状图  开始-->
-	        <div class="row">
-	            <div class="col-sm-12">
-	                <section class="panel">
-	                    <header class="panel-heading">
-	                        Bar Chart
-	                        <span class="tools pull-right">
-	                            <a href="javascript:;" class="fa fa-chevron-down"></a>
-	                            <a href="javascript:;" class="fa fa-cog"></a>
-	                            <a href="javascript:;" class="fa fa-times"></a>
-	                         </span>
-	                    </header>
-	                    <div class="panel-body">
-	                        <div class="chartJS">
-	                            <canvas id="bar-chart-js2" height="250" width="800" ></canvas>
-	                        </div>
-	                    </div>
-	                </section>
-	            </div>
-        	</div>
-        	<!--柱状图 结束-->
-	        <div class="tab-list" style="margin-bottom:20px;">
-	            <a class="tab-item active" style="width:200px;">月度资金净流入走势图</a>
-	        </div>
-	        <!--柱状图  开始-->
-	        <div class="row">
-	            <div class="col-sm-12">
-	                <section class="panel">
-	                    <header class="panel-heading">
-	                        Bar Chart
-	                        <span class="tools pull-right">
-	                            <a href="javascript:;" class="fa fa-chevron-down"></a>
-	                            <a href="javascript:;" class="fa fa-cog"></a>
-	                            <a href="javascript:;" class="fa fa-times"></a>
-	                         </span>
-	                    </header>
-	                    <div class="panel-body">
-	                        <div class="chartJS">
-	                            <canvas id="bar-chart-js3" height="250" width="800" ></canvas>
-	                        </div>
-	                    </div>
-	                </section>
-	            </div>
-        	</div>
-        	<!--柱状图 结束-->
+        </div>
+       <!--  用户推广统计 -->
+        <div class="panel-body light-bg tab-content" id="redpacket2" style="display:none;">
+            <section id="unseen">
+                <div class="panel-body">
+                    <div class="search-line">
+                        <label>统计区间：</label>
+                        <a href="javascript:void(0);" class="active">近30日</a>
+                        <a href="javascript:void(0);">近三月</a>
+                        <a href="javascript:void(0);">今年以来</a>
+                        <a href="javascript:void(0);">近一年</a>
+                        <a href="javascript:void(0);" class="user-defined">自定义区间</a>
+                        <form class="form-inline" role="form" style="display:none;" >
+                            <div class="form-group">
+                                <input size="16"  class="default-date-picker form-control" type="text"  readonly >
+                            </div>
+                            <div class="form-group">
+                                <input size="16"  class="default-date-picker form-control" type="text"  readonly >
+                            </div>
+                            <div class="form-group">   
+                                <button type="submit" class="btn btn-primary">查询</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <table class="table table-bordered table-striped table-condensed table-new">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>推广人姓名</th>
+                        <th>推广ID</th>
+                        <th>推广注册人数</th>
+                        <th>推广有效人数</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>12132243434</td>
+                            <td>1234</td>
+                            <td>123<td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>12132243434</td>
+                            <td>1234</td>
+                            <td>123<td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>12132243434</td>
+                            <td>1234</td>
+                            <td>123<td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>12132243434</td>
+                            <td>1234</td>
+                            <td>123<td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><a href="#" class="link">张立刻</a></td>
+                            <td>12132243434</td>
+                            <td>1234</td>
+                            <td>123<td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <ul class="pagination-sm"></ul>
+        </div>
+        <!-- 用户推广分析 -->
+        <div class="panel-body light-bg tab-content" id="redpacket3" style="display:none;">
+            <div class="search-box">
+            <form class="form-inline" role="form">
+                <div class="form-group">
+                    <label class="control-label">统计指标：</label>
+                    <select class="form-control" >
+                        <option value="1">注册用户</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">统计口径：</label>
+                    <select class="form-control" >
+                        <option value="1">按日统计</option>
+                        <option value="2">按月统计</option>
+                        <option value="3">按年统计</option>
+                    </select>
+                </div>
+                <div class="form-group">   
+                    <button type="submit" class="btn btn-primary">查询</button>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div id="echart_behavior" style="height:400px;"></div>
+        </div>
         </div>
     </section>
 </section>
@@ -381,21 +432,14 @@
 </section>
 <!-- Placed js at the end of the document so the pages load faster -->
 <!--Core js-->
-<script src="../js/lib/jquery-1.8.3.min.js"></script>
+<script src="../js/lib/jquery.js"></script>
+<script src="../assets/jquery-ui/jquery-ui-1.10.1.custom.min.js"></script>
 <script src="../bs3/js/bootstrap.min.js"></script>
-<script src="../js/lib/jquery-ui-1.9.2.custom.min.js"></script>
-<script class="include" type="text/javascript" src="../js/accordion-menu/jquery.dcjqaccordion.2.7.js"></script>
+<script src="../js/accordion-menu/jquery.dcjqaccordion.2.7.js"></script>
 <script src="../js/scrollTo/jquery.scrollTo.min.js"></script>
-<script src="../assets/easypiechart/jquery.easypiechart.js"></script>
 <script src="../assets/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
 <script src="../js/nicescroll/jquery.nicescroll.js"></script>
 
-<script src="../assets/bootstrap-switch-master/build/js/bootstrap-switch.js"></script>
-
-<script type="text/javascript" src="../assets/fuelux/js/spinner.min.js"></script>
-<script type="text/javascript" src="../assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
-<script type="text/javascript" src="../assets/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
-<script type="text/javascript" src="../assets/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
 <script type="text/javascript" src="../assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="../assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
 <script type="text/javascript" src="../assets/bootstrap-daterangepicker/moment.min.js"></script>
@@ -412,50 +456,36 @@
 <script src="../assets/select2-master/select2.js"></script>
 <script src="../js/select2/select-init.js"></script>
 
-
-<!--common script init for all pages-->
-<script src="../js/scripts.js"></script>
-<script src="../js/jquery.twbsPagination.js"></script>
-
-<script src="../js/advanced-form/advanced-form.js"></script>
-<!--Easy Pie Chart-->
-<script src="../assets/easypiechart/jquery.easypiechart.js"></script>
-<!--Sparkline Chart-->
 <!--Chart JS-->
-<script src="../assets/chart-js/Chart.js"></script>
+<script src="../assets/chart-js/echarts.js"></script>
 <script src="../js/chartjs/chartjs.init.js"></script>
-
-<script src="../assets/sparkline/jquery.sparkline.js"></script>
-<!--jQuery Flot Chart-->
-<script src="../assets/flot-chart/jquery.flot.js"></script>
-<script src="../assets/flot-chart/jquery.flot.tooltip.min.js"></script>
-<script src="../assets/flot-chart/jquery.flot.resize.js"></script>
-<script src="../assets/flot-chart/jquery.flot.pie.resize.js"></script>
-
-<script type="text/javascript" src="../assets/ckeditor/ckeditor.js"></script>
-<!--icheck init radio -->
-<script src="../js/icheck/icheck-init.js"></script>
-<script src="../assets/iCheck-master/jquery.icheck.js"></script>
-<script type="text/javascript">
-    $("#datetimeStart").datetimepicker({
-//      format: 'yyyy-mm-dd',
-        minView:'month',
-        language: 'zh-CN',
-//      autoclose:true,
-        startDate:new Date()
-    }).on("click",function(){
-        $("#datetimeStart").datetimepicker("setEndDate",$("#datetimeEnd").val())
-    });
-    $("#datetimeEnd").datetimepicker({
-//      format: 'yyyy-mm-dd',
-        minView:'month',
-        language: 'zh-CN',
-//      autoclose:true,
-        startDate:new Date()
-    }).on("click",function(){
-        $("#datetimeEnd").datetimepicker("setStartDate",$("#datetimeStart").val())
-    });
+<!--common script init for all pages-->
+<script src="../js/jquery.twbsPagination.js"></script>
+<script src="../js/advanced-form/advanced-form.js"></script>
+<script src="../js/scripts.js"></script>
+<script>
+    $(function(){
+        $('.pagination-sm').twbsPagination({
+            totalPages: 20,
+            first:"首页",
+            prev:"上一页",
+            next:"下一页",
+            last:"尾页"
+        })
+        $(".tab-item").click(function () {
+            if ($(this).attr("data-id") == "redpacket3") {  
+                $('#redpacket3').show();
+                optionConfig({
+                    id:'echart_behavior',
+                    text:'',
+                    xData:[1,2,3,4,5,6,7,8,9,10,11,12],
+                    name:'人数(个)',
+                    data:[5, 20, 36, 10, 10,5, 20, 36, 10, 10,33,50]
+                });
+            }  
+        }); 
+        
+    }());
 </script>
-<!--script for this page-->
 </body>
 </html>

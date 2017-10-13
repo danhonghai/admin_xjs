@@ -5,16 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="ThemeBucket">
-    <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="shortcut icon" href="images/favicon.png">
     <title>后台管理系统</title>
     <!--Core CSS -->
-    
     <link href="../bs3/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/bootstrap-reset.css" rel="stylesheet">
     <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-	<!--Morris Chart CSS -->
-    <link rel="stylesheet" href="../assets/morris-chart/morris.css">
-    
+
     <link rel="stylesheet" type="text/css" href="../assets/bootstrap-fileupload/bootstrap-fileupload.css" />
     <link rel="stylesheet" type="text/css" href="../assets/bootstrap-wysihtml5/bootstrap-wysihtml5.css" />
     <link rel="stylesheet" type="text/css" href="../assets/bootstrap-datepicker/css/datepicker.css" />
@@ -35,7 +32,7 @@
     <!-- MyStyle -->
     <link rel="stylesheet" type="text/css" href="../css/xjs.css" />
     <!-- <base href="/"> -->
-
+    
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="js/ie8/ie8-responsive-file-warning.js"></script><![endif]-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -50,7 +47,7 @@
 <header class="header fixed-top clearfix">
 <!--logo start-->
 <div class="brand">
-    <a href="index.html" class="logo">
+    <a href="../index.html" class="logo">
         <img src="../images/logo.png" alt="">
     </a>
     <div class="sidebar-toggle-box">
@@ -65,7 +62,7 @@
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <img alt="" src="../images/avatar1_small.jpg">
-                <span class="username">John Doe</span>
+                <span class="username">Admin</span>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
@@ -90,7 +87,7 @@
                     <span style="display: block;line-height:30px; text-align:center;">一级菜单</span>
                 </li> -->
                 <li>
-                    <a class="active" href="index.html">
+                    <a href="../index.html">
                         <i class="fa fa-home"></i>
                         <span>首页</span>
                     </a>
@@ -101,16 +98,16 @@
                         <span>融资管理</span>
                     </a>
                     <ul>
-                        <li><a class="apl40" href="business/borrow_order.html">融资预约</a></li>
-                        <li><a class="apl40" href="business/opborrow_add.html">融资发布</a></li>
-                        <li><a class="apl40" href="business/borrow_published.html">已发布项目</a></li>
-                        <li><a class="apl40" href="business/borrowlist.html">融资初审</a></li>
-                        <li><a class="apl40" href="business/reborrowlist.html">融资复审</a></li>
-                        <li><a class="apl40" href="business/raiselist.html">募集中项目</a></li>
-                        <li><a class="apl40" href="business/bidlist.html">投标记录</a></li>
-                        <li><a class="apl40" href="business/finaborrowlist.html">融资终审</a></li>
-                        <li><a class="apl40" href="business/abortivelist.html">流标记录</a></li>
-                        <li><a class="apl40" href="business/advanced_search.html">项目高级搜索</a></li>
+                        <li><a class="apl40" href="borrow_order.html">融资预约</a></li>
+                        <li><a class="apl40" href="opborrow_add.html">融资发布</a></li>
+                        <li><a class="apl40" href="borrow_published.html">已发布项目</a></li>
+                        <li><a class="apl40" href="borrowlist.html">融资初审</a></li>
+                        <li><a class="apl40" href="reborrowlist.html">融资复审</a></li>
+                        <li><a class="apl40" href="raiselist.html">募集中项目</a></li>
+                        <li><a class="apl40" href="bidlist.html">投标记录</a></li>
+                        <li><a class="apl40" href="finaborrowlist.html">融资终审</a></li>
+                        <li><a class="apl40" href="abortivelist.html">流标记录</a></li>
+                        <li><a class="apl40" href="advanced_search.html">项目高级搜索</a></li>
                     </ul>
                 </li>
                 <li>
@@ -152,16 +149,18 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="firstmenu" href="javascript:;">
+                    <a class="firstmenu active" href="javascript:;">
                         <i class="fa fa-gift"></i>
                         <span>活动管理</span>
                     </a>
                     <ul>
-                        <li><a class="apl40" href="activity/activity_list.html">活动统计</a></li>
-                        <li><a class="apl40" href="activity/userdiscount_list.html">用户活动优惠统计</a></li>
-                        <li><a class="apl40" href="activity/redpacket_list.html">红包统计</a></li>
-                        <li><a class="apl40" href="activity/coupon_list.html">加息券统计</a></li>
-                        <li><a class="apl40" href="activity/reward_list.html">推广奖励统计</a></li>
+                        <li><a class="apl40" href="activity_list.html">活动统计</a></li>
+                        <li><a class="apl40" href="userdiscount_list.html">用户活动参与统计</a></li>
+                        <li><a class="apl40" href="redpacket_list.html">红包统计</a></li>
+                        <li><a class="apl40" href="coupon_list.html">加息券统计</a></li>
+                        <li><a class="apl40" href="reward_list.html">积分统计</a></li>
+                        <li><a class="apl40 active" href="sign.html">每日签到</a></li>
+                        <li><a class="apl40" href="extension_analysis.html">推广分析</a></li>
                     </ul>
                 </li>
                 <li>
@@ -233,87 +232,102 @@
 <section id="main-content">
     <section class="wrapper">
         <div class="tab-list" style="margin-bottom:20px;">
-            <a class="tab-item active">用户分析</a>
+            <a class="tab-item active">每日签到</a>
         </div>
         <div class="panel-body light-bg">
+            <table class="table table-bordered table-count">
+                   <thead>
+                   <tr>
+                       <th>今日签到人数</th>
+                       <th>今日签到奖励积分</th>
+                       <th>昨日签到人数</th>
+                       <th>昨日签到奖励积分</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td>50</td>
+                           <td>124</td>
+                           <td>123</td>
+                           <td>21</td>
+                       </tr>
+                   </tbody>
+            </table>
             <section id="unseen">
                 <div class="panel-body" style="padding-left:0;">
                     <div class="search-box">
-                        <form class="form-inline" role="form">
+                        <form class="form-inline" role="form"  id="baseListForm">
                             <div class="form-group">
-                            	<lable>统计周期:</lable>
-                            	<button type="submit" class="btn">今日</button>
-                            	<button type="submit" class="btn">近7天</button>
-                            	<button type="submit" class="btn">近30天</button>
-                            	<button type="submit" class="btn">全部</button>
-                            	<button type="submit" class="btn">自定义区间</button>
+                                <label class="control-label">用户姓名：</label>
+                                <input type="text" class="form-control" placeholder="输入用户姓名">
                             </div>
                             <div class="form-group">
-                            	<input type="text" class="form-control form_datetime" placeholder="起始时间" id="datetimeStart">
-                            	<input type="text" class="form-control form_datetime" placeholder="操作结束时间" id="datetimeEnd"/>
+                                <label class="control-label" >签到日期：</label>
+                                <input size="16"  class="default-date-picker form-control" type="text"  readonly >
                             </div>
                             <div class="form-group">   
-                                <button type="submit" class="btn btn-primary">搜索</button>
+                                <button type="submit" class="btn btn-primary">查询</button>
+                                <a class="btn btn-refresh" onclick="clearFrom('baseListForm')">清空条件</a>
                             </div>
                         </form>
                     </div>
                 </div>
                 <table class="table table-bordered table-striped table-condensed table-new">
-                    <thead></thead>
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>用户姓名</th>
+                        <th>签到时间</th>
+                        <th>签到渠道</th>
+                        <th>连续签到次数</th>
+                        <th>积分奖励</th>
+                    </tr>
+                    </thead>
                     <tbody>
                         <tr>
-                            <td style="text-align: center;">12</td>
-                            <td style="text-align: center;">2234</td>
-                            <td style="text-align: center;">12</td>
-                            <td style="text-align: center;">13</td>
-                            <td style="text-align: center;">12</td>
-                            <td style="text-align: center;">13</td>
-                            <td style="text-align: center;">12</td>
+                            <td>1</td>
+                            <td><a href="#" class="link">张三</a></td>
+                            <td>2017-10-12</td>
+                            <td>PC</td>
+                            <td>12</td>
+                            <td>6</td>
                         </tr>
                         <tr>
-                            <td style="text-align: center;">登录用户数</td>
-                            <td style="text-align: center;">注册用户数</td>
-                            <td style="text-align: center;">实名认证人数</td>
-                            <td style="text-align: center;">绑卡人数</td>
-                            <td style="text-align: center;">充值人数</td>
-                            <td style="text-align: center;">投资人数</td>
-                            <td style="text-align: center;">提现人数</td>
+                            <td>2</td>
+                            <td><a href="#" class="link">张三</a></td>
+                            <td>2017-10-12</td>
+                            <td>PC</td>
+                            <td>12</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><a href="#" class="link">张三</a></td>
+                            <td>2017-10-12</td>
+                            <td>PC</td>
+                            <td>12</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><a href="#" class="link">张三</a></td>
+                            <td>2017-10-12</td>
+                            <td>PC</td>
+                            <td>12</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><a href="#" class="link">张三</a></td>
+                            <td>2017-10-12</td>
+                            <td>PC</td>
+                            <td>12</td>
+                            <td>6</td>
                         </tr>
                     </tbody>
                 </table>
-                
             </section>
             <ul class="pagination-sm"></ul>
-	        <div class="tab-list" style="margin-bottom:20px;">
-	            <a class="tab-item active" style="width:200px;">月度登录用户走势图</a>
-	        </div>
-	          <!--柱状图 开始-->
-	        <div class="row">
-	            <div class="col-sm-12">
-	                <section class="panel">
-	                    <div class="panel-body">
-	                        <div id="graph-bar1"></div>
-	                    </div>
-	                </section>
-	            </div>
-       		 </div>
-       		 <!--柱状图 结束-->
-	        <div class="tab-list" style="margin-bottom:20px;">
-	            <a class="tab-item active"  style="width:200px;">月度注册用户走势图</a>
-	        </div>
-	          <!--柱状图 开始-->
-	        <div>
-	        	<div class="row">
-	            <div class="col-sm-12">
-	                <section class="panel">
-	                    <div class="panel-body">
-	                        <div id="graph-bar"></div>
-	                    </div>
-	                </section>
-	            </div>
-       		 </div>
-	        </div>
-       		 <!--柱状图 结束-->
         </div>
     </section>
 </section>
@@ -351,11 +365,7 @@
 
 <script src="../assets/select2-master/select2.js"></script>
 <script src="../js/select2/select-init.js"></script>
-<!--Morris Chart-->
-<script src="../assets/morris-chart/morris.js"></script>
-<script src="../assets/morris-chart/raphael-min.js"></script>
-<!-- 这个是放数据的页面 对应的元素 是Id  的名字 如 graph-area-line-->
-<script src="../js/morris/morris.init.js"></script>
+
 
 <!--common script init for all pages-->
 <script src="../js/scripts.js"></script>
@@ -376,26 +386,17 @@
 <!--icheck init radio -->
 <script src="../js/icheck/icheck-init.js"></script>
 <script src="../assets/iCheck-master/jquery.icheck.js"></script>
+<!--script for this page-->
 <script type="text/javascript">
-    $("#datetimeStart").datetimepicker({
-//      format: 'yyyy-mm-dd',
-        minView:'month',
-        language: 'zh-CN',
-//      autoclose:true,
-        startDate:new Date()
-    }).on("click",function(){
-        $("#datetimeStart").datetimepicker("setEndDate",$("#datetimeEnd").val())
-    });
-    $("#datetimeEnd").datetimepicker({
-//      format: 'yyyy-mm-dd',
-        minView:'month',
-        language: 'zh-CN',
-//      autoclose:true,
-        startDate:new Date()
-    }).on("click",function(){
-        $("#datetimeEnd").datetimepicker("setStartDate",$("#datetimeStart").val())
+    $(function () {
+        $('.pagination-sm').twbsPagination({
+            totalPages: 20,
+            first:"首页",
+            prev:"上一页",
+            next:"下一页",
+            last:"尾页"
+        })
     });
 </script>
-<!--script for this page-->
 </body>
 </html>

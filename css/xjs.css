@@ -175,7 +175,7 @@
 	border-top:none;
 }
 .list-vertical li .list-item{
-	display: inline-block;
+	float: left;
 	padding-left: 20px;
 	height: 48px;
 	width: 218px;
@@ -188,4 +188,111 @@
 /* 改写表单校验样式 */
 .help-block {
     float: left;
+}
+
+.table-center{
+	text-align: center;
+}
+.table-center th{
+	text-align: center;
+}
+
+.table-center tr td.htd{
+	color: #333;
+    font-weight: bold;
+}
+
+.search-line{
+	margin-bottom: 20px;
+}
+.search-line a{
+	margin-right: 15px;
+}
+.search-line a.active{
+	color:red;
+}
+
+/* 登录 */
+.login-body{
+	padding-top: 220px;
+	background:url(../images/login_bg.png) no-repeat center top;
+	background-attachment: fixed;
+	background-size: cover;
+	
+}
+.login-body .login_box{
+	position: relative;
+	margin:0 auto;
+	background: #fff;
+	padding-top: 35px;
+	width: 770px;
+	height: 360px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.login-body .login_box .error{
+	margin-top: 30px;
+	color: #d70000;
+}
+
+.login-body .login_box .loginImg{
+	position: absolute;
+	left: -110px;
+	top:-105px;
+}
+.login-body .login_box .form-signin-heading{
+	display: inline-block;
+	position: relative;
+	font-size: 32px;
+	color:#333;
+}
+.login-body .login_box .form-signin-heading:before{
+	content: "";
+	background:#1898ff;
+	position:absolute;
+	width:135px;
+	height:3px;
+	top:45px;
+}
+
+.login-body .login_box .login-wrap .login-input{
+	padding-left: 15px;
+	margin-bottom: 15px;
+	width: 405px;
+	height: 39px;
+	line-height: 39px;
+	border-radius: 30px;
+	border: 1px solid #ececec;
+	color: #666666;
+}
+
+.login-body .login_box .login-wrap .login-input:focus{
+	border: 1px solid #3aa7ff;
+	color: #3aa7ff;
+	box-shadow: 0px 0px 5px 1px #3aa7ff;
+}
+
+.login-body .login_box .login-wrap .btn-wrap{
+	margin-top: 20px;
+}
+
+.login-body .login_box .login-wrap .btn{
+	display: inline-block;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 18px;
+	border-radius: 20px;
+	border:none;
+}
+.login-body .login_box .login-wrap .login-submit{
+	margin-right: 15px;
+	color: #fff;
+	background: url(../images/login_btn.png) no-repeat center center;
+		
+}
+.login-body .login_box .login-wrap .login-reset{
+	color: #999;
+	background: #ddd;
 }

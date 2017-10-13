@@ -47,7 +47,7 @@
 <header class="header fixed-top clearfix">
 <!--logo start-->
 <div class="brand">
-    <a href="index.html" class="logo">
+    <a href="../index.html" class="logo">
         <img src="../images/logo.png" alt="">
     </a>
     <div class="sidebar-toggle-box">
@@ -62,7 +62,7 @@
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <img alt="" src="../images/avatar1_small.jpg">
-                <span class="username">John Doe</span>
+                <span class="username">Admin</span>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
@@ -98,16 +98,16 @@
                         <span>融资管理</span>
                     </a>
                     <ul>
-                        <li><a class="apl40" href="business/borrow_order.html">融资预约</a></li>
-                        <li><a class="apl40" href="business/opborrow_add.html">融资发布</a></li>
-                        <li><a class="apl40" href="business/borrow_published.html">已发布项目</a></li>
-                        <li><a class="apl40" href="business/borrowlist.html">融资初审</a></li>
-                        <li><a class="apl40" href="business/reborrowlist.html">融资复审</a></li>
-                        <li><a class="apl40" href="business/raiselist.html">募集中项目</a></li>
-                        <li><a class="apl40" href="business/bidlist.html">投标记录</a></li>
-                        <li><a class="apl40" href="business/finaborrowlist.html">融资终审</a></li>
-                        <li><a class="apl40" href="business/abortivelist.html">流标记录</a></li>
-                        <li><a class="apl40" href="business/advanced_search.html">项目高级搜索</a></li>
+                        <li><a class="apl40" href="borrow_order.html">融资预约</a></li>
+                        <li><a class="apl40" href="opborrow_add.html">融资发布</a></li>
+                        <li><a class="apl40" href="borrow_published.html">已发布项目</a></li>
+                        <li><a class="apl40" href="borrowlist.html">融资初审</a></li>
+                        <li><a class="apl40" href="reborrowlist.html">融资复审</a></li>
+                        <li><a class="apl40" href="raiselist.html">募集中项目</a></li>
+                        <li><a class="apl40" href="bidlist.html">投标记录</a></li>
+                        <li><a class="apl40" href="finaborrowlist.html">融资终审</a></li>
+                        <li><a class="apl40" href="abortivelist.html">流标记录</a></li>
+                        <li><a class="apl40" href="advanced_search.html">项目高级搜索</a></li>
                     </ul>
                 </li>
                 <li>
@@ -149,18 +149,16 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="firstmenu active" href="javascript:;">
+                    <a class="firstmenu" href="javascript:;">
                         <i class="fa fa-gift"></i>
                         <span>活动管理</span>
                     </a>
                     <ul>
-                        <li><a class="apl40" href="activity_list.html">活动统计</a></li>
-                        <li><a class="apl40 active" href="userdiscount_list.html">用户活动参与统计</a></li>
-                        <li><a class="apl40" href="redpacket_list.html">红包统计</a></li>
-                        <li><a class="apl40" href="coupon_list.html">加息券统计</a></li>
-                        <li><a class="apl40" href="reward_list.html">积分统计</a></li>
-                        <li><a class="apl40" href="sign.html">每日签到</a></li>
-                        <li><a class="apl40" href="extension_analysis.html">推广分析</a></li>
+                        <li><a class="apl40" href="activity/activity_list.html">活动统计</a></li>
+                        <li><a class="apl40" href="activity/userdiscount_list.html">用户活动优惠统计</a></li>
+                        <li><a class="apl40" href="activity/redpacket_list.html">红包统计</a></li>
+                        <li><a class="apl40" href="activity/coupon_list.html">加息券统计</a></li>
+                        <li><a class="apl40" href="activity/reward_list.html">推广奖励统计</a></li>
                     </ul>
                 </li>
                 <li>
@@ -187,14 +185,14 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="firstmenu" href="javascript:;">
+                    <a class="firstmenu active" href="javascript:;">
                         <i class="fa fa-cogs"></i> 
                         <span>消息中心</span>
                     </a>
                     <ul>
-                        <li><a class="apl40" href="#">意见反馈</a></li>
+                        <li><a class="apl40 active" href="feedback.html">意见反馈</a></li>
                         <li><a class="apl40" href="#">短信模板设置</a></li>
-                        <li><a class="apl40" href="#">短信发送记录</a></li>
+                        <li><a class="apl40" href="msg_list.html">短信发送记录</a></li>
                     </ul>
                 </li>
                 <li>
@@ -235,20 +233,24 @@
             <div class="nav-title"><span>融资初审</span></div>
         </div> -->
         <div class="tab-list" style="margin-bottom:20px;">
-            <a class="tab-item active" style="width:145px;">用户参与活动统计</a>
+            <a class="tab-item active">意见反馈</a>
         </div>
         <div class="panel-body light-bg">
             <section id="unseen">
-                <div class="panel-body">
+                <div class="panel-body" style="padding-left:0;">
                     <div class="search-box">
-                        <form class="form-inline" role="form">
+                        <form class="form-inline" role="form" id="baseListForm">
                             <div class="form-group">
-                                <label class="control-label">投资人：</label>
-                                <input type="text" class="form-control" placeholder="输入投资人">
+                                <label class="control-label">意见反馈来源：</label>
+                                <select class="form-control" >
+                                    <option value="1">请选择来源</option>
+                                    <option value="2">等待通过</option>
+                                    <option value="3" selected="">审核未通过</option>
+                                </select>
                             </div>
                             <div class="form-group">   
                                 <button type="submit" class="btn btn-primary">查询</button>
-                                <button class="btn btn-refresh">清空条件</button>
+                                <a class="btn btn-refresh" onclick="clearFrom('baseListForm')">清空条件</a>
                             </div>
                         </form>
                     </div>
@@ -257,83 +259,81 @@
                     <thead>
                     <tr>
                         <th>序号</th>
-                        <th>用户姓名</th>
-                        <th>可用红包数</th>
-                        <th>可用红包总金额</th>
-                        <th>已用红包数</th>
-                        <th>已用红包总金额</th>
-                        <th>可用加息券数</th>
-                        <th>已用加息券数</th>
-                        <th>加息总利息</th>
-                        <th>未使用积分</th>
-                        <th>已兑换积分</th>
+                        <th>意见反馈编号</th>
+                        <th>来源</th>
+                        <th>用户类型</th>
+                        <th>用户账号</th>
+                        <th>反馈内容</th>
+                        <th>反馈时间</th>
+                        <th>状态</th>
+                        <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td><a href="#" class="link">张立刻</a></td>
-                            <td>3</td>
-                            <td>30</td>
-                            <td>2</td>
-                            <td>20</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>431.12</td>
-                            <td>12</td>
-                            <td>120</td>
+                            <td>FK0001</td>
+                            <td>APP</td>
+                            <td>登录用户</td>
+                            <td><a href="#" class="link">张三丰</a></td>
+                            <td>登录不了</td>
+                            <td>2017-08-23 13:37:06</td>
+                            <td>待处理</td>
+                            <td>
+                                <button class="btn btn-round btn-info" style="padding:0px 5px;" data-toggle="modal" data-target=".view-detail">详细</button>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td><a href="#" class="link">张立刻</a></td>
-                            <td>3</td>
-                            <td>30</td>
-                            <td>2</td>
-                            <td>20</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>431.12</td>
-                            <td>12</td>
-                            <td>120</td>
+                            <td>FK0001</td>
+                            <td>APP</td>
+                            <td>登录用户</td>
+                            <td><a href="#" class="link">张三丰</a></td>
+                            <td>登录不了</td>
+                            <td>2017-08-23 13:37:06</td>
+                            <td>待处理</td>
+                            <td>
+                                <button class="btn btn-round btn-info" style="padding:0px 5px;" data-toggle="modal" data-target=".view-detail">详细</button>
+                            </td>
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td><a href="#" class="link">张立刻</a></td>
-                            <td>3</td>
-                            <td>30</td>
-                            <td>2</td>
-                            <td>20</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>431.12</td>
-                            <td>12</td>
-                            <td>120</td>
+                            <td>FK0001</td>
+                            <td>APP</td>
+                            <td>登录用户</td>
+                            <td><a href="#" class="link">张三丰</a></td>
+                            <td>登录不了</td>
+                            <td>2017-08-23 13:37:06</td>
+                            <td>待处理</td>
+                            <td>
+                                <button class="btn btn-round btn-info" style="padding:0px 5px;" data-toggle="modal" data-target=".view-detail">详细</button>
+                            </td>
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td><a href="#" class="link">张立刻</a></td>
-                            <td>3</td>
-                            <td>30</td>
-                            <td>2</td>
-                            <td>20</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>431.12</td>
-                            <td>12</td>
-                            <td>120</td>
+                            <td>FK0001</td>
+                            <td>APP</td>
+                            <td>登录用户</td>
+                            <td><a href="#" class="link">张三丰</a></td>
+                            <td>登录不了</td>
+                            <td>2017-08-23 13:37:06</td>
+                            <td>待处理</td>
+                            <td>
+                                <button class="btn btn-round btn-info" style="padding:0px 5px;" data-toggle="modal" data-target=".view-detail">详细</button>
+                            </td>
                         </tr>
                         <tr>
                             <td>5</td>
-                            <td><a href="#" class="link">张立刻</a></td>
-                            <td>3</td>
-                            <td>30</td>
-                            <td>2</td>
-                            <td>20</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>431.12</td>
-                            <td>12</td>
-                            <td>120</td>
+                            <td>FK0001</td>
+                            <td>APP</td>
+                            <td>登录用户</td>
+                            <td><a href="#" class="link">张三丰</a></td>
+                            <td>登录不了</td>
+                            <td>2017-08-23 13:37:06</td>
+                            <td>待处理</td>
+                            <td>
+                                <button class="btn btn-round btn-info" style="padding:0px 5px;" data-toggle="modal" data-target=".view-detail">详细</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -345,50 +345,82 @@
 <!--main content end-->
 </section>
 <!-- Placed js at the end of the document so the pages load faster -->
-<div class="modal fade collection-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
+<!-- 详情弹窗 -->
+<div class="modal fade view-detail" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myLargeModalLabel">催收</h4>
+                <h4 class="modal-title" id="myLargeModalLabel">意见反馈详情</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" method="get">
+                <form class="form-inline form-model" method="get">
                     <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">逾期编号：</label>
-                        <div class="col-lg-7">
-                            <div style="padding-top:8px;">yq876271512</div>
-                        </div>
+                        <label class="control-label">反馈编号：</label>
+                        <input type="text" class="form-control" value="RZ0001" readonly >
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">项目名称：</label>
-                        <div class="col-lg-7">
-                            <div style="padding-top:8px;">乐乐乐乐乐123</div>
-                        </div>
+                        <label class="control-label">反馈来源：</label>
+                        <input type="text" class="form-control" value="web" readonly >
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">借款人：</label>
-                        <div class="col-lg-7">
-                            <div style="padding-top:8px;">张国富</div>
-                        </div>
+                        <label class="control-label">用户类型：</label>
+                        <input type="text" class="form-control" value="注册用户" readonly >
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">逾期期数：</label>
-                        <div class="col-lg-7">
-                            <div style="padding-top:8px;">1/4</div>
-                        </div>
+                        <label class="control-label">用户名称：</label>
+                        <input type="text" class="form-control" value="张三" readonly >
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">应还款时间：</label>
-                        <div class="col-lg-7">
-                            <div style="padding-top:8px;">2017-08-09 12:34:56</div>
-                        </div>
+                        <label class="control-label">手机号：</label>
+                        <input type="text" class="form-control" value="318758265847" readonly >
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">催收备注：</label>
-                        <div class="col-sm-8">
-                            <textarea class="form-control" rows="4"></textarea>
-                        </div>
+                        <label class="control-label">电子邮箱：</label>
+                        <input type="text" class="form-control" value="123@qq.com" readonly >
+                    </div>
+                    <div class="form-group" style="display:block;">
+                        <label class="control-label">问题描述：</label>
+                        <input type="text" class="form-control" value="登录不了" readonly style="width:85%;">
+                    </div>
+                    <div class="form-group" style="display:block;">
+                        <label class="control-label">相关文件：</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">用户IP：</label>
+                        <input type="text" class="form-control" value="APP | 192.168.1.2|浙江电信" readonly style="width:450px;">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">浏览器版本:</label>
+                        <input type="text" class="form-control" value="chrome" readonly >
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">cookie：</label>
+                        <input type="text" class="form-control" value="支持" readonly >
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">flash：</label>
+                        <input type="text" class="form-control" value="7.0" readonly >
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">APP版本：</label>
+                        <input type="text" class="form-control" value="1.2" readonly >
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">来源页面：</label>
+                        <input type="text" class="form-control" value="1.2" readonly >
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">处理状态：</label>
+                        <input type="text" class="form-control" value="1.2" readonly >
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">处理时间：</label>
+                        <input type="text" class="form-control" value="1.2" readonly >
+                    </div>
+                    <div class="form-group"  style="display:block;">
+                        <label class="control-label">项目备注：</label>
+                        <textarea class="form-control" rows="4" style="width:85%;"></textarea>
                     </div>
                 </form>
             </div>
@@ -462,6 +494,8 @@
             last:"尾页"
         })
     });
+
+
 </script>
 </body>
 </html>

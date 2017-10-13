@@ -47,7 +47,7 @@
 <header class="header fixed-top clearfix">
 <!--logo start-->
 <div class="brand">
-    <a href="index.html" class="logo">
+    <a href="../index.html" class="logo">
         <img src="../images/logo.png" alt="">
     </a>
     <div class="sidebar-toggle-box">
@@ -149,18 +149,16 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="firstmenu active" href="javascript:;">
+                    <a class="firstmenu" href="javascript:;">
                         <i class="fa fa-gift"></i>
                         <span>活动管理</span>
                     </a>
                     <ul>
                         <li><a class="apl40" href="activity_list.html">活动统计</a></li>
-                        <li><a class="apl40 active" href="userdiscount_list.html">用户活动参与统计</a></li>
+                        <li><a class="apl40" href="userdiscount_list.html">用户参与活动统计</a></li>
                         <li><a class="apl40" href="redpacket_list.html">红包统计</a></li>
                         <li><a class="apl40" href="coupon_list.html">加息券统计</a></li>
                         <li><a class="apl40" href="reward_list.html">积分统计</a></li>
-                        <li><a class="apl40" href="sign.html">每日签到</a></li>
-                        <li><a class="apl40" href="extension_analysis.html">推广分析</a></li>
                     </ul>
                 </li>
                 <li>
@@ -187,14 +185,14 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="firstmenu" href="javascript:;">
+                    <a class="firstmenu active" href="javascript:;">
                         <i class="fa fa-cogs"></i> 
                         <span>消息中心</span>
                     </a>
                     <ul>
-                        <li><a class="apl40" href="#">意见反馈</a></li>
+                        <li><a class="apl40" href="feedback.html">意见反馈</a></li>
                         <li><a class="apl40" href="#">短信模板设置</a></li>
-                        <li><a class="apl40" href="#">短信发送记录</a></li>
+                        <li><a class="apl40 active" href="msg_list.html">短信发送记录</a></li>
                     </ul>
                 </li>
                 <li>
@@ -230,25 +228,47 @@
 <div class="has-switch" tabindex="0"><div class="switch-on switch-animate"><span class="switch-left switch-success">ON</span><label for="change-color-switch">&nbsp;</label><span class="switch-right switch-danger">OFF</span><input type="checkbox" id="change-color-switch" checked="" data-on="default" data-off="primary"></div></div>
 -->
 <section id="main-content">
-    <section class="wrapper">
+    <section class="wrapper" style="position:relative;">
         <!-- <div class="row nav-wrap">
             <div class="nav-title"><span>融资初审</span></div>
         </div> -->
         <div class="tab-list" style="margin-bottom:20px;">
-            <a class="tab-item active" style="width:145px;">用户参与活动统计</a>
+            <a class="tab-item active" data-id="msg1">短息发送记录</a>
+            <a class="tab-item" data-id="msg2">批量发送记录</a>
         </div>
-        <div class="panel-body light-bg">
+       <!--  短息发送记录 -->
+        <div class="panel-body light-bg tab-content" id="msg1">
             <section id="unseen">
                 <div class="panel-body">
                     <div class="search-box">
-                        <form class="form-inline" role="form">
+                        <form class="form-inline" role="form" id="baseListForm">
                             <div class="form-group">
-                                <label class="control-label">投资人：</label>
-                                <input type="text" class="form-control" placeholder="输入投资人">
+                                <label class="control-label">短信类型：</label>
+                                <select class="form-control" >
+                                    <option value="1">请选择类型</option>
+                                    <option value="2">等待通过</option>
+                                    <option value="3">审核未通过</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">发送批次：</label>
+                                <input type="text" class="form-control" placeholder="输入发送批次">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">短信接收人：</label>
+                                <input type="text" class="form-control" placeholder="输入姓名或手机号">
+                            </div>
+                            <div class="form-group">
+                                <label class="" name="">发送时间：</label>
+                                <input size="16"  class="form_datetime form-control" type="text" name="startTime" id="startTime" placeholder="起始时间">
+                            </div>
+                            <div class="form-group">
+                                <label class="" name="">~</label>
+                                <input size="16" class="form_datetime form-control"  type="text" name="endTime"  id="endTime" placeholder="结束时间">
                             </div>
                             <div class="form-group">   
                                 <button type="submit" class="btn btn-primary">查询</button>
-                                <button class="btn btn-refresh">清空条件</button>
+                                <a class="btn btn-refresh" onclick="clearFrom('baseListForm')">清空条件</a>
                             </div>
                         </form>
                     </div>
@@ -257,83 +277,162 @@
                     <thead>
                     <tr>
                         <th>序号</th>
-                        <th>用户姓名</th>
-                        <th>可用红包数</th>
-                        <th>可用红包总金额</th>
-                        <th>已用红包数</th>
-                        <th>已用红包总金额</th>
-                        <th>可用加息券数</th>
-                        <th>已用加息券数</th>
-                        <th>加息总利息</th>
-                        <th>未使用积分</th>
-                        <th>已兑换积分</th>
+                        <th>发送批次代码</th>
+                        <th>发送时间</th>
+                        <th>短信类型</th>
+                        <th>接收人</th>
+                        <th>短信内容</th>
+                        <th>短信发送状态</th>
                     </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td><a href="#" class="link">张立刻</a></td>
-                            <td>3</td>
-                            <td>30</td>
-                            <td>2</td>
-                            <td>20</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>431.12</td>
-                            <td>12</td>
-                            <td>120</td>
+                            <td>1212</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>验证码</td>
+                            <td>张三三</td>
+                            <td>您的验证码是2121212</td>
+                            <td>成功</td>
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td><a href="#" class="link">张立刻</a></td>
-                            <td>3</td>
-                            <td>30</td>
-                            <td>2</td>
-                            <td>20</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>431.12</td>
-                            <td>12</td>
-                            <td>120</td>
+                            <td>1212</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>验证码</td>
+                            <td>张三三</td>
+                            <td>您的验证码是2121212</td>
+                            <td>成功</td>
+                            </td>
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td><a href="#" class="link">张立刻</a></td>
-                            <td>3</td>
-                            <td>30</td>
-                            <td>2</td>
-                            <td>20</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>431.12</td>
-                            <td>12</td>
-                            <td>120</td>
+                            <td>1212</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>验证码</td>
+                            <td>张三三</td>
+                            <td>您的验证码是2121212</td>
+                            <td>成功</td>
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td><a href="#" class="link">张立刻</a></td>
-                            <td>3</td>
-                            <td>30</td>
-                            <td>2</td>
-                            <td>20</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>431.12</td>
-                            <td>12</td>
-                            <td>120</td>
+                            <td>1212</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>验证码</td>
+                            <td>张三三</td>
+                            <td>您的验证码是2121212</td>
+                            <td>成功</td>
                         </tr>
                         <tr>
                             <td>5</td>
-                            <td><a href="#" class="link">张立刻</a></td>
-                            <td>3</td>
-                            <td>30</td>
+                            <td>1212</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>验证码</td>
+                            <td>张三三</td>
+                            <td>您的验证码是2121212</td>
+                            <td>成功</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <ul class="pagination-sm"></ul>
+        </div>
+       <!--  批量发送记录 -->
+        <div class="panel-body light-bg tab-content" id="msg2" style="display:none;">
+            <section id="unseen">
+                <div class="panel-body">
+                    <div class="search-box">
+                        <form class="form-inline" role="form" id="baseListForm">
+                            <div class="form-group">
+                                <label class="control-label">短信类型：</label>
+                                <select class="form-control" >
+                                    <option value="1">请选择类型</option>
+                                    <option value="2">等待通过</option>
+                                    <option value="3">审核未通过</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">发送批次：</label>
+                                <input type="text" class="form-control" placeholder="输入发送批次">
+                            </div>
+                            <div class="form-group">
+                                <label class="" name="">执行时间：</label>
+                                <input size="16"  class="form_datetime form-control" type="text" name="startTime" id="startTime" placeholder="起始时间">
+                            </div>
+                            <div class="form-group">
+                                <label class="" name="">~</label>
+                                <input size="16" class="form_datetime form-control"  type="text" name="endTime"  id="endTime" placeholder="结束时间">
+                            </div>
+                            <div class="form-group">   
+                                <button type="submit" class="btn btn-primary">查询</button>
+                                <a class="btn btn-refresh" onclick="clearFrom('baseListForm')">清空条件</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <table class="table table-bordered table-striped table-condensed table-new">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>发送批次代码</th>
+                        <th>执行时间</th>
+                        <th>短信类型</th>
+                        <th>内容模板</th>
+                        <th>短信发送总数</th>
+                        <th>成功数</th>
+                        <th>失败数</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>hb17862813</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>验证码</td>
+                            <td>该还款了</td>
+                            <td>432</td>
+                            <td>234</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
                             <td>2</td>
-                            <td>20</td>
+                            <td>hb17862813</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>验证码</td>
+                            <td>该还款了</td>
+                            <td>432</td>
+                            <td>234</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
                             <td>3</td>
+                            <td>hb17862813</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>验证码</td>
+                            <td>该还款了</td>
+                            <td>432</td>
+                            <td>234</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
                             <td>4</td>
-                            <td>431.12</td>
-                            <td>12</td>
-                            <td>120</td>
+                            <td>hb17862813</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>验证码</td>
+                            <td>该还款了</td>
+                            <td>432</td>
+                            <td>234</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>hb17862813</td>
+                            <td>2017-09-06 11:49</td>
+                            <td>验证码</td>
+                            <td>该还款了</td>
+                            <td>432</td>
+                            <td>234</td>
+                            <td>23</td>
                         </tr>
                     </tbody>
                 </table>
@@ -345,60 +444,6 @@
 <!--main content end-->
 </section>
 <!-- Placed js at the end of the document so the pages load faster -->
-<div class="modal fade collection-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myLargeModalLabel">催收</h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal" method="get">
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">逾期编号：</label>
-                        <div class="col-lg-7">
-                            <div style="padding-top:8px;">yq876271512</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">项目名称：</label>
-                        <div class="col-lg-7">
-                            <div style="padding-top:8px;">乐乐乐乐乐123</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">借款人：</label>
-                        <div class="col-lg-7">
-                            <div style="padding-top:8px;">张国富</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">逾期期数：</label>
-                        <div class="col-lg-7">
-                            <div style="padding-top:8px;">1/4</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">应还款时间：</label>
-                        <div class="col-lg-7">
-                            <div style="padding-top:8px;">2017-08-09 12:34:56</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label col-lg-3">催收备注：</label>
-                        <div class="col-sm-8">
-                            <textarea class="form-control" rows="4"></textarea>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-info">确认</button>
-                <button type="button" class="btn btn-info" data-dismiss="modal">取消</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div>
 <!--Core js-->
 <script src="../js/lib/jquery-1.8.3.min.js"></script>
 <script src="../bs3/js/bootstrap.min.js"></script>
