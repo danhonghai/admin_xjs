@@ -52,6 +52,11 @@ var Script = function () {
     //保留两位小数
     jQuery.validator.addMethod("lrunlv", function(value, element) {         
         return this.optional(element) || /^\d+(\.\d{1,2})?$/.test(value);         
-    }, "小数位不能超过两位");   
+    }, "小数位不能超过两位"); 
+
+    //不能包含空格
+    jQuery.validator.addMethod("noblank", function(value, element) {         
+        return this.optional(element) || /^[^ ]+$/.test(value);         
+    }, "不能包含空格");   
 
 }();

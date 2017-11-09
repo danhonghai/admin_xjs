@@ -254,6 +254,12 @@ $(function(){
             $(this).next().css('display','inline-block');
         }
     });
+
+    //字符太长截断
+    var cutLine = $('.cut-line').text();
+    if(cutLine && cutLine.length >= 13){
+        $('.cut-line').attr("title",cutLine).text(cutLine.substring(0,13)+"...");
+    }
 });
 /*封装消息提示框*/
 function alertFun(paramsObj){
@@ -264,7 +270,7 @@ function alertFun(paramsObj){
     $('#alertModal').modal({
         backdrop:false
     });
-    $('#alertModal .okBtn,#alertModal .close').click(function(event) {
+    $('#alertModal .okBtn,#alertModal .close').unbind("click").click(function(event) {
         paramsObj.callBackFun && paramsObj.callBackFun()
     });
 }
@@ -277,7 +283,7 @@ function  confirmFun(paramsObj){
     $('#confirmModal').modal({
         backdrop:false
     });
-    $('#confirmModal .okBtn').click(function(event) {
+    $('#confirmModal .okBtn').unbind("click").click(function(event) {
         paramsObj.callBackFun && paramsObj.callBackFun()
     });
 }

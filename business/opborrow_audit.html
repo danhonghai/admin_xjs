@@ -572,7 +572,7 @@
             <div class="form-group" style="margin-top:20px;">
                 <label class="col-lg-2 col-sm-2 control-label"></label>
                 <div class="col-lg-3">
-                    <button type="button" class="btn btn-primary btn-lg btn-block">通过</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" id="auditPass" >通过</button>
                 </div>
                 <div class="col-lg-3">
                     <button type="button" class="btn btn-primary btn-lg btn-block">不通过</button>
@@ -637,5 +637,46 @@
 <script src="../js/icheck/icheck-init.js"></script>
 <script src="../assets/iCheck-master/jquery.icheck.js"></script>business/
 <!--script for this page-->
+<div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" style="margin-top:200px;">
+        <div class="modal-content" style="border: 1px solid #dbdbdb;box-shadow: 3px 5px 10px #ccc;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h5 class="modal-title"></h5>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary okBtn" type="button" data-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" style="margin-top:200px;">
+        <div class="modal-content" style="border: 1px solid #dbdbdb;box-shadow: 3px 5px 10px #ccc;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h5 class="modal-title"></h5>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-default cancleBtn" type="button">取消</button>
+                <button class="btn btn-primary okBtn" type="button" data-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+        $('#auditPass').click(function(){
+            confirmFun({
+                content:"您确定要审核通过吗",
+                callBackFun:function(){
+                   alert('1')
+                }
+            });
+        });
+</script>
 </body>
 </html>

@@ -236,7 +236,7 @@
         <div class="tab-list" style="margin-bottom:20px;">
             <a class="tab-item active">发布融资信息</a>
         </div>
-        <form class="form-horizontal" method="get" id="borrowFrom">
+        <form class="form-horizontal" method="get" id="borrowFrom" enctype="multipart/form-data">
             <div class="light-bg item-box">
                 <div class="box-title">项目基本信息:</div>
                 <div class="row">
@@ -355,13 +355,17 @@
                 <div class="row">
                     <div class="form-group col-lg-5">
                         <label class="col-sm-3 control-label col-lg-3">募集开始时间：</label>
-                        <input size="16" type="text" value="" readonly class="form_datetime form-control required" 
-                        style="width: 250px;display: inline-block;margin-left: 15px;" name="startDate">
+                        <div class="col-lg-7">
+                            <input size="16" type="text" value="" readonly class="form_datetime form-control required" 
+                        style="width: 250px;display: inline-block;" name="startDate">
+                        </div>
                     </div>
                     <div class="form-group col-lg-5">
                         <label class="col-sm-3 control-label col-lg-3">募集结束时间：</label>
-                        <input size="16" type="text" value="" readonly class="form_datetime form-control required" 
-                            style="width: 250px;display: inline-block;margin-left: 15px;" name="endDate">
+                        <div class="col-lg-7">
+                            <input size="16" type="text" value="" readonly class="form_datetime form-control required" 
+                            style="width: 250px;display: inline-block;" name="endDate">
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -504,6 +508,7 @@
                     <input type="hidden">
                     <div style="width:260px;">
                         <input id="input-b1" name="input-b1" type="file" class="file imgFile" >
+                        <input type="hidden" id="litpic" value="1">
                     </div>
                 </div>
                 <div class="box-title" style="margin-top:20px;">项目图片:</div>
@@ -516,7 +521,7 @@
                 <div class="row">
                     <div class="form-group col-lg-1"><!-- <button class="btn btn-primary" style="display:inline-block;margin-left:30px;">预览</button> --></div>
                     <div class="form-group col-lg-8">
-                        <textarea class="form-control ckeditor" name="editor1" rows="6"></textarea>
+                        <textarea class="form-control ckeditor" name="editor1" ></textarea>
                     </div>
                 </div>
             </div>
@@ -525,7 +530,7 @@
                 <div class="row">
                     <div class="form-group col-lg-1"><!-- <button class="btn btn-primary" style="display:inline-block;margin-left:30px;">预览</button> --></div>
                     <div class="form-group col-lg-8">
-                        <textarea class="form-control ckeditor" name="editor2" rows="6"></textarea>
+                        <textarea class="form-control ckeditor" name="editor2" ></textarea>
                     </div>
                 </div>
             </div>
@@ -650,8 +655,9 @@
         allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
         showClose:false,//是否显示关闭按钮
         dropZoneEnabled:false,
-        uploadUrl:'http://www.baiducom',
-        initialPreview: ["<img src="+imgSrc+" class='file-preview-image' style='width:200px;'>"],  
+        maxFileSize:10,//单位为KB，如果为0表示不限制文件大小
+        uploadUrl:'/',
+        initialPreview: ["<img src="+imgSrc+" class='file-preview-image' style='width: auto;height: auto;max-width: 100%;max-height: 100%;'>"],  
         initialPreviewConfig: [{  
            caption: 'desert.jpg',// 展示的图片名称  
         }],
@@ -659,7 +665,13 @@
             actionDelete:''
         }  
     }).on("fileuploaded", function (event, data, previewId, index){
-        debugger;  
+        
+    }).on("filebatchselected", function (event, files){debugger;
+       if(files.length > 0){
+            $("#litpic").val(1);
+       }
+    }).on("filecleared", function (event, previewId, index){
+        $("#litpic").val("");
     });
     //多个文件上传
     $('.imgFileMul').fileinput({
@@ -667,11 +679,24 @@
         allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
         showClose:false,//是否显示关闭按钮
         maxFileCount: 10,
+        maxFileSize:10,//单位为KB，如果为0表示不限制文件大小
         dropZoneEnabled:false,
-        uploadUrl:'http://www.baiducom'
+        uploadUrl:'http://www.baiducom',
+        overwriteInitial:false,//预设图片 不会被覆盖
+        initialPreview: ["<input type='text' class='form-control' placeholder='图片标题'' style='margin-bottom:20px;'><img src="+imgSrc+" class='file-preview-image' style='width: auto;height: auto;max-width: 100%;max-height: 100%;'>","<input type='text' class='form-control' placeholder='图片标题'' style='margin-bottom:20px;'><img src="+imgSrc+" class='file-preview-image' style='width: auto;height: auto;max-width: 100%;max-height: 100%;'>"],
+        initialPreviewConfig: [{  
+           url: '/delete',// 预展示图片的删除调取路径  
+           key: 100,// 可修改 场景2中会用的  
+           extra: {id: 100} //调用删除路径所传参数   
+       },{  
+           url: '/delete',// 预展示图片的删除调取路径  
+           key: 99,// 可修改 场景2中会用的  
+           extra: {id: 99} //调用删除路径所传参数   
+       }],  
     }).on("filebatchselected", function(event, files) {
         console.log(files);
-        $('#imgWrap .kv-preview-thumb').each(function(index, el) {
+        $('#imgWrap .kv-preview-thumb .kv-file-content').each(function(index, el) {
+            console.log(index);
             var str = '<input type="text" class="form-control" placeholder="图片标题" style="margin-bottom:20px;">';
             var _self = $(this);
             if(_self.find('.form-control').length == 0){
@@ -679,7 +704,17 @@
             }
         });
     }).on("fileuploaded", function (event, data, previewId, index){
-        debugger;  
+          
+    }).on('filepredelete', function(event, key) {  
+        console.log('Key = ' + key);  
+    }).on('filedeleted', function(event, key) {  
+        console.log('Key = ' + key);  
+    }).on("fileclear", function (event){
+        console.log("fileclear");
+    }).on("filedelete", function (event, id){
+        console.log('id = ' + id); 
+    }).on('fileremoved', function(event, id, index) {
+        console.log('id = ' + id + ', index = ' + index);
     });
 
     $(function(){
@@ -688,6 +723,7 @@
                 for ( instance in CKEDITOR.instances ) {
                     CKEDITOR.instances[instance].updateElement(); 
                 }
+                console.log($('#litpic').val());
                 console.log($("#borrowFrom").serialize());
             }
         });

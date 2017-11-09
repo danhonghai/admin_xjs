@@ -415,7 +415,7 @@
         optionConfig({
             id:'echart_user3',
             text:'省份',
-            yData:['广东','江苏','北京','山东','浙江','四川','上海','河南','福建','广西'],
+            yData:['广东哈尔冰','江苏','北京','山东','浙江','四川','上海','河南','福建','广西'],
             name:'人数(个)',
             data:[1,2,3,4,5,6,7,8,9,10]
         });
@@ -474,13 +474,13 @@
             data: {},
             dataType: "json",
             success: function(data){
-                $('#userAge').empty();   //清空所有内容
+              /*  $('#userAge').empty();   //清空所有内容
                 var html = ''; 
                 $.each(data, function(index, obj){
                     html += '<tr><td>'+obj.age+'</td><td>'+obj.number+'</td><td>'+obj.proportion+'</td>'
                             +'</tr>';
                 });
-                $('#userAge').html(html);
+                $('#userAge').html(html);*/
                 optionPieConfig({
                     id:'echart_user1',
                     type:'ring',

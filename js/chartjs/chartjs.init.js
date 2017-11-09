@@ -11,6 +11,9 @@ function optionConfig(optionObj){
         tooltip: {
             trigger: 'axis',
         },
+        grid: {
+            containLabel: true
+        },
         xAxis: {
             data: optionObj.xData
         },
